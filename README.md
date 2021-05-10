@@ -1,27 +1,32 @@
 # Teamder
+Réalisation d'un projet fil rouge dans le cadre de la formation JAVA JEE (POE) dispensée par M2i Formation.
+Teamder est une appli web/mobile basée sur le fonctionnement de Swipe proposé par Tinder afin réunir des joueurs de jeux vidéos tels que League of Legends ou encore Counter Strike.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.11.
+-> Depuis le web : inscrivez-vous sur le site ... et laissez-vous guider.
+-> Depuis le mobile : téléchargez l'application "Teamder" disponible sur le...store, inscrivez-vous et laissez-vous guider.
+
+## Equipe
+Elle est composée de Justine Picque, Mathyce D'Alessandro, Maxime Deleruyelle et Miguel Bravo qui ont choisi de s'associer autour de l'idée de base.
+
+
+## Pré-requis
+
+
+## Utilisation
+
+
+
+## Initialisation du projet
+Ce projet a été initialisé par [Angular CLI](https://github.com/angular/angular-cli) version 11.2.11.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Lancer `ng serve` pour un serveur dev. Naviguer vers `http://localhost:4200/`. L'application se relancera automatiquement si vous réalisez une modification dans vos fichiers.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Pour avoir plus d'aide sur l'Angular CLI, utiliser `ng help` ou verifier la page suivante :[Angular CLI Overview and Command Reference](https://angular.io/cli).
+
+## Nous countacter
+Vous pouvez nous contacter aux adresses suivantes : justine.picque@labom2iformation.fr
