@@ -1,0 +1,19 @@
+<header>
+    <nav>
+        <div>
+            <a routerLink="/home"><img src="../../../assets/img/logo.png" alt="logo"></a>
+            <select name="select" (change)="redirectTo($event.target.value)">
+                <option>Jeux disponibles : </option>
+                <option value="league-of-legends">League Of Legends</option>
+                <option value="rocket-league">Rocket League</option>
+                <option value="apex-legends">Apex Legends</option>
+                <option value="counter-strike">Counter Strike</option>
+            </select>
+            <a routerLink="/about-us">About us</a>
+        </div>
+        <div>
+            <a routerLink="/login">Login</a>
+            <a routerLink="/signin">Register</a>
+        </div>
+    </nav>
+</header>

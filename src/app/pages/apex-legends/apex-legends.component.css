@@ -1,0 +1,30 @@
+.apex {
+  border: 1px solid black;
+  width: 50%;
+  margin: 100px auto;
+  padding: 100px 30px;
+  text-align: center;
+  background-image: url("../../../assets/img/apex-legends.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.apex p {
+  font-size: 25px;
+  margin-bottom: 50px;
+  color: white;
+}
+
+.apex a {
+  margin: 0 auto;
+  text-decoration: none;
+  border: 1px solid black;
+  padding: 15px;
+  background-color: beige;
+  color: black;
+}
+
+.apex a:hover {
+  color: red;
+}
