@@ -1,3 +1,31 @@
-img {
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+header img {
     width:75px;
+}
+header nav {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:beige;
+    padding:20px 0px;
+}
+header a, header select {
+    font-size:25px;
+    margin:0 20px;
+    font-family: 'Source Sans Pro',
+    sans-serif;
+}
+header select {
+    border:none;
+    color:red;
+    background-color:beige;
+    outline: none;
+    padding:10px;
+}
+header a {
+    text-decoration: none;
+    color:black
+}
+header a:hover {
+    color:red;
 }
