@@ -1,0 +1,30 @@
+.rl {
+  border: 1px solid black;
+  width: 50%;
+  margin: 100px auto;
+  padding: 100px 30px;
+  text-align: center;
+  background-image: url("../../../assets/img/rocket-league.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.rl p {
+  font-size: 25px;
+  margin-bottom: 50px;
+  color: red;
+}
+
+.rl a {
+  margin: 0 auto;
+  text-decoration: none;
+  border: 1px solid black;
+  padding: 15px;
+  background-color: beige;
+  color: black;
+}
+
+.rl a:hover {
+  color: red;
+}
