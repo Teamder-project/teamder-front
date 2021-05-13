@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RocketLeagueComponent } from './pages/rocket-league/rocket-league.component';
 import { ApexLegendsComponent } from './pages/apex-legends/apex-legends.component';
 import { CounterStrikeComponent } from './pages/counter-strike/counter-strike.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CounterStrikeComponent } from './pages/counter-strike/counter-strike.co
     HomeComponent,
     RocketLeagueComponent,
     ApexLegendsComponent,
-    CounterStrikeComponent
+    CounterStrikeComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,

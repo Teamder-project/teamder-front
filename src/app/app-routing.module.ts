@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ApexLegendsComponent } from './pages/apex-legends/apex-legends.component';
 import { CounterStrikeComponent } from './pages/counter-strike/counter-strike.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'rocket-league', component: RocketLeagueComponent},
   { path: 'apex-legends', component: ApexLegendsComponent},
   { path: 'counter-strike', component: CounterStrikeComponent},
+  { path: 'about-us', component : AboutUsComponent}
   
 ];
 

@@ -1,0 +1,26 @@
+.about h2 {
+    text-align: center;
+}
+
+.about img {
+    display: flex;
+    align-items: center;
+    max-width: 30%;
+}
+
+.about div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.corpus {
+    border: 1px solid black;
+    margin : 20px ;
+    padding: 20px ;
+    background-color: rgb(236, 131, 131);
+    text-indent: 60px;
+
+}
+
