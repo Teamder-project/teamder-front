@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, HammerModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +11,8 @@ import { RocketLeagueComponent } from './pages/rocket-league/rocket-league.compo
 import { ApexLegendsComponent } from './pages/apex-legends/apex-legends.component';
 import { CounterStrikeComponent } from './pages/counter-strike/counter-strike.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { SwipeJuComponent } from './pages/swipe-ju/swipe-ju.component';
+import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 
 @NgModule({
   declarations: [
@@ -21,13 +23,17 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
     RocketLeagueComponent,
     ApexLegendsComponent,
     CounterStrikeComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    SwipeJuComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxUsefulSwiperModule,
+    HammerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

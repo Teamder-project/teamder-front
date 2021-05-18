@@ -1,0 +1,15 @@
+<swiper [config]="config">
+  <div class="swiper-wrapper">
+
+    <div class="swiper-slide" *ngFor="let image of images">
+      {{image.prenom}}{{image.nom}},{{image.age}} ans
+
+
+      <!-- Add Pagination -->
+      <!-- <div class="swiper-pagination"></div>
+  Add Arrows -->
+      <div class="swiper-button-next" (swipeleft)=swipeLeft()></div>
+      <div class="swiper-button-prev"(swiperight)=swipeRight()></div>
+    </div>
+  </div>
+</swiper>
