@@ -12,6 +12,7 @@ import { RocketLeagueComponent } from './pages/rocket-league/rocket-league.compo
 import { ApexLegendsComponent } from './pages/apex-legends/apex-legends.component';
 import { CounterStrikeComponent } from './pages/counter-strike/counter-strike.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { SignInComponent } from './pages/sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
     RocketLeagueComponent,
     ApexLegendsComponent,
     CounterStrikeComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,

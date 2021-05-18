@@ -6,6 +6,7 @@ import { CounterStrikeComponent } from './pages/counter-strike/counter-strike.co
 import { HomeComponent } from './pages/home/home.component';
 import { LeagueOfLegendsComponent } from './pages/league-of-legends/league-of-legends.component';
 import { RocketLeagueComponent } from './pages/rocket-league/rocket-league.component';
+import { SignInComponent } from './pages/sign-in/sign-in.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'rocket-league', component: RocketLeagueComponent},
   { path: 'apex-legends', component: ApexLegendsComponent},
   { path: 'counter-strike', component: CounterStrikeComponent},
-  { path: 'about-us', component : AboutUsComponent}
+  { path: 'about-us', component : AboutUsComponent},
+  { path: 'sign-in', component : SignInComponent}
   
 ];
 
