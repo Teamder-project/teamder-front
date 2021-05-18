@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, HammerModule } from '@angular/platform-browser';
+import { BrowserModule, HammerModule, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +13,7 @@ import { CounterStrikeComponent } from './pages/counter-strike/counter-strike.co
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { SwipeJuComponent } from './pages/swipe-ju/swipe-ju.component';
 import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
+import { MyHammerConfig } from './pages/swipe-ju/my-hammer.config';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,12 @@ import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
     NgxUsefulSwiperModule,
     HammerModule
   ],
-  providers: [],
+  providers: [
+    {
+    provide: HAMMER_GESTURE_CONFIG,
+    useClass: MyHammerConfig
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
