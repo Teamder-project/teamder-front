@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 header img {
-    width:75px;
+    width: 7.5%;
 }
+
+
 header nav {
     display:flex;
     justify-content: space-between;
     align-items: center;
-    background-color:beige;
+    background-color:rgb(66, 13, 116);
     padding:20px 0px;
 }
 header a, header select {
@@ -14,17 +17,18 @@ header a, header select {
     margin:0 20px;
     font-family: 'Source Sans Pro',
     sans-serif;
+    align-items: center;
 }
 header select {
     border:none;
     color:red;
-    background-color:beige;
+    background-color: rgb(66, 13, 116);
     outline: none;
     padding:10px;
 }
 header a {
     text-decoration: none;
-    color:black
+    color:white;
 }
 header a:hover {
     color:red;
