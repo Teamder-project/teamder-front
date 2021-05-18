@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ApexLegendsComponent } from './pages/apex-legends/apex-legends.component';
+import { ChatListComponent } from './pages/chat-list/chat-list.component';
 import { CounterStrikeComponent } from './pages/counter-strike/counter-strike.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LeagueOfLegendsComponent } from './pages/league-of-legends/league-of-legends.component';
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'rocket-league', component: RocketLeagueComponent},
   { path: 'apex-legends', component: ApexLegendsComponent},
   { path: 'counter-strike', component: CounterStrikeComponent},
-  { path: 'about-us', component : AboutUsComponent}
+  { path: 'about-us', component : AboutUsComponent},
+  { path: 'chat-list', component : ChatListComponent}
   
 ];
 
