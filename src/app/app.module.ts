@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './_components/header/header.component';
 import { LeagueOfLegendsComponent } from './pages/league-of-legends/league-of-legends.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -13,6 +14,7 @@ import { CounterStrikeComponent } from './pages/counter-strike/counter-strike.co
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ChatListComponent } from './pages/chat-list/chat-list.component';
 import { FriendsComponent } from './_components/friends/friends.component';
+import { SignInComponent } from './pages/sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
@@ -25,13 +27,15 @@ import { FriendsComponent } from './_components/friends/friends.component';
     CounterStrikeComponent,
     AboutUsComponent,
     ChatListComponent,
-    FriendsComponent
+    FriendsComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
