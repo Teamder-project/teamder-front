@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SwiperOptions } from 'swiper';
+import { HammerGestureConfig } from "@angular/platform-browser";
+import * as hammer from "hammerjs";
 
 
 @Component({
@@ -7,7 +9,7 @@ import { SwiperOptions } from 'swiper';
   templateUrl: './swipe-ju.component.html',
   styleUrls: ['./swipe-ju.component.css']
 })
-export class SwipeJuComponent implements OnInit {
+export class SwipeJuComponent extends HammerGestureConfig implements OnInit {
   
   images = [
     {nom : "Pif", prenom : "Coucou", age : 26},
@@ -15,9 +17,12 @@ export class SwipeJuComponent implements OnInit {
     {nom : "Pouf", prenom : "Crucru", age : 19},
   ]
 
+  overrides = <any>{
+    swipe: { direction: hammer.DIRECTION_HORIZONTAL },
+    pinch: { enable: false },
+    rotate: { enable: false }
+  };
 
-  
-  constructor() { }
 
   ngOnInit(): void {
 
