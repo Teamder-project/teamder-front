@@ -28,6 +28,17 @@ export class SwipeJuComponent extends HammerGestureConfig implements OnInit {
 
     
   }
+
+  swipeRight(): void {
+    console.log("droite")
+    
+  }
+
+  swipeLeft(): void {
+    console.log("gauche")
+    
+  }
+
   config: SwiperOptions = {
     pagination: { el: '.swiper-pagination', clickable: true },
     navigation: {
@@ -37,12 +48,6 @@ export class SwipeJuComponent extends HammerGestureConfig implements OnInit {
     spaceBetween: 30
 
   }
-  swipeLeft() {
-  
-  }
- 
-  swipeRight() {
-    
-  }
+
 
 }
