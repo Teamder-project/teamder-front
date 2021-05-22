@@ -14,7 +14,13 @@ export class SwipeJuComponent extends HammerGestureConfig implements OnInit {
   images = [
     {nom : "Pif", prenom : "Coucou", age : 26},
     {nom : "Paf", prenom : "Cuicui", age : 30},
-    {nom : "Pouf", prenom : "Crucru", age : 19},
+    {nom : "Pouf", prenom : "Crucru", age : 58},
+    {nom : "toto", prenom : "roro", age : 12},
+    {nom : "titi", prenom : "riri", age : 27},
+    {nom : "tutu", prenom : "rara", age : 69},
+    {nom : "cucu", prenom : "momo", age : 14},
+    {nom : "coco", prenom : "mimi", age : 18},
+    {nom : "caca", prenom : "mama", age : 78},
   ]
 
   overrides = <any>{
@@ -23,12 +29,25 @@ export class SwipeJuComponent extends HammerGestureConfig implements OnInit {
     rotate: { enable: false }
   };
 
+  constructor() {
+    super();
+   }
 
   ngOnInit(): void {
 
-    
+    setInterval(this.rafraichir, 100);
   }
 
+  rafraichir = () => {
+    
+    let id = document.querySelector("#swipe0");
+    if(id.classList.contains("swiper-slide-prev")) {
+      
+
+
+    }
+ 
+  }
   swipeRight(): void {
     console.log("droite")
     

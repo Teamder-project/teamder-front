@@ -1,8 +1,8 @@
 <swiper [config]="config">
   <div class="swiper-wrapper">
 
-    <div class="swiper-slide" *ngFor="let image of images" (swipeleft)="swipeLeft()"
-    (swiperight)="swipeRight()" (slideChange)="swipeRight()">
+    <div id="swipe{{i}}" class="swiper-slide" *ngFor="let image of images; let i = index" (swipeleft)="swipeLeft()"
+    (swiperight)="swipeRight()">
       {{image.prenom}} {{image.nom}}, {{image.age}}  ans
 
 
