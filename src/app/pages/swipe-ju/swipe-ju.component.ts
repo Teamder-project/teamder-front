@@ -11,7 +11,7 @@ import * as hammer from "hammerjs";
 })
 export class SwipeJuComponent extends HammerGestureConfig implements OnInit {
   
-  images = [
+  users = [
     {nom : "Pif", prenom : "Coucou", age : 26},
     {nom : "Paf", prenom : "Cuicui", age : 30},
     {nom : "Pouf", prenom : "Crucru", age : 58},
@@ -21,6 +21,14 @@ export class SwipeJuComponent extends HammerGestureConfig implements OnInit {
     {nom : "cucu", prenom : "momo", age : 14},
     {nom : "coco", prenom : "mimi", age : 18},
     {nom : "caca", prenom : "mama", age : 78},
+  ]
+
+  likes = [
+
+  ]
+
+  dislikes = [
+
   ]
 
   overrides = <any>{
@@ -40,22 +48,30 @@ export class SwipeJuComponent extends HammerGestureConfig implements OnInit {
 
   rafraichir = () => {
     
-    let id = document.querySelector("#swipe0");
+    let id = document.querySelector("#swipe");
     if(id.classList.contains("swiper-slide-prev")) {
-      
-
-
+  
     }
  
   }
-  swipeRight(): void {
-    console.log("droite")
-    
+  
+  like = () => {
+
+    let id = document.querySelector("#swipe");
+    id.remove();
+    let user = { nom: "Ajouter", prenom: "Miguel", age: 45}
+    this.likes.push(user);
+    console.log(this.likes);
+
   }
 
-  swipeLeft(): void {
-    console.log("gauche")
-    
+  dislike = () => {
+
+    let id = document.querySelector("#swipe");
+    id.remove();
+    let user = { nom: "Next", prenom: "Roger", age: 87 }
+    this.dislikes.push(user);
+    console.log(this.dislikes);
   }
 
   config: SwiperOptions = {
