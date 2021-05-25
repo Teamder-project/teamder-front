@@ -1,7 +1,7 @@
 <swiper [config]="config">
-  <div class="swiper-wrapper">
+ <div class="swiper-wrapper">
 
-    <div class="swiper-slide" *ngFor="let image of images" (swipeleft)="swipeLeft()" (swiperight)="swipeRight()"
+    <div id="swipe" class="swiper-slide" *ngFor="let user of users" (swipeleft)="dislike()" (swiperight)="like()"
       (slideChange)="swipeRight()">
       <!-- Add Pagination -->
       <!-- <div class="swiper-pagination"></div>
@@ -10,7 +10,7 @@
         <div class="card">
           <div class="entete">
             <img src="../../../assets/img/base-logo.jpg" alt="Person" class="card_image">
-            <p class="joueur">{{image.prenom}}  {{image.nom}}</p>
+            <p class="joueur">{{user.prenom}}  {{user.nom}}</p>
           </div>
           <div class="infos_joueur">
             <p class="description">Coucou toi le joueur ! </p>

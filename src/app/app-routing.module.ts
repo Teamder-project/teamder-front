@@ -8,7 +8,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { IndexComponent } from './pages/index/index.component';
 import { LeagueOfLegendsComponent } from './pages/league-of-legends/league-of-legends.component';
 import { RocketLeagueComponent } from './pages/rocket-league/rocket-league.component';
-import { SwipeJuComponent } from './pages/swipe-ju/swipe-ju.component';
+import { SignInComponent } from './pages/sign-in/sign-in.component';
+import { SwipeComponent } from './pages/swipe/swipe.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -18,7 +19,9 @@ const routes: Routes = [
   { path: 'apex-legends', component: ApexLegendsComponent},
   { path: 'counter-strike', component: CounterStrikeComponent},
   { path: 'about-us', component : AboutUsComponent},
-  { path: 'swipe', component : SwipeJuComponent}
+  { path: 'sign-in', component : SignInComponent},
+  { path: 'swipe', component : SwipeComponent},
+  { path: 'chat-list', component : ChatListComponent}
   
 ];
 

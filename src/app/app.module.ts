@@ -12,8 +12,11 @@ import { RocketLeagueComponent } from './pages/rocket-league/rocket-league.compo
 import { ApexLegendsComponent } from './pages/apex-legends/apex-legends.component';
 import { CounterStrikeComponent } from './pages/counter-strike/counter-strike.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
-import { SwipeJuComponent } from './pages/swipe-ju/swipe-ju.component';
-import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
+import { SwipeComponent } from './pages/swipe/swipe.component';
+import { NgxUsefulSwiperModule} from 'ngx-useful-swiper';
+import { ChatListComponent } from './pages/chat-list/chat-list.component';
+import { SignInComponent } from './pages/sign-in/sign-in.component';
+import { FriendsComponent } from './_components/friends/friends.component';
 
 
 @NgModule({
@@ -26,7 +29,10 @@ import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
     ApexLegendsComponent,
     CounterStrikeComponent,
     AboutUsComponent,
-    SwipeJuComponent
+    SwipeComponent,
+    ChatListComponent,
+    FriendsComponent,
+    SignInComponent
     
   ],
   imports: [
@@ -35,7 +41,8 @@ import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
     FormsModule,
     ReactiveFormsModule,
     NgxUsefulSwiperModule,
-    HammerModule
+    HammerModule,
+    HttpClientModule
   ],
   providers: [
     {

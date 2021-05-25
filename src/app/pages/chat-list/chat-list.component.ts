@@ -14,8 +14,8 @@ export class ChatListComponent implements OnInit {
     {pseudo: "toto", avatar:"default-img.jpg"},
     {pseudo: "titi", avatar:"default-img.jpg"},
     {pseudo: "tutu", avatar:"default-img.jpg"},
-    {pseudo: "tata", avatar:"default-img.jpg"},
-  ]
+    {pseudo: "tata", avatar:"default-img.jpg"}
+  ];
   constructor(private fb : FormBuilder) {
     this.sendMsg = this.fb.group({
       pseudo: ['Toto'],
