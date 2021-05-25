@@ -5,12 +5,14 @@ import { ApexLegendsComponent } from './pages/apex-legends/apex-legends.componen
 import { ChatListComponent } from './pages/chat-list/chat-list.component';
 import { CounterStrikeComponent } from './pages/counter-strike/counter-strike.component';
 import { HomeComponent } from './pages/home/home.component';
+import { IndexComponent } from './pages/index/index.component';
 import { LeagueOfLegendsComponent } from './pages/league-of-legends/league-of-legends.component';
 import { RocketLeagueComponent } from './pages/rocket-league/rocket-league.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
+  { path: 'index', component: IndexComponent },
   { path: 'league-of-legends', component: LeagueOfLegendsComponent},
   { path: 'rocket-league', component: RocketLeagueComponent},
   { path: 'apex-legends', component: ApexLegendsComponent},

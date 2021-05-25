@@ -1,26 +1,49 @@
-.about h2 {
-    text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Open+Sans&display=swap');
+
+#back-color {
+    background-color: #171717;
+    color: white;
+  }
+
+.block {
+    font-family: 'Josefin Sans', sans-serif;
+    position: fixed; 
+    height: auto;
+    top: 70px; 
+    left: 0; 
 }
 
-.about img {
-    display: flex;
-    align-items: center;
-    max-width: 30%;
+h2 {
+    margin-top: 60px;
+    margin-left: 80px;
+    text-transform: uppercase;
+    width: 100%;
 }
 
-.about div{
+.about-text{
+    margin-top: 50px;
+    display: flex;
+    margin: 60px;
+}
+
+.about-text p {
+    width: 580px;
+}
+
+
+img {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    max-width: 50%;
 }
 
 .corpus {
-    border: 1px solid black;
-    margin : 20px ;
-    padding: 20px ;
-    background-color: rgb(236, 131, 131);
-    text-indent: 60px;
+    padding: 40px;
+    background-image: linear-gradient(to left, rgb(26, 23, 22, 0) 10%, rgb(236, 131, 131) 180%);
+    border-radius: 10%;
+}
 
+.sign h3 {
+    margin-top: 60px;
 }
 
