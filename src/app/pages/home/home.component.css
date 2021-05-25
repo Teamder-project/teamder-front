@@ -2,27 +2,27 @@
     padding: 3.125rem 0;
 }
 
-.container {
-    max-width: 68.75rem;
-    padding: 0.312rem 0.625rem;
-    margin: 0 auto;
-}
-
 h4 {
     margin-bottom: 60px;
+    margin-left: 60px;
 }
 
-/* CINEMA */
-#cinema {
+#back-color {
     background-color: #171717;
     color: white;
 }
 
-#cinema h2 {
+#back-color h2 {
     color: white;
+    margin-left: 60px;
 }
 
-#cinema .element {
+.elements {
+    display: flex;
+}
+
+#back-color .element {
+    position: relative;
     display: flex;
     width: 50%;
     padding: 0.625rem;
@@ -45,44 +45,17 @@ h4 {
 }
 
 #comingSoon video {
+    position: relative;
     width: 100%;
+    background-size: cover;
 }
 
-#comingSoon .container {
+#comingSoon .gradiant {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     background-image: linear-gradient(to bottom, rgb(20, 22, 25) 10%, rgba(41, 39, 39, 0) 100%);
-    max-width: 100%;
     min-height: 30rem;
 }
-
-#comingSoon h2 {
-    color: white;
-}
-
-#comingSoon table {
-    background-color: white;
-    border: 5px solid #171717;
-    width: 50%;
-    margin: 0 auto;
-    margin-top: 3.75rem;
-}
-
-#comingSoon tr {
-    padding: 0.312rem 0;
-}
-
-#comingSoon th, #comingSoon td {
-    padding: 0.312rem 0;
-}
-    
-#comingSoon th {
-    font-weight: bold;
-    border-bottom: 0.062rem solid #171717;
-}
-
-#comingSoon td {
-    text-align: center;
-}
+ 

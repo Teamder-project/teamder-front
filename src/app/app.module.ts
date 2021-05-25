@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, HammerGestureConfig, HammerModule, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,9 +12,12 @@ import { RocketLeagueComponent } from './pages/rocket-league/rocket-league.compo
 import { ApexLegendsComponent } from './pages/apex-legends/apex-legends.component';
 import { CounterStrikeComponent } from './pages/counter-strike/counter-strike.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { SwipeComponent } from './pages/swipe/swipe.component';
+import { NgxUsefulSwiperModule} from 'ngx-useful-swiper';
 import { ChatListComponent } from './pages/chat-list/chat-list.component';
-import { FriendsComponent } from './_components/friends/friends.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
+import { FriendsComponent } from './_components/friends/friends.component';
+
 
 @NgModule({
   declarations: [
@@ -26,18 +29,27 @@ import { SignInComponent } from './pages/sign-in/sign-in.component';
     ApexLegendsComponent,
     CounterStrikeComponent,
     AboutUsComponent,
+    SwipeComponent,
     ChatListComponent,
     FriendsComponent,
     SignInComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxUsefulSwiperModule,
+    HammerModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+    provide: HAMMER_GESTURE_CONFIG,
+    useClass: HammerGestureConfig
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
