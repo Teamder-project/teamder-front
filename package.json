@@ -21,7 +21,11 @@
     "@angular/platform-browser-dynamic": "~11.2.12",
     "@angular/router": "~11.2.12",
     "bootstrap": "^5.0.0",
+<<<<<<< HEAD
     "ngx-useful-swiper": "^10.0.1",
+=======
+    "jquery": "^3.6.0",
+>>>>>>> 7768c5ec4191b06608b72185867d53111ebc47ba
     "rxjs": "~6.6.0",
     "swiper": "^6.6.1",
     "tslib": "^2.0.0",

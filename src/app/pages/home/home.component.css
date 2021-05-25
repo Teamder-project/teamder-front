@@ -1,0 +1,61 @@
+.block {
+    padding: 3.125rem 0;
+}
+
+h4 {
+    margin-bottom: 60px;
+    margin-left: 60px;
+}
+
+#back-color {
+    background-color: #171717;
+    color: white;
+}
+
+#back-color h2 {
+    color: white;
+    margin-left: 60px;
+}
+
+.elements {
+    display: flex;
+}
+
+#back-color .element {
+    position: relative;
+    display: flex;
+    width: 50%;
+    padding: 0.625rem;
+}
+
+.media, .media-detail {
+    width: 50%;
+}
+
+.media iframe {
+    width: 100%;
+    padding-right: 0.625rem;
+}
+
+/* COMING SOON */
+#comingSoon {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+}
+
+#comingSoon video {
+    position: relative;
+    width: 100%;
+    background-size: cover;
+}
+
+#comingSoon .gradiant {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(to bottom, rgb(20, 22, 25) 10%, rgba(41, 39, 39, 0) 100%);
+    min-height: 30rem;
+}
+ 
