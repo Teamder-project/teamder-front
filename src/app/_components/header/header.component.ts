@@ -12,17 +12,17 @@ export class HeaderComponent implements OnInit {
 
      }
 
+
   ngOnInit(): void {
+    
+     }
+
+     myFunction = () => {
+      document.getElementById("menu1").style.display = "none";
+    }
+
+
   }
 
-  redirectTo = (e) => {
+     
 
-    console.log(e)
-    if (e != "Jeux :"){
-      this.router.navigate([`/${e}`])
-    }
-    else {
-      this.router.navigate([`/home`])
-    }
-  }
-}

@@ -1,0 +1,42 @@
+#back-color {
+    background-color: #171717;
+    color: white;
+}
+
+.block {
+    padding: 3.125rem 0;
+}
+
+.elements {
+    display: flex;
+    justify-content: space-around;
+}
+
+.game {
+    background-image: url("https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/bltcfa4652c8d383f56/5e21837f63d1b6503160d39b/Home-page.jpg");
+    width: 380px;
+    height: 200px;
+    background-size: cover;
+}
+
+
+.profile-edit {
+    background-image: url("../../../assets/img/add-profile.jpg");
+    width: 380px;
+    height: 200px;
+    background-size: cover;
+}
+
+#search {
+    float: left;
+    width: 50%;
+}
+
+#edit {
+    float: right;
+    width: 50%;
+}
+
+a:hover {
+    opacity: 50%;
+}

@@ -11,6 +11,7 @@ import { RocketLeagueComponent } from './pages/rocket-league/rocket-league.compo
 import { ApexLegendsComponent } from './pages/apex-legends/apex-legends.component';
 import { CounterStrikeComponent } from './pages/counter-strike/counter-strike.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { IndexComponent } from './pages/index/index.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
     RocketLeagueComponent,
     ApexLegendsComponent,
     CounterStrikeComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    IndexComponent
   ],
   imports: [
     BrowserModule,
