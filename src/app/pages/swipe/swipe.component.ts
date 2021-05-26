@@ -1,0 +1,100 @@
+import { Component, OnInit } from '@angular/core';
+import Swiper, { SwiperOptions } from 'swiper';
+
+
+@Component({
+  selector: 'app-swipe',
+  templateUrl: './swipe.component.html',
+  styleUrls: ['./swipe.component.css']
+})
+export class SwipeComponent implements OnInit {
+  
+  users = [
+    {nom : "Pif", prenom : "Coucou", age : 26},
+    {nom : "Paf", prenom : "Cuicui", age : 30},
+    {nom : "Pouf", prenom : "Crucru", age : 58},
+    {nom : "toto", prenom : "roro", age : 12},
+    {nom : "titi", prenom : "riri", age : 27},
+    {nom : "tutu", prenom : "rara", age : 69},
+    {nom : "cucu", prenom : "momo", age : 14},
+    {nom : "coco", prenom : "mimi", age : 18},
+    {nom : "caca", prenom : "mama", age : 78},
+  ]
+
+  likes = [
+
+  ]
+
+  dislikes = [
+
+  ]
+
+  constructor() {
+   }
+
+
+  //charge le premier g@m3r, initialise le swiper, et boucle la fonction rafraichir()
+  ngOnInit(): void {
+
+    document.getElementById("nom-prenom").innerText = this.users[0].nom + " " + this.users[0].prenom;
+    
+    const swiper = new Swiper('.swiper-container', {
+      speed: 800,
+      spaceBetween: 100,
+      initialSlide: 1,
+      pagination: { el: '.swiper-pagination', clickable: true },
+      navigation: {
+        nextEl: '.swiper-button-prev',
+        prevEl: '.swiper-button-next'
+      },
+    });
+    
+    setInterval(this.rafraichir, 100);
+  }
+
+  //verifie s'il y a eu swipe et execute like() ou dislike() selon le sens
+  rafraichir = () => {
+
+    const swiper = document.querySelector('.swiper-container')['swiper'];
+    let slide = document.getElementById("swipe2");
+    if(slide.classList.contains("swiper-slide-next")) {
+      this.like();
+    }else if(slide.classList.contains("swiper-slide-prev")) {
+      this.dislike();
+    }
+  }
+  
+  //charge le prochain g@m3r, l'ajoute dans likes[] et renvoie sur la slide principale
+  like = () => {
+
+    document.getElementById("swipe1").classList.remove("swiper-slide-active");
+    document.getElementById("swipe1").classList.add("swiper-slide-prev");
+    document.getElementById("swipe2").classList.remove("swiper-slide-next");
+    document.getElementById("swipe2").classList.add("swiper-slide-active");
+    document.getElementById("swipe3").classList.add("swiper-slide-next");
+    
+    this.likes.push(this.users.splice(0, 1));
+    document.getElementById("nom-prenom").innerText = this.users[0].nom + " " + this.users[0].prenom;
+
+    const swiper = document.querySelector('.swiper-container')['swiper'];
+    setTimeout(function(){swiper.slideNext(800)}, 600);
+    console.log("like");
+  }
+
+  //charge le prochain g@m3r, l'ajoute dans dislikes[] et renvoie sur la slide principale
+  dislike = () => {
+
+    document.getElementById("swipe1").classList.add("swiper-slide-prev");
+    document.getElementById("swipe2").classList.remove("swiper-slide-prev");
+    document.getElementById("swipe2").classList.add("swiper-slide-active");
+    document.getElementById("swipe2").classList.remove("swiper-slide-active");
+    document.getElementById("swipe3").classList.add("swiper-slide-next");
+
+    this.dislikes.push(this.users.splice(0, 1));
+    document.getElementById("nom-prenom").innerText = this.users[0].nom + " " + this.users[0].prenom;
+
+    const swiper = document.querySelector('.swiper-container')['swiper'];
+    setTimeout(function(){swiper.slidePrev(800)}, 600);
+    console.log("dislike");
+  }
+}

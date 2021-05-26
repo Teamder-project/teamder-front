@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SwipeJuComponent } from './swipe-ju.component';
+import { SwipeComponent } from './swipe.component';
 
-describe('SwipeJuComponent', () => {
-  let component: SwipeJuComponent;
-  let fixture: ComponentFixture<SwipeJuComponent>;
+describe('SwipeComponent', () => {
+  let component: SwipeComponent;
+  let fixture: ComponentFixture<SwipeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SwipeJuComponent ]
+      declarations: [ SwipeComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SwipeJuComponent);
+    fixture = TestBed.createComponent(SwipeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
