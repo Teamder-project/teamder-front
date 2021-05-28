@@ -3,6 +3,7 @@ import { BrowserModule, HammerGestureConfig, HammerModule, HAMMER_GESTURE_CONFIG
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './_components/header/header.component';
 import { LeagueOfLegendsComponent } from './pages/league-of-legends/league-of-legends.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -12,7 +13,10 @@ import { ApexLegendsComponent } from './pages/apex-legends/apex-legends.componen
 import { CounterStrikeComponent } from './pages/counter-strike/counter-strike.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { SwipeComponent } from './pages/swipe/swipe.component';
-import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
+import { NgxUsefulSwiperModule} from 'ngx-useful-swiper';
+import { ChatListComponent } from './pages/chat-list/chat-list.component';
+import { SignInComponent } from './pages/sign-in/sign-in.component';
+import { FriendsComponent } from './_components/friends/friends.component';
 
 
 @NgModule({
@@ -25,7 +29,10 @@ import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
     ApexLegendsComponent,
     CounterStrikeComponent,
     AboutUsComponent,
-    SwipeComponent
+    SwipeComponent,
+    ChatListComponent,
+    FriendsComponent,
+    SignInComponent
     
   ],
   imports: [
@@ -34,7 +41,8 @@ import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
     FormsModule,
     ReactiveFormsModule,
     NgxUsefulSwiperModule,
-    HammerModule
+    HammerModule,
+    HttpClientModule
   ],
   providers: [
     {

@@ -1,31 +1,107 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Open+Sans&display=swap');
+
 header img {
-    width:75px;
+    width: 50px;
 }
-header nav {
-    display:flex;
-    justify-content: space-between;
+
+nav {
+    display: flex;
     align-items: center;
-    background-color:beige;
-    padding:20px 0px;
 }
-header a, header select {
-    font-size:25px;
-    margin:0 20px;
-    font-family: 'Source Sans Pro',
-    sans-serif;
+
+.logo {
+    margin-left: 20px;
+    
 }
-header select {
-    border:none;
-    color:red;
-    background-color:beige;
-    outline: none;
-    padding:10px;
+
+.menu {
+  
+    margin-left: 5%;
 }
+
+.more {
+    margin-left: 5%;
+}
+
+.login {
+    margin-left: 40%;
+}
+
+.signup {
+    margin-left: 5%;
+}
+
+i {
+    color: white;
+}
+
+
+header nav {
+    background-color:rgb(10, 40, 92);
+    height: 70px;
+}
+
+header a, header .dropbtn {
+    font-size: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: capitalize;
+    align-items: center;    
+}
+
+
 header a {
     text-decoration: none;
-    color:black
+    color: white;
+    width: 250px;
+    transition: all 0.2s ease-out;
 }
 header a:hover {
     color:red;
+
 }
+
+
+/* Dropdown Button */
+.dropbtn {
+    background:transparent;
+    color: white;
+    padding: 16px;
+    border: none;
+  }
+
+  .dropbtn:hover {
+    color:red;
+}
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    background: linear-gradient(to bottom, transparent 0%, #171717f1 2.2%);
+    padding: 10px;
+    pointer-events: auto;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    
+  }
+  
+  /* Change color of dropdown links on hover */
+ 
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  

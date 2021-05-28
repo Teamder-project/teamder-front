@@ -1,0 +1,7 @@
+.friends {
+    display:flex;
+    align-items: center;
+}
+.friends img {
+    width:50px;
+}

@@ -1,0 +1,10 @@
+<form [formGroup]="accountForm" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="username">
+    <input type="text" formControlName="password">
+    <input type="text" formControlName="email">
+    <input type="text" formControlName="birthday">
+    <input type="text" formControlName="gender">
+    <input type="text" formControlName="country">
+    <input type="text" formControlName="avatar">
+    <button type="submit">enregistrer</button>
+</form>

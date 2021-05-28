@@ -1,27 +1,70 @@
-.lol {
-    border: 1px solid black;
-    width:50%;
-    margin:100px auto;
-    padding:100px 30px;
-    text-align:center;
-    background-image: url("../../../assets/img/league-of-legends.jpg");
-    background-position:center;
-    background-size:cover;
-    background-repeat: no-repeat;
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Open+Sans&display=swap');
+
+#back-color {
+  background-color: #171717;
+  color: white;
 }
-.lol p {
-    font-size: 25px;
-    margin-bottom:50px;
-    color:red;
+
+.block {
+  font-family: 'Josefin Sans', sans-serif;
+  background-image: url("../../../assets/img/league-page.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed; 
+  height: auto;
+  top: 70px; 
+  left: 0; 
+ /* Préserve le ratio de l'image */
+  min-width: 100%;
+  min-height: 100%;
 }
-.lol a {
-    margin:0 auto;
-    text-decoration:none;
-    border:1px solid black;
-    padding:15px;
-    background-color: beige;
-    color:black;
+
+h2 {
+  margin-top: 60px;
+  margin-left: 80px;
+  text-transform: uppercase;
+  width: 100%;
 }
-.lol a:hover {
-    color:red;
+
+p {
+  left: 0;
+  right: 0;
+  padding: 45px;
+  background-image: linear-gradient(to right, rgb(26, 23, 22, 0) 10%, rgb(26, 82, 104) 190%);
+  border-radius: 33%;
+}
+
+.lol-text {
+  width: 33%;
+}
+
+.lol-text p {
+  font-size: 20px;
+  margin-bottom: 50px;
+  color: white;
+  margin-top: 80px;
+  margin-left: 40px;
+}
+
+.lol-text a {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+  border: 1px solid black;
+  padding: 15px;
+  background-color: #527596;
+  opacity: 80%;
+  color: white;
+  width: 25%;
+  margin: auto;
+}
+
+a:hover {
+  background-color: #527596;
+  opacity: 100%;
 }

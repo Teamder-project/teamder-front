@@ -1,0 +1,87 @@
+.friend-list {
+    border: 1px solid #420d74;
+    width:20%;
+    margin:50px 0px 0px 50px;
+    box-shadow: 0px 0px 10px 4px rgba(119, 119, 119, 0.75);
+}
+.friend-list div {
+    padding:15px;
+}
+.friend-list hr {
+    color:#420d74;
+    width:80%;
+    margin:10px auto;
+}
+.chat-list {
+    display:flex;
+    margin: 0 auto;
+
+}
+.conversation {
+    margin-top:50px;
+    border: 1px solid #420d74;
+    width:50%;
+    box-shadow: 0px 0px 10px 4px rgba(119, 119, 119, 0.75);
+    text-align: center;
+}
+.message img {
+    width: 50px;
+}
+.message {
+    margin:40px;
+    display: flex;
+}
+.envoyer {
+    text-align:right;
+    flex-direction: row-reverse;
+}
+.recu {
+    text-align:left;
+}
+.conversation input {
+    width: 70%;
+    margin-bottom:40px;
+    padding:15px;
+    border:0;
+    border-bottom: 1px solid #420d74;
+    outline:none;
+}
+.conversation-nom {
+    background-color:#420d74;
+    color:white;
+    padding:10px 20px;
+    text-align:left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.conversation-nom i {
+    font-size:30px;
+}
+.fa-share-square {
+    font-size:30px;
+    color: #420d74;
+    position: relative;
+    right:30px;
+    top:10px;
+}
+.conversation button {
+    border:0;
+    background-color: white;
+    outline:none;
+}
+.conversation button[type="button"] {
+    background-color: #420d74;
+    color:white;
+}
+.add-group {
+     border: 1px solid #420d74;
+     width:20%;
+     padding:20px;
+     margin:50px 0px 0px;
+     box-shadow: 0px 0px 10px 4px rgba(119, 119, 119, 0.75);
+}
+.display {
+    display:none;
+}
