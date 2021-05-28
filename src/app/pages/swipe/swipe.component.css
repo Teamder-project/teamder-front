@@ -1,13 +1,12 @@
 /* correspond à la div swiper : ne pas toucher */
 .swiper-container {
-  width: 100%;
   height: 100px;
+  background-color: transparent;
 }
 
 .swiper-slide {
   text-align: center;
   font-size: 40px;
-  background: #fff;
 
   /* swiper centré */
   display: -webkit-box;
@@ -30,8 +29,7 @@
   align-items: center;
   justify-content: center;
   height: 80vh;
-  margin: 10px;
-  background-color: #f5f5f5;
+  background-color: transparent;
   /* mettre la police choisie pour l'appli */
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
@@ -101,6 +99,8 @@
   margin: 15px;
   box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.226);
 }
+
 .description {
   margin-top: 10px;
 }
+
