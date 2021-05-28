@@ -4,4 +4,8 @@
 }
 .friends img {
     width:50px;
+    margin:20px;
+}
+.friends p, .friends h4 {
+    color:white;
 }

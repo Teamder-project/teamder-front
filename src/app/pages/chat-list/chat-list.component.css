@@ -1,14 +1,16 @@
 .friend-list {
-    border: 1px solid #420d74;
+    border: 1px solid white;
     width:20%;
     margin:50px 0px 0px 50px;
     box-shadow: 0px 0px 10px 4px rgba(119, 119, 119, 0.75);
+    background-color:rgba(255, 255, 255, 0.15);
+    border-right:none;
 }
 .friend-list div {
     padding:15px;
 }
 .friend-list hr {
-    color:#420d74;
+    color:white;
     width:80%;
     margin:10px auto;
 }
@@ -19,17 +21,21 @@
 }
 .conversation {
     margin-top:50px;
-    border: 1px solid #420d74;
+    border: 1px solid white;
     width:50%;
     box-shadow: 0px 0px 10px 4px rgba(119, 119, 119, 0.75);
     text-align: center;
+    border-left:none;
 }
 .message img {
     width: 50px;
+    margin:20px;
 }
 .message {
     margin:40px;
     display: flex;
+    align-items: flex-end;
+    color:white;
 }
 .envoyer {
     text-align:right;
@@ -43,11 +49,11 @@
     margin-bottom:40px;
     padding:15px;
     border:0;
-    border-bottom: 1px solid #420d74;
+    border-bottom: 1px solid white;
     outline:none;
 }
 .conversation-nom {
-    background-color:#420d74;
+    background-color:rgba(255, 255, 255, 0.15);
     color:white;
     padding:10px 20px;
     text-align:left;
@@ -61,27 +67,44 @@
 }
 .fa-share-square {
     font-size:30px;
-    color: #420d74;
+    color:white;
     position: relative;
+    background:transparent;
     right:30px;
     top:10px;
 }
 .conversation button {
     border:0;
-    background-color: white;
+    background:transparent;
     outline:none;
 }
 .conversation button[type="button"] {
-    background-color: #420d74;
+    background: transparent;
     color:white;
 }
 .add-group {
-     border: 1px solid #420d74;
+     border: 1px solid white;
      width:20%;
      padding:20px;
      margin:50px 0px 0px;
      box-shadow: 0px 0px 10px 4px rgba(119, 119, 119, 0.75);
+     background-color:rgba(255, 255, 255, 0.15);
+     border-left:none;
+}
+.add-group hr {
+    color:white;
 }
 .display {
     display:none;
+}
+.background-chat {
+    height:100vh;
+    background: linear-gradient(rgba(10, 40, 92, 1)0%, red 180%);
+}
+#input {
+    background:transparent;
+    color:white;
+}
+#input::placeholder {
+    color:white;
 }
