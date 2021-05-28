@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SwiperOptions } from 'swiper';
-import { HammerGestureConfig } from "@angular/platform-browser";
-import * as hammer from "hammerjs";
+import Swiper, { SwiperOptions } from 'swiper';
 
 
 @Component({
@@ -9,7 +7,7 @@ import * as hammer from "hammerjs";
   templateUrl: './swipe.component.html',
   styleUrls: ['./swipe.component.css']
 })
-export class SwipeComponent extends HammerGestureConfig implements OnInit {
+export class SwipeComponent implements OnInit {
   
   users = [
     {nom : "Pif", prenom : "Coucou", age : 26},
@@ -31,60 +29,72 @@ export class SwipeComponent extends HammerGestureConfig implements OnInit {
 
   ]
 
-  overrides = <any>{
-    swipe: { direction: hammer.DIRECTION_HORIZONTAL },
-    pinch: { enable: false },
-    rotate: { enable: false }
-  };
-
   constructor() {
-    super();
    }
 
+
+  //charge le premier g@m3r, initialise le swiper, et boucle la fonction rafraichir()
   ngOnInit(): void {
 
+    document.getElementById("nom-prenom").innerText = this.users[0].nom + " " + this.users[0].prenom;
+    
+    const swiper = new Swiper('.swiper-container', {
+      speed: 800,
+      spaceBetween: 100,
+      initialSlide: 1,
+      pagination: { el: '.swiper-pagination', clickable: true },
+      navigation: {
+        nextEl: '.swiper-button-prev',
+        prevEl: '.swiper-button-next'
+      },
+    });
+    
     setInterval(this.rafraichir, 100);
   }
 
+  //verifie s'il y a eu swipe et execute like() ou dislike() selon le sens
   rafraichir = () => {
-    
-    let id = document.querySelector("#swipe");
-    if(id.classList.contains("swiper-slide-prev")) {
-  
+
+    const swiper = document.querySelector('.swiper-container')['swiper'];
+    let slide = document.getElementById("swipe2");
+    if(slide.classList.contains("swiper-slide-next")) {
+      this.like();
+    }else if(slide.classList.contains("swiper-slide-prev")) {
+      this.dislike();
     }
- 
   }
   
+  //charge le prochain g@m3r, l'ajoute dans likes[] et renvoie sur la slide principale
   like = () => {
 
-    console.log("droite")
-    let id = document.querySelector("#swipe");
-    id.remove();
-    let user = { nom: "Ajouter", prenom: "Miguel", age: 45}
-    this.likes.push(user);
-    console.log(this.likes);
+    document.getElementById("swipe1").classList.remove("swiper-slide-active");
+    document.getElementById("swipe1").classList.add("swiper-slide-prev");
+    document.getElementById("swipe2").classList.remove("swiper-slide-next");
+    document.getElementById("swipe2").classList.add("swiper-slide-active");
+    document.getElementById("swipe3").classList.add("swiper-slide-next");
+    
+    this.likes.push(this.users.splice(0, 1));
+    document.getElementById("nom-prenom").innerText = this.users[0].nom + " " + this.users[0].prenom;
 
+    const swiper = document.querySelector('.swiper-container')['swiper'];
+    setTimeout(function(){swiper.slideNext(800)}, 600);
+    console.log("like");
   }
 
+  //charge le prochain g@m3r, l'ajoute dans dislikes[] et renvoie sur la slide principale
   dislike = () => {
 
-    console.log("gauche")
-    let id = document.querySelector("#swipe");
-    id.remove();
-    let user = { nom: "Next", prenom: "Roger", age: 87 }
-    this.dislikes.push(user);
-    console.log(this.dislikes);
+    document.getElementById("swipe1").classList.add("swiper-slide-prev");
+    document.getElementById("swipe2").classList.remove("swiper-slide-prev");
+    document.getElementById("swipe2").classList.add("swiper-slide-active");
+    document.getElementById("swipe2").classList.remove("swiper-slide-active");
+    document.getElementById("swipe3").classList.add("swiper-slide-next");
+
+    this.dislikes.push(this.users.splice(0, 1));
+    document.getElementById("nom-prenom").innerText = this.users[0].nom + " " + this.users[0].prenom;
+
+    const swiper = document.querySelector('.swiper-container')['swiper'];
+    setTimeout(function(){swiper.slidePrev(800)}, 600);
+    console.log("dislike");
   }
-
-  config: SwiperOptions = {
-    pagination: { el: '.swiper-pagination', clickable: true },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
-    },
-    spaceBetween: 30
-
-  }
-
-
 }
