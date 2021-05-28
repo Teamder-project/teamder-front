@@ -1,11 +1,7 @@
 <swiper [config]="config">
  <div class="swiper-wrapper">
 
-    <div id="swipe" class="swiper-slide" *ngFor="let user of users" (swipeleft)="dislike()" (swiperight)="like()"
-      (slideChange)="swipeRight()">
-      <!-- Add Pagination -->
-      <!-- <div class="swiper-pagination"></div>
-  Add Arrows -->
+    <div id="swipe" class="swiper-slide" *ngFor="let user of users" (swipeleft)="dislike()" (swiperight)="like()">
       <div class="container">
         <div class="card">
           <div class="entete">
