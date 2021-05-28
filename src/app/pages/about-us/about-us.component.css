@@ -8,7 +8,7 @@
 .block {
     font-family: 'Josefin Sans', sans-serif;
     position: fixed; 
-    height: auto;
+    height: 100vh;
     top: 70px; 
     left: 0; 
 }

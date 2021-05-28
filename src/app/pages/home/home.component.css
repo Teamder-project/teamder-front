@@ -1,5 +1,6 @@
 .block {
     padding: 3.125rem 0;
+    height: 100vh;
 }
 
 h4 {
@@ -10,6 +11,7 @@ h4 {
 #back-color {
     background-color: #171717;
     color: white;
+    
 }
 
 #back-color h2 {
@@ -17,37 +19,10 @@ h4 {
     margin-left: 60px;
 }
 
-.elements {
-    display: flex;
-}
-
-#back-color .element {
-    position: relative;
-    display: flex;
-    width: 50%;
-    padding: 0.625rem;
-}
-
-.media, .media-detail {
-    width: 50%;
-}
-
-.media iframe {
-    width: 100%;
-    padding-right: 0.625rem;
-}
-
 /* COMING SOON */
 #comingSoon {
     position: relative;
     overflow: hidden;
-    padding: 0;
-}
-
-#comingSoon video {
-    position: relative;
-    width: 100%;
-    background-size: cover;
 }
 
 #comingSoon .gradiant {
