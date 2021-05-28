@@ -57,6 +57,7 @@ export class SwipeComponent extends HammerGestureConfig implements OnInit {
   
   like = () => {
 
+    console.log("droite")
     let id = document.querySelector("#swipe");
     id.remove();
     let user = { nom: "Ajouter", prenom: "Miguel", age: 45}
@@ -67,6 +68,7 @@ export class SwipeComponent extends HammerGestureConfig implements OnInit {
 
   dislike = () => {
 
+    console.log("gauche")
     let id = document.querySelector("#swipe");
     id.remove();
     let user = { nom: "Next", prenom: "Roger", age: 87 }

@@ -37,7 +37,7 @@ i {
 
 
 header nav {
-    background-color:rgb(66, 13, 116);
+    background-color:rgb(10, 40, 92);
     height: 70px;
 }
 
@@ -63,7 +63,7 @@ header a:hover {
 
 /* Dropdown Button */
 .dropbtn {
-    background-color:rgb(66, 13, 116);
+    background:transparent;
     color: white;
     padding: 16px;
     border: none;
