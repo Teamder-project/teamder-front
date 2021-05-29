@@ -1,13 +1,10 @@
 /* correspond à la div swiper : ne pas toucher */
-.swiper-container {
-  height: 100px;
-  background-color: transparent;
-}
 
-.swiper-slide {
+.swiper-container {
+  height: 100vh;
+  background-color: transparent;
   text-align: center;
   font-size: 40px;
-
   /* swiper centré */
   display: -webkit-box;
   display: -ms-flexbox;
@@ -91,7 +88,17 @@
       0 0 70px #0ba9ca, 0 0 80px #0ba9ca;
   }
 }
-
+.card_transition {
+  background: linear-gradient(135deg, black, grey);
+  height: 70vh;
+  padding: 200px;
+  margin: 60px;
+  border-radius: 15px;
+  color: white;
+  box-shadow: 0 8px 6px -6px black;
+  flex-direction: column;
+  font-size: small;
+}
 
 .infos_joueur {
   background-color: rgba(255, 255, 255, 0.301);
@@ -104,3 +111,10 @@
   margin-top: 10px;
 }
 
+.swiper-button-prev {
+  margin-left : 400px;
+}
+
+.swiper-button-next {
+  margin-right : 400px;
+}

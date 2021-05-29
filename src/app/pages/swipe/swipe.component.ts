@@ -33,7 +33,7 @@ export class SwipeComponent implements OnInit {
    }
 
 
-  //charge le premier g@m3r, initialise le swiper, et boucle la fonction rafraichir()
+  //charge le premier gamer, initialise le swiper, et boucle la fonction rafraichir()
   ngOnInit(): void {
 
     document.getElementById("nom-prenom").innerText = this.users[0].nom + " " + this.users[0].prenom;
@@ -64,7 +64,7 @@ export class SwipeComponent implements OnInit {
     }
   }
   
-  //charge le prochain g@m3r, l'ajoute dans likes[] et renvoie sur la slide principale
+  //charge le prochain gamer, l'ajoute dans likes[] et renvoie sur la slide principale
   like = () => {
 
     document.getElementById("swipe1").classList.remove("swiper-slide-active");
@@ -81,7 +81,7 @@ export class SwipeComponent implements OnInit {
     console.log("like");
   }
 
-  //charge le prochain g@m3r, l'ajoute dans dislikes[] et renvoie sur la slide principale
+  //charge le prochain gamer, l'ajoute dans dislikes[] et renvoie sur la slide principale
   dislike = () => {
 
     document.getElementById("swipe1").classList.add("swiper-slide-prev");
