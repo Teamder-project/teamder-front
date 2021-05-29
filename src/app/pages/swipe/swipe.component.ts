@@ -1,25 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import Swiper from 'swiper';
 
-
-
 @Component({
   selector: 'app-swipe',
   templateUrl: './swipe.component.html',
   styleUrls: ['./swipe.component.css']
 })
 export class SwipeComponent implements OnInit {
-  
+
   users = [
-    {nom : "Pif", prenom : "Coucou", age : 26},
-    {nom : "Paf", prenom : "Cuicui", age : 30},
-    {nom : "Pouf", prenom : "Crucru", age : 58},
-    {nom : "toto", prenom : "roro", age : 12},
-    {nom : "titi", prenom : "riri", age : 27},
-    {nom : "tutu", prenom : "rara", age : 69},
-    {nom : "fufu", prenom : "momo", age : 14},
-    {nom : "coco", prenom : "mimi", age : 18},
-    {nom : "fafa", prenom : "mama", age : 78},
+    { nom: "Pif", prenom: "Coucou", age: 26 },
+    { nom: "Paf", prenom: "Cuicui", age: 30 },
+    { nom: "Pouf", prenom: "Crucru", age: 58 },
+    { nom: "toto", prenom: "roro", age: 12 },
+    { nom: "titi", prenom: "riri", age: 27 },
+    { nom: "tutu", prenom: "rara", age: 69 },
+    { nom: "fufu", prenom: "momo", age: 14 },
+    { nom: "coco", prenom: "mimi", age: 18 },
+    { nom: "fafa", prenom: "mama", age: 78 },
   ]
 
   likes = [
@@ -31,19 +29,21 @@ export class SwipeComponent implements OnInit {
   ]
 
   constructor() {
-   }
+  }
 
 
   //charge le premier gamer, initialise le swiper, et boucle la fonction rafraichir()
   ngOnInit(): void {
 
     document.getElementById("nom-prenom").innerText = this.users[0].nom + " " + this.users[0].prenom;
-    
+
     const swiper = new Swiper('.swiper-container', {
+      effect: 'flip',
+      grabCursor: true,
       flipEffect: {
-       slideShadows: false,
-      }, 
-      speed: 800,
+        slideShadows: false,
+      },
+      speed: 600,
       spaceBetween: 100,
       initialSlide: 1,
       pagination: { el: '.swiper-pagination', clickable: true },
@@ -52,7 +52,7 @@ export class SwipeComponent implements OnInit {
         prevEl: '.swiper-button-next'
       },
     });
-    
+
     setInterval(this.rafraichir, 100);
   }
 
@@ -61,13 +61,13 @@ export class SwipeComponent implements OnInit {
 
     const swiper = document.querySelector('.swiper-container')['swiper'];
     let slide = document.getElementById("swipe2");
-    if(slide.classList.contains("swiper-slide-next")) {
+    if (slide.classList.contains("swiper-slide-next")) {
       this.like();
-    }else if(slide.classList.contains("swiper-slide-prev")) {
+    } else if (slide.classList.contains("swiper-slide-prev")) {
       this.dislike();
     }
   }
-  
+
   //charge le prochain gamer, l'ajoute dans likes[] et renvoie sur la slide principale
   like = () => {
 
@@ -76,12 +76,12 @@ export class SwipeComponent implements OnInit {
     document.getElementById("swipe2").classList.remove("swiper-slide-next");
     document.getElementById("swipe2").classList.add("swiper-slide-active");
     document.getElementById("swipe3").classList.add("swiper-slide-next");
-    
+
     this.likes.push(this.users.splice(0, 1));
     document.getElementById("nom-prenom").innerText = this.users[0].nom + " " + this.users[0].prenom;
 
     const swiper = document.querySelector('.swiper-container')['swiper'];
-    setTimeout(function(){swiper.slideNext(800)}, 600);
+    setTimeout(function () { swiper.slideNext(800) }, 600);
     console.log("like");
   }
 
@@ -98,7 +98,7 @@ export class SwipeComponent implements OnInit {
     document.getElementById("nom-prenom").innerText = this.users[0].nom + " " + this.users[0].prenom;
 
     const swiper = document.querySelector('.swiper-container')['swiper'];
-    setTimeout(function(){swiper.slidePrev(800)}, 600);
+    setTimeout(function () { swiper.slidePrev(800) }, 600);
     console.log("dislike");
   }
 }

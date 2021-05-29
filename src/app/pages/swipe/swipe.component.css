@@ -2,9 +2,10 @@
 
 .swiper-container {
   height: 100vh;
-  background-color: transparent;
+  background-color: none;
   text-align: center;
   font-size: 40px;
+
   /* swiper centré */
   display: -webkit-box;
   display: -ms-flexbox;
@@ -146,9 +147,10 @@
 }
 
 .swiper-button-prev {
-  margin-left : 400px;
+  color: red;
 }
 
 .swiper-button-next {
-  margin-right : 400px;
+ 
+  color: blue;
 }
