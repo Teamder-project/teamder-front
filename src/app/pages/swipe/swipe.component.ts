@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import Swiper, { SwiperOptions } from 'swiper';
+import Swiper from 'swiper';
+
 
 
 @Component({
@@ -16,9 +17,9 @@ export class SwipeComponent implements OnInit {
     {nom : "toto", prenom : "roro", age : 12},
     {nom : "titi", prenom : "riri", age : 27},
     {nom : "tutu", prenom : "rara", age : 69},
-    {nom : "cucu", prenom : "momo", age : 14},
+    {nom : "fufu", prenom : "momo", age : 14},
     {nom : "coco", prenom : "mimi", age : 18},
-    {nom : "caca", prenom : "mama", age : 78},
+    {nom : "fafa", prenom : "mama", age : 78},
   ]
 
   likes = [
@@ -39,6 +40,9 @@ export class SwipeComponent implements OnInit {
     document.getElementById("nom-prenom").innerText = this.users[0].nom + " " + this.users[0].prenom;
     
     const swiper = new Swiper('.swiper-container', {
+      flipEffect: {
+       slideShadows: false,
+      }, 
       speed: 800,
       spaceBetween: 100,
       initialSlide: 1,

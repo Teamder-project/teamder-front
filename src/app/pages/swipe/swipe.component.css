@@ -88,18 +88,52 @@
       0 0 70px #0ba9ca, 0 0 80px #0ba9ca;
   }
 }
-.card_transition {
-  background: linear-gradient(135deg, black, grey);
+.card_transition_oui {
+  background: linear-gradient(135deg, rgb(0, 38, 255), rgb(231, 226, 226));
   height: 70vh;
-  padding: 200px;
+  padding: 10px;
   margin: 60px;
   border-radius: 15px;
   color: white;
   box-shadow: 0 8px 6px -6px black;
   flex-direction: column;
   font-size: small;
+  display: flex;
+}
+.image_oui img {
+ 
+  align-items: center;
+  text-align: center;
+  height: 300px;
+  width: 400px; 
+}
+.texte_oui {
+  margin-top: 10px;
 }
 
+.card_transition_non {
+  background: linear-gradient(135deg, rgb(255, 0, 0), rgb(0, 0, 0));
+  height: 70vh;
+  padding: 10px;
+  margin: 60px;
+  border-radius: 15px;
+  color: white;
+  box-shadow: 0 8px 6px -6px black;
+  flex-direction: column;
+  font-size: small;
+  display: flex;
+  
+}
+.image_non img {
+  align-items: center;
+  text-align: center;
+  height: 300px;
+  width: 400px; 
+}
+
+.texte_non {
+  margin-top: 10px;
+}
 .infos_joueur {
   background-color: rgba(255, 255, 255, 0.301);
   border-radius: 5mm;
