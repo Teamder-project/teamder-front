@@ -6,18 +6,18 @@
     background-color:rgba(255, 255, 255, 0.15);
     border-right:none;
 }
-.friend-list div {
-    padding:15px;
-}
 .friend-list hr {
     color:white;
     width:80%;
-    margin:10px auto;
+    margin:0 auto;
 }
 .chat-list {
     display:flex;
     margin: 0 auto;
-
+}
+.background-chat {
+    background: linear-gradient(rgba(10, 40, 92, 1)0%, red 180%);
+    height:100%;
 }
 .conversation {
     margin-top:50px;
@@ -32,7 +32,7 @@
     margin:20px;
 }
 .message {
-    margin:40px;
+    margin:10px;
     display: flex;
     align-items: flex-end;
     color:white;
@@ -46,7 +46,7 @@
 }
 .conversation input {
     width: 70%;
-    margin-bottom:40px;
+    margin-bottom:20px;
     padding:15px;
     border:0;
     border-bottom: 1px solid white;
@@ -64,6 +64,9 @@
 }
 .conversation-nom i {
     font-size:30px;
+}
+.conversation-nom i:hover, .fa-share-square:hover {
+    color:red;
 }
 .fa-share-square {
     font-size:30px;
@@ -85,7 +88,6 @@
 .add-group {
      border: 1px solid white;
      width:20%;
-     padding:20px;
      margin:50px 0px 0px;
      box-shadow: 0px 0px 10px 4px rgba(119, 119, 119, 0.75);
      background-color:rgba(255, 255, 255, 0.15);
@@ -93,13 +95,11 @@
 }
 .add-group hr {
     color:white;
+    width:80%;
+    margin:0 auto;
 }
 .display {
     display:none;
-}
-.background-chat {
-    height:100vh;
-    background: linear-gradient(rgba(10, 40, 92, 1)0%, red 180%);
 }
 #input {
     background:transparent;
