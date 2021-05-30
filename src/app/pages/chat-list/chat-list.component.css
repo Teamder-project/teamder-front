@@ -99,6 +99,7 @@
 }
 .background-chat {
     height:100vh;
+    
     background: linear-gradient(rgba(10, 40, 92, 1)0%, red 180%);
 }
 #input {
