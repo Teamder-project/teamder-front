@@ -1,0 +1,22 @@
+<swiper [config]="config">
+ <div class="swiper-wrapper">
+
+    <div id="swipe" class="swiper-slide" *ngFor="let user of users" (swipeleft)="dislike()" (swiperight)="like()">
+      <div class="container">
+        <div class="card">
+          <div class="entete">
+            <img src="../../../assets/img/base-logo.jpg" alt="Person" class="card_image">
+            <p class="joueur">{{user.prenom}}  {{user.nom}}</p>
+          </div>
+          <div class="infos_joueur">
+            <p class="description">Coucou toi le joueur ! </p>
+            <p class="notation">Et si on jouait ensemble ?</p>
+          </div>
+          
+        </div>
+      </div>
+      <div class="swiper-button-next" (click)=swipeLeft()></div>
+      <div class="swiper-button-prev" (click)=swipeRight()></div>
+    </div>
+  </div>
+</swiper>
