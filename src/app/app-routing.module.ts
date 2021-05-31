@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'apex-legends', component: ApexLegendsComponent},
   { path: 'counter-strike', component: CounterStrikeComponent},
   { path: 'about-us', component : AboutUsComponent},
-  { path: 'signin', component : SignInComponent},
+  { path: 'sign-in', component : SignInComponent},
   { path: 'swipe', component : SwipeComponent},
   { path: 'chat-list', component : ChatListComponent}
   
