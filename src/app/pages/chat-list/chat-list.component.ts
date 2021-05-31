@@ -35,7 +35,8 @@ export class ChatListComponent implements OnInit {
   }
 
   sendMessage = () => {
+
     console.log(this.sendMsg.value);
-    document.getElementById("input")['value'] = "";
+    document.getElementById('input')['value'] = "";
   }
 }

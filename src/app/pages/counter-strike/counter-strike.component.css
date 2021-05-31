@@ -10,10 +10,10 @@
   background-image: url("../../../assets/img/counter-page.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  position: fixed; 
+  position: fixed;
   height: auto;
-  top: 70px; 
-  left: 0; 
+  top: 70px;
+  left: 0;
  /* Préserve le ratio de l'image */
   min-width: 100%;
   min-height: 100%;
