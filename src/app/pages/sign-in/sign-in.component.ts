@@ -19,8 +19,7 @@ export class SignInComponent implements OnInit {
       email: '',
       birthday: '',
       gender: '',
-      country: '',
-      avatar: ''
+      country: ''
     })
   }
 
@@ -28,8 +27,6 @@ export class SignInComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.accountService.create(this.accountForm.value).subscribe(data => {
-      this.router.navigate([`/home/`]);
-    });
+    this.router.navigate([`/home/`]);
   }
 }

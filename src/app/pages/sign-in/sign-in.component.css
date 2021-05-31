@@ -1,0 +1,16 @@
+.main{
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    border: outset;
+}
+
+.submit{
+    margin-top: 10px;
+}
