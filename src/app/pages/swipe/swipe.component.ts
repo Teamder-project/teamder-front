@@ -38,6 +38,7 @@ export class SwipeComponent implements OnInit {
     document.getElementById("nom-prenom").innerText = this.users[0].nom + " " + this.users[0].prenom;
 
     const swiper = new Swiper('.swiper-container', {
+      //permet de mettre en place l'effet flip de la carte. Pour modifier la vitesse à laquelle elle se tourne, jouer avec les valeurs du speed.
       effect: 'flip',
       grabCursor: true,
       flipEffect: {
