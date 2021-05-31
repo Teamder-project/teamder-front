@@ -10,7 +10,7 @@ Elle est composée de Justine Picque, Mathyce D'Alessandro, Maxime Deleruyelle e
 
 
 ## Pré-requis
-
+L'installation de l'API SWIPER est indispensable pour le fonctionnement du swipe. 
 
 ## Utilisation
 
@@ -19,12 +19,12 @@ Elle est composée de Justine Picque, Mathyce D'Alessandro, Maxime Deleruyelle e
 ## Initialisation du projet
 Ce projet a été initialisé par [Angular CLI](https://github.com/angular/angular-cli) version 11.2.11.
 
-## Development server
+## Developement serveur
 
 Lancer `ng serve` pour un serveur dev. Naviguer vers `http://localhost:4200/`. L'application se relancera automatiquement si vous réalisez une modification dans vos fichiers.
 
 
-## Further help
+## Plus d'aide
 
 Pour avoir plus d'aide sur l'Angular CLI, utiliser `ng help` ou verifier la page suivante :[Angular CLI Overview and Command Reference](https://angular.io/cli).
 
