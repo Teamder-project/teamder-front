@@ -3,20 +3,12 @@
   /* mets le background en full indépendamment du swiper*/
   background: url("../../../assets/img/league-page.jpg") center;
   position: fixed; 
-  
  
-
-  
   padding: 0 20vh 0 20vh;
    /* Préserve le ratio de l'image */
    min-width: 100%;
    min-height: 100%;
-  
 
- 
-
-  
-  
 }
 
 /* correspond à la div swiper : ne pas toucher */
@@ -45,8 +37,16 @@
 }
 .retour {
   text-align: left;
-  
   display: block;
+  font-size: 20px;
+  font-family: 'Josefin Sans', sans-serif;
+  text-transform: capitalize;
+  align-items: center; 
+  color: white;
+  padding: 2vh;
+}
+.retour:hover{
+    color:red;
 }
 
 /* personnalisation de la card, utilisation de la flex */
