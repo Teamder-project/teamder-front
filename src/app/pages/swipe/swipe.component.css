@@ -1,10 +1,25 @@
+
+.full {
+  /* mets le background en full indépendamment du swiper*/
+  background: url("../../../assets/img/league-page.jpg") center;
+  position: fixed; 
+ 
+  padding: 0 20vh 0 20vh;
+   /* Préserve le ratio de l'image */
+   min-width: 100%;
+   min-height: 100%;
+
+}
+
 /* correspond à la div swiper : ne pas toucher */
 
 .swiper-container {
-  height: 100vh;
-  background-color: none;
+  
   text-align: center;
   font-size: 40px;
+  background: rgba(255, 255, 255, 0.288);
+  width: 160vh;
+
 
   /* swiper centré */
   display: -webkit-box;
@@ -21,8 +36,33 @@
   align-items: center;
 }
 
+
+@font-face {
+  font-family: "symboles de flèches";
+  src:url(../../../assets/fonts/VNArrows.ttf)
+}
+.retour {
+  text-align: left;
+  display: block;
+  font-size: 20px;
+  font-family: 'Josefin Sans', sans-serif;
+  text-transform: capitalize;
+  align-items: center; 
+  color: white;
+  padding: 2vh;
+  width: 100px;
+  text-decoration: none;
+  cursor: pointer;
+
+}
+.retour:hover {
+    color:red;
+    text-shadow: 3px 3px 5px rgb(0, 0, 0);
+}
+
 /* personnalisation de la card, utilisation de la flex */
 .container {
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,13 +70,14 @@
   background-color: transparent;
   /* mettre la police choisie pour l'appli */
   font-family: Georgia, 'Times New Roman', Times, serif;
+  width: 160vh;
 }
 
 .card {
+  
   background: linear-gradient(135deg, black, grey);
   height: 70vh;
   padding: 5px;
-  margin: 60px;
   border-radius: 15px;
   color: white;
   box-shadow: 0 8px 6px -6px black;
@@ -93,7 +134,6 @@
   background: linear-gradient(135deg, rgb(0, 38, 255), rgb(231, 226, 226));
   height: 70vh;
   padding: 10px;
-  margin: 60px;
   border-radius: 15px;
   color: white;
   box-shadow: 0 8px 6px -6px black;
@@ -116,7 +156,7 @@
   background: linear-gradient(135deg, rgb(255, 0, 0), rgb(0, 0, 0));
   height: 70vh;
   padding: 10px;
-  margin: 60px;
+
   border-radius: 15px;
   color: white;
   box-shadow: 0 8px 6px -6px black;
@@ -149,9 +189,13 @@
 .swiper-button-prev {
 
   color: red;
+  text-shadow:  3px 3px 5px rgb(0, 0, 0);
+
 }
 
 .swiper-button-next {
 
   color: blue;
+  text-shadow:  3px 3px 5px rgb(0, 0, 0);
+  
 }

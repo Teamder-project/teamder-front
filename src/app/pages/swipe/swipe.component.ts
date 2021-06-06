@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import Swiper from 'swiper';
+import Swiper, { EffectFlip } from 'swiper';
 
 @Component({
   selector: 'app-swipe',
@@ -36,13 +36,14 @@ export class SwipeComponent implements OnInit {
   ngOnInit(): void {
 
     document.getElementById("nom-prenom").innerText = this.users[0].nom + " " + this.users[0].prenom;
-
+   
     const swiper = new Swiper('.swiper-container', {
       //permet de mettre en place l'effet flip de la carte. Pour modifier la vitesse à laquelle elle se tourne, jouer avec les valeurs du speed.
       effect: 'flip',
       grabCursor: true,
       flipEffect: {
         slideShadows: false,
+      
       },
       speed: 600,
       spaceBetween: 100,
@@ -52,11 +53,15 @@ export class SwipeComponent implements OnInit {
         nextEl: '.swiper-button-prev',
         prevEl: '.swiper-button-next'
       },
+      //empêche le swipe sur la fonctionnalité "retour"
+      //noSwiping : true,
+      //noSwipingClass : 'retour'
     });
-
+    
     setInterval(this.rafraichir, 100);
   }
 
+  
   //verifie s'il y a eu swipe et execute like() ou dislike() selon le sens
   rafraichir = () => {
 
