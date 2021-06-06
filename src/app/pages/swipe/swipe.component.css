@@ -35,6 +35,12 @@
   -webkit-align-items: center;
   align-items: center;
 }
+
+
+@font-face {
+  font-family: "symboles de flèches";
+  src:url(../../../assets/fonts/VNArrows.ttf)
+}
 .retour {
   text-align: left;
   display: block;
@@ -44,11 +50,11 @@
   align-items: center; 
   color: white;
   padding: 2vh;
-  width: 120px;
+  width: 100px;
   text-decoration: none;
 
 }
-.retour:hover{
+.retour:hover {
     color:red;
     text-shadow: 3px 3px 5px rgb(0, 0, 0);
 }
@@ -182,10 +188,13 @@
 .swiper-button-prev {
 
   color: red;
+  text-shadow:  3px 3px 5px rgb(0, 0, 0);
 
 }
 
 .swiper-button-next {
 
   color: blue;
+  text-shadow:  3px 3px 5px rgb(0, 0, 0);
+  
 }
