@@ -45,6 +45,7 @@
   color: white;
   padding: 2vh;
   width: 120px;
+  text-decoration: none;
 
 }
 .retour:hover{
@@ -181,7 +182,7 @@
 .swiper-button-prev {
 
   color: red;
-  
+
 }
 
 .swiper-button-next {
