@@ -44,9 +44,12 @@
   align-items: center; 
   color: white;
   padding: 2vh;
+  width: 120px;
+
 }
 .retour:hover{
     color:red;
+    text-shadow: 3px 3px 5px rgb(0, 0, 0);
 }
 
 /* personnalisation de la card, utilisation de la flex */
