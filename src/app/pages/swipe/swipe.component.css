@@ -52,6 +52,7 @@
   padding: 2vh;
   width: 100px;
   text-decoration: none;
+  cursor: pointer;
 
 }
 .retour:hover {
