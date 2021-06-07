@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import Swiper, { EffectFlip } from 'swiper';
 
 @Component({
@@ -28,7 +29,7 @@ export class SwipeComponent implements OnInit {
 
   ]
 
-  constructor() {
+  constructor(private router : Router) {
   }
 
 
@@ -57,20 +58,24 @@ export class SwipeComponent implements OnInit {
       //noSwiping : true,
       //noSwipingClass : 'retour'
     });
-    
+  
     setInterval(this.rafraichir, 100);
+      
   }
 
-  
   //verifie s'il y a eu swipe et execute like() ou dislike() selon le sens
   rafraichir = () => {
 
-    const swiper = document.querySelector('.swiper-container')['swiper'];
-    let slide = document.getElementById("swipe2");
-    if (slide.classList.contains("swiper-slide-next")) {
-      this.like();
-    } else if (slide.classList.contains("swiper-slide-prev")) {
-      this.dislike();
+    if(this.router.url.startsWith("/swipe")){
+
+      console.log("bonjour");
+      const swiper = document.querySelector('.swiper-container')['swiper'];
+      let slide = document.getElementById("swipe2");
+      if (slide.classList.contains("swiper-slide-next")) {
+        this.like();
+      } else if (slide.classList.contains("swiper-slide-prev")) {
+        this.dislike();
+      }
     }
   }
 
