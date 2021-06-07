@@ -5,6 +5,7 @@
 
 .block {
     padding: 3.125rem 0;
+    background-size: 100vh;
 }
 
 .elements {

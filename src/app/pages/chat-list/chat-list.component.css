@@ -15,10 +15,12 @@
     display:flex;
     margin: 0 auto;
 }
+
 .background-chat {
     background: linear-gradient(rgba(10, 40, 92, 1)0%, red 180%);
-    height:100%;
+    height: 100%;
 }
+
 .conversation {
     margin-top:50px;
     border: 1px solid white;
@@ -60,7 +62,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
 }
 .conversation-nom i {
     font-size:30px;
