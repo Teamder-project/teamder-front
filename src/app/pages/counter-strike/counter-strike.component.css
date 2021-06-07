@@ -30,7 +30,7 @@ p {
   left: 0;
   right: 0;
   padding: 45px;
-  background-image: linear-gradient(to right, rgb(26, 23, 22, 0) 10%, rgb(141, 141, 60) 190%);
+  background-image: linear-gradient(to right, rgb(26, 23, 22, 0) 30%, rgb(141, 141, 60) 190%);
   border-radius: 33%;
 }
 

@@ -1,17 +1,22 @@
+
+<div class="block" id="back-color">
 <div class="main">
     <form [formGroup]="accountForm" (ngSubmit)="onSubmit()">
-        <label for="username">username</label>
+        <label for="username">pseudo</label>
         <input type="text" formControlName="username">
-        <label for="password">password</label>
+        <label for="password">mot de passe</label>
         <input type="text" formControlName="password">
         <label for="email">email</label>
         <input type="text" formControlName="email">
-        <label for="birthday">birthday</label>
+        <label for="birthday">date de naissance</label>
         <input type="date" formControlName="birthday">
-        <label for="gender">gender</label>
+        <label for="gender">sexe</label>
         <input type="text" formControlName="gender">
-        <label for="country">country</label>
-        <input type="text" formControlName="country">
-        <button class="submit" type="submit">enregistrer</button>
+        <label for="country">pays</label>
+        <input type="text" formControlName="country" id="pays"> 
+        <div>
+        <button class="submit" type="submit">Enregistrer</button>
+        </div>
     </form>
+</div>
 </div>

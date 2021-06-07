@@ -12,7 +12,6 @@ nav {
 
 .logo {
     margin-left: 20px;
-    
 }
 
 .menu {
@@ -39,7 +38,7 @@ i {
 
 
 header nav {
-    background-color:rgb(10, 40, 92);
+    background: linear-gradient(rgba(10, 40, 92, 1) 90%, rgb(5, 21, 49) 100%);
     height: 70px;
 }
 
@@ -108,4 +107,5 @@ header a:hover {
   
   /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content {display: block;}
+
   
