@@ -24,7 +24,7 @@
         display: flex;
     }
     .login-dropdown {
-        margin-left: 25%;
+        margin-left: 40%;
     }
     .login-content {
         display: none;
@@ -50,7 +50,6 @@
     header a {
         text-decoration: none;
         color: white;
-        width: 250px;
         transition: all 0.2s ease-out;
         text-shadow: 3px 3px 5px rgb(0, 0, 0);
     }
@@ -138,7 +137,6 @@
     header a {
         text-decoration: none;
         color: white;
-        width: 250px;
         transition: all 0.2s ease-out;
         text-shadow: 3px 3px 5px rgb(0, 0, 0);
     }
@@ -226,7 +224,6 @@
     header a {
         text-decoration: none;
         color: white;
-        width: 250px;
         transition: all 0.2s ease-out;
         text-shadow: 3px 3px 5px rgb(0, 0, 0);
     }
