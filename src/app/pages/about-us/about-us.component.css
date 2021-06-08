@@ -5,7 +5,7 @@
 ========================================================================== */
 
 /* PC */
-@media (min-width: 991px){
+@media (min-width: 991px) {
     #back-color {
         background-color: #171717;
         color: white;
@@ -64,7 +64,7 @@
     
     .block {
         font-family: 'Josefin Sans', sans-serif;
-        position: fixed;
+        position: absolute;
         min-width: 100%;
         min-height: 100%;
     }
@@ -103,16 +103,15 @@
 
 /* Mobile */
 @media (max-width:767px) {
+
     #back-color {
         background-color: #171717;
         color: white;
-        width: auto;
     }
     
     .block {
         font-family: 'Josefin Sans', sans-serif;
-        position: fixed;
-        width: auto;
+        position: absolute;
     }
 
     h2 {
