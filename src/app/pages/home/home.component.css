@@ -7,7 +7,13 @@
 @media (min-width: 991px) {
     .block {
         padding: 3.125rem 0;
+<<<<<<< HEAD
         position: fixed;
+=======
+        position: fixed; 
+        height: auto;
+    /* Préserve le ratio de l'image */
+>>>>>>> responsive
         min-width: 100%;
         min-height: 100%;
     }
@@ -50,7 +56,13 @@
 @media all and (min-width: 768px) and (max-width: 990px) {
     .block {
         padding: 3.125rem 0;
+<<<<<<< HEAD
         position: fixed;
+=======
+        position: fixed; 
+        height: auto;
+    /* Préserve le ratio de l'image */
+>>>>>>> responsive
         min-width: 100%;
         min-height: 100%;
     }
@@ -95,8 +107,14 @@
 @media (max-width:767px) {
     .block {
         padding: 3.125rem 0;
+<<<<<<< HEAD
         height: auto;
         position: fixed;
+=======
+        position: fixed; 
+        height: auto;
+    /* Préserve le ratio de l'image */
+>>>>>>> responsive
         min-width: 100%;
         min-height: 100%;
     }
