@@ -41,3 +41,25 @@ button {
 button:hover {
     color:red;
 }
+
+a {
+    font-size: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: capitalize;
+    align-items: center;
+    text-decoration: none;
+    color: white !important;
+    width: 250px;
+    transition: all 0.2s ease-out;
+    text-shadow: 3px 3px 5px rgb(0, 0, 0);
+}
+
+a:hover {
+    color:red;
+}
+
+.login-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+}

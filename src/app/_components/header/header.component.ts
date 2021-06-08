@@ -8,18 +8,10 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router : Router) {}
+  constructor() {}
 
   ngOnInit(): void {
 
-  }
-
-  showLogin(): void {
-    document.getElementById("login-content").style.display = "block";
-  }
-
-  hideLogin(): void {
-    document.getElementById("login-content").style.display = "none";
   }
 
   showDropdown(): void {
