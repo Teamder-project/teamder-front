@@ -1,46 +1,148 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Open+Sans&display=swap');
 
-#back-color {
-    background-color: #171717;
-    color: white;
-  }
+/* ==========================================================================
+    Responsive
+========================================================================== */
 
-.block {
-    font-family: 'Josefin Sans', sans-serif;
-    position: fixed;
-    height:100vh; 
+/* PC */
+@media (min-width: 991px){
+    #back-color {
+        background-color: #171717;
+        color: white;
+    }
+    
+    .block {
+        font-family: 'Josefin Sans', sans-serif;
+        position: fixed; 
+        height: auto;
+    /* Préserve le ratio de l'image */
+        min-width: 100%;
+        min-height: 100%;
+       
+    }
+    
+    h2 {
+        text-transform: uppercase;
+        width: 100%;
+    }
+    
+    .about-text{
+        margin-top: 50px;
+        display: flex;
+        margin: 60px;
+    }
+   
+    
+    img {
+        margin-top: 5%;
+        display: flex;
+        align-items: center;
+        max-width: 60%;
+    }
+    
+    .corpus {
+        padding: 40px;
+        background-image: linear-gradient(to left, rgb(26, 23, 22, 0) 10%, rgb(236, 131, 131) 180%);
+        border-radius: 10%;
+        min-width: 50%;
+        max-height: 30%;
+    }
+    
+    .sign h3 {
+        margin-top: 60px;
+    }
+
+    
 }
-h2 {
-    margin-top: 60px;
-    margin-left: 80px;
-    text-transform: uppercase;
-    width: 100%;
+
+/* Tablette */
+@media all and (min-width: 768px) and (max-width: 990px) {
+    #back-color {
+        background-color: #171717;
+        color: white;
+    }
+    
+    .block {
+        font-family: 'Josefin Sans', sans-serif;
+        position: fixed;
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    h2 {
+        display: flex;
+        justify-content: center;
+        text-transform: uppercase;
+    }
+
+    h3 {
+        margin-top: 5%;
+    }
+
+    .sign {
+        text-align: center;
+    }
+
+    .about-text{
+        margin-top: 5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    img {
+        margin-top: 2%;
+        max-width: 80%;
+    }
+
+    .about-text p {
+        text-align: center;
+    }
+
 }
 
-.about-text{
-    margin-top: 50px;
-    display: flex;
-    margin: 60px;
+/* Mobile */
+@media (max-width:767px) {
+    #back-color {
+        background-color: #171717;
+        color: white;
+        width: auto;
+    }
+    
+    .block {
+        font-family: 'Josefin Sans', sans-serif;
+        position: fixed;
+        width: auto;
+    }
+
+    h2 {
+        display: flex;
+        justify-content: center;
+        text-transform: uppercase;
+    }
+
+    h3 {
+        margin-top: 5%;
+    }
+
+    .sign {
+        text-align: center;
+    }
+
+    .about-text{
+        margin-top: 5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    img {
+        margin-top: 2%;
+        max-width: 80%;
+        text-align: center;
+    }
+
+    .about-text p {
+        text-align: center;
+    }
 }
-
-.about-text p {
-    width: 580px;
-}
-
-
-img {
-    display: flex;
-    align-items: center;
-    max-width: 50%;
-}
-
-.corpus {
-    padding: 40px;
-    background-image: linear-gradient(to left, rgb(26, 23, 22, 0) 10%, rgb(236, 131, 131) 180%);
-    border-radius: 10%;
-}
-
-.sign h3 {
-    margin-top: 60px;
-}
-
