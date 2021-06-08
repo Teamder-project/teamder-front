@@ -6,26 +6,32 @@
         </div>
 
         <div class="menu">
-            <div class="dropdown" >
+            <div class="dropdown" (mouseover)="showDropdown()" (mouseleave)="hideDropdown()">
                 <button class="dropbtn">jeux &darr;</button>
-                <div class="dropdown-content">
-                  <a href="/league-of-legends">League of Legends</a>
-                  <a href="/rocket-league" >Rocket League</a>
-                  <a href="/apex-legends">Apex</a>
-                  <a href="/counter-strike">Counter Strike</a>
+                <div id="dropdown-content" class="dropdown-content" >
+                  <a routerLink="/league-of-legends" (click)="hideDropdown()">League of Legends</a>
+                  <a routerLink="/rocket-league" (click)="hideDropdown()">Rocket League</a>
+                  <a routerLink="/apex-legends" (click)="hideDropdown()">Apex</a>
+                  <a routerLink="/counter-strike" (click)="hideDropdown()">Counter Strike</a>
                 </div>
-              </div>
             </div>
-            <div class="more">
-            <a routerLink="/about-us">a propos</a>
-            </div>
-        
-        <div class="login">
-            <a routerLink="/login">connexion</a>
-
         </div>
-            <div class="signup">
-            <a routerLink="/signin">inscription</a>
+        
+        <div class="more">
+            <a routerLink="/about-us">a propos</a>
+        </div>
+        
+        <div class="login-dropdown" (mouseover)="showLogin()" (mouseleave)="hideLogin()">
+            <div class="login" >
+                <a>login</a>
             </div>
+            <div id="login-content" class="login-content">
+                <app-login></app-login>
+            </div>
+        </div>
+
+        <div class="signup">
+            <a routerLink="/signin">inscription</a>
+        </div>
     </nav>
 </header>

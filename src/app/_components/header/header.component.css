@@ -23,8 +23,14 @@ nav {
     margin-left: 5%;
 }
 
-.login {
+.login-dropdown {
     margin-left: 40%;
+}
+
+.login-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
 }
 
 .signup {
@@ -103,5 +109,5 @@ header a:hover {
  
   
   /* Show the dropdown menu on hover */
-  .dropdown:hover .dropdown-content {display: block;}
+  /*.dropdown:hover .dropdown-content {display: block;}*/
   

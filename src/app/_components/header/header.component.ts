@@ -8,21 +8,28 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router : Router) {
-
-     }
-
+  constructor(private router : Router) {}
 
   ngOnInit(): void {
-    
-     }
-
-     myFunction = () => {
-      document.getElementById("menu1").style.display = "none";
-    }
-
 
   }
+
+  showLogin(): void {
+    document.getElementById("login-content").style.display = "block";
+  }
+
+  hideLogin(): void {
+    document.getElementById("login-content").style.display = "none";
+  }
+
+  showDropdown(): void {
+    document.getElementById("dropdown-content").style.display = "block";
+  }
+
+  hideDropdown(): void {
+    document.getElementById("dropdown-content").style.display = "none";
+  }
+}
 
      
 
