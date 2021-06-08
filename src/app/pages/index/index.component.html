@@ -1,25 +1,14 @@
-<div class="block" id="back-color">
-
+<div id="back-color">
         <div class="container">
-                    <div class="elements">
-                        <div class="game">
-                            <a href="">
-                            <button id="edit" routerLink="/register">Modifier</button>
-                            </a>
-                            <a href="">
-                            <button id="search" routerLink="/swipe-ju">Rechercher</button>
-                            </a>
-                        
-                        </div>
-               
-               
-                    <div class="profile-edit">
-                        <a href="">
-                        <button id="create" routerLink="/register">Créer un Profil</button>
-                        </a>
-                    </div>
-                
+            <div class="elements">
+                <div *ngFor="let profile of gameProfiles" class="game {{profile.game.alias}}" > 
+                    <app-game-profile [gameProfile]="profile"></app-game-profile>
                 </div>
+                <div class="profile-edit">
+                    <button id="create" routerLink="/register">Créer un Profil</button>
+                </div>
+            </div>
+            
         </div>
     
-</div>
+</div>  
