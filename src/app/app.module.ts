@@ -18,6 +18,7 @@ import { ChatListComponent } from './pages/chat-list/chat-list.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { FriendsComponent } from './_components/friends/friends.component';
 import { LoginComponent } from './_components/login/login.component';
+import { Error404Component } from './pages/error404/error404.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { LoginComponent } from './_components/login/login.component';
     ChatListComponent,
     FriendsComponent,
     SignInComponent,
-    LoginComponent
+    LoginComponent,
+    Error404Component
     
   ],
   imports: [
