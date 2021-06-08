@@ -8,3 +8,54 @@ form{
     display: flex;
     flex-direction: column;
 }
+
+label {
+    text-decoration: none;
+    color: white;
+    text-shadow: 3px 3px 5px rgb(0, 0, 0);
+    font-size: 20px;
+    text-decoration: none;
+    display: block;
+    text-decoration: none;
+    display: block;
+    margin: 2%;
+    
+}
+
+button {
+    margin-top: 8%;
+    color: white;
+    font-size: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: capitalize;
+    background: transparent;
+    border: none;
+    text-align: right;
+    margin-right: 5%;
+}
+
+button:hover {
+    color:red;
+}
+
+a {
+    font-size: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: capitalize;
+    align-items: center;
+    text-decoration: none;
+    color: white !important;
+    width: 250px;
+    transition: all 0.2s ease-out;
+    text-shadow: 3px 3px 5px rgb(0, 0, 0);
+}
+
+a:hover {
+    color:red;
+}
+
+.login-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+}

@@ -8,6 +8,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
+  private focusLogin : boolean = false;
+
   loginForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
@@ -15,6 +17,7 @@ export class LoginComponent implements OnInit {
       email: '',
       password: ''
     })
+    document.addEventListener('click', this.hideOnClick.bind(this));
   }
 
   ngOnInit(): void {
@@ -23,4 +26,28 @@ export class LoginComponent implements OnInit {
   onSubmit(): void {
     
   }
+
+  showLogin(): void {
+    document.getElementById("login-content").style.display = "block";
+  }
+
+  hideLogin(): void {
+    if(!this.focusLogin){
+      document.getElementById("login-content").style.display = "none";
+    }
+  }
+
+  focus(): void {
+    this.focusLogin = true;
+  }
+
+  focusOut(): void {
+    this.focusLogin = false;
+  }
+
+  hideOnClick(event:any) {
+    if (!document.getElementById("login-content").contains(event.target)) {
+      document.getElementById("login-content").style.display = "none";
+    }
+}
 }

@@ -27,12 +27,6 @@ nav {
     margin-left: 40%;
 }
 
-.login-content {
-    display: none;
-    position: absolute;
-    z-index: 1;
-}
-
 .signup {
     margin-left: 5%;
 }

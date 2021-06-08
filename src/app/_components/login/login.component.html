@@ -1,9 +1,17 @@
-<div class="main">
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        <label for="email">email</label>
-        <input type="text" formControlName="email">
-        <label for="password">password</label>
-        <input type="password" formControlName="password">
-        <button class="submit" type="submit">enregistrer</button>
-    </form>
+<div (mouseover)="showLogin()" (mouseleave)="hideLogin()">
+    <div>
+        <a>connexion</a>
+    </div>
+    <div id="login-content" class="login-content">
+        <div class="main">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <label for="email">email</label>
+                <input type="text" formControlName="email" (focus)="focus()" (focusout)="focusOut()">
+                <label for="password">mot de passe</label>
+                <input type="password" formControlName="password" (focus)="focus()" (focusout)="focusOut()">
+        
+                <button class="submit" type="submit">valider</button>
+            </form>
+        </div>
+    </div>
 </div>
