@@ -35,6 +35,10 @@ button {
     text-align: right;
 }
 
+button:hover {
+    color:red;
+}
+
 .dropbtn {
     font-size: 20px;
     font-family: 'Josefin Sans', sans-serif;
@@ -46,13 +50,16 @@ button {
     text-shadow: 3px 3px 5px rgb(0, 0, 0);
 }
 
-
-button:hover {
-    color:red;
-}
-
 .submit {
     margin-top: 8%;
+    width: 0;
+    margin-left: 40%;
+    text-align: right;
+}
+
+/* Validation connexion*/
+.submit:hover {
+    color: rgb(151, 205, 50);
 }
 
 .login-content {
