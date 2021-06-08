@@ -1,10 +1,9 @@
-
+/* met le background en full indépendamment du swiper*/
 .full {
-  /* mets le background en full indépendamment du swiper*/
+  
   background: url("../../../assets/img/league-page.jpg") center;
   position: fixed; 
  
-  padding: 0 20vh 0 20vh;
    /* Préserve le ratio de l'image */
    min-width: 100%;
    min-height: 100%;
@@ -18,7 +17,7 @@
   text-align: center;
   font-size: 40px;
   background: rgba(255, 255, 255, 0.288);
-  width: 160vh;
+  max-width: 60vw;
 
 
   /* swiper centré */
@@ -49,8 +48,8 @@
   text-transform: capitalize;
   align-items: center; 
   color: white;
-  padding: 2vh;
-  width: 100px;
+  padding: 6vh 6vw 2vh 6vw;
+  width: 100vw;
   text-decoration: none;
   cursor: pointer;
 
@@ -70,7 +69,8 @@
   background-color: transparent;
   /* mettre la police choisie pour l'appli */
   font-family: Georgia, 'Times New Roman', Times, serif;
-  width: 160vh;
+  min-width: 40vw;
+  
 }
 
 .card {
@@ -86,28 +86,32 @@
 }
 
 .entete {
+  
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: 26pt;
+  font-size: 6vh;
   justify-content: space-around;
-  margin: 10px
+  margin: 2vh 2vw 2vh 2vw;
+  size: auto;
 }
 
 .joueur {
-  margin-left: 20px;
-  margin-top: 20px;
+  margin-left: 2vw;
+  margin-top: 2vh;
 }
 
 
 .card_image {
-  height: 100px;
-  width: 100px;
+  min-height: 30px;
+  min-width: 60px;
+  max-height: 100px;
+  max-width: 100px;
   border-radius: 50%;
   border: 5px solid #272133;
   margin-top: 20px;
-  margin-left: 20px;
+  margin-left: 2vh;
 
 
   /* box shadow qui brille du blanc au bleu. Si une couleur est modifiée, il faut la changer avec la même référence dans le webkit, sinon, ce n'est pas heureux. Possibilité de rajouter des couleurs ou d'agrandir l'auréole en jouant avec les px */
