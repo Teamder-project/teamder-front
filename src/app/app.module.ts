@@ -17,6 +17,7 @@ import { NgxUsefulSwiperModule} from 'ngx-useful-swiper';
 import { ChatListComponent } from './pages/chat-list/chat-list.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { FriendsComponent } from './_components/friends/friends.component';
+import { Error404Component } from './pages/error404/error404.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { FriendsComponent } from './_components/friends/friends.component';
     SwipeComponent,
     ChatListComponent,
     FriendsComponent,
-    SignInComponent
+    SignInComponent,
+    Error404Component
     
   ],
   imports: [
