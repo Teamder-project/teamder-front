@@ -2,7 +2,6 @@
 
 header img {
     width: 50px;
-    
 }
 
 nav {
@@ -65,7 +64,6 @@ header a {
 }
 header a:hover {
     color:red;
-
 }
 
 
@@ -95,7 +93,7 @@ header a:hover {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    background: linear-gradient(to bottom, transparent 0%, #171717f1 2.2%);
+    background: linear-gradient(to bottom, transparent 0%, #171717f1 30%);
     padding: 10px;
     pointer-events: auto;
   }
@@ -104,13 +102,5 @@ header a:hover {
   .dropdown-content a {
     padding: 12px 16px;
     text-decoration: none;
-    display: block;
-    
+    display: block; 
   }
-  
-  /* Change color of dropdown links on hover */
- 
-  
-  /* Show the dropdown menu on hover */
-  /*.dropdown:hover .dropdown-content {display: block;}*/
-  

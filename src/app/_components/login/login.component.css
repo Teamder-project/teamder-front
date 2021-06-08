@@ -1,10 +1,43 @@
 .main{
-    padding: 10px;
-    background-color: black;
     color: white;
+    margin-top: 9%;
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: capitalize;
+    min-width: 160px;
+    padding: 16px;
+    background: linear-gradient(to bottom, transparent 0%, rgb(6, 31, 75) 100%);
 }
 
 form{
     display: flex;
     flex-direction: column;
+}
+
+label {
+    text-decoration: none;
+    color: white;
+    text-shadow: 3px 3px 5px rgb(0, 0, 0);
+    font-size: 20px;
+    text-decoration: none;
+    display: block;
+    text-decoration: none;
+    display: block;
+    margin: 2%;
+    
+}
+
+button {
+    margin-top: 8%;
+    color: white;
+    font-size: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: capitalize;
+    background: transparent;
+    border: none;
+    text-align: right;
+    margin-right: 5%;
+}
+
+button:hover {
+    color:red;
 }
