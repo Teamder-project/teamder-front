@@ -21,13 +21,8 @@
             <a routerLink="/about-us">a propos</a>
         </div>
         
-        <div class="login-dropdown" (mouseover)="showLogin()" (mouseleave)="hideLogin()">
-            <div class="login" >
-                <a>connexion</a>
-            </div>
-            <div id="login-content" class="login-content">
-                <app-login></app-login>
-            </div>
+        <div class="login-dropdown">
+            <app-login></app-login>
         </div>
 
         <div class="signup">
