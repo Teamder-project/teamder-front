@@ -43,10 +43,6 @@
 }
 
 
-@font-face {
-  font-family: "symboles de flèches";
-  src:url(../../../assets/fonts/VNArrows.ttf)
-}
 .retour {
   text-align: left;
   display: block;
@@ -160,7 +156,7 @@
  
   align-items: center;
   text-align: center;
-  height: 30vh;
+  height: 50vh;
   width: 25vw; 
 }
 .texte_oui {
@@ -182,7 +178,7 @@
 .image_non img {
   align-items: center;
   text-align: center;
-  height: 30vh;
+  height: 50vh;
   width: 25vw; 
 }
 
@@ -261,11 +257,6 @@
     align-items: center;
   }
   
-  
-  @font-face {
-    font-family: "symboles de flèches";
-    src:url(../../../assets/fonts/VNArrows.ttf)
-  }
   .retour {
     text-align: left;
     display: block;
@@ -445,12 +436,13 @@
 
   .full {
   
-    background: url("../../../assets/img/league-page.jpg") center;
+    background: url("../../../assets/img/background-mobile/league-background.jpg") center;
     position: fixed; 
    
      /* Préserve le ratio de l'image */
      min-width: 100%;
      min-height: 100%;
+     background-size:cover ;
   
   }
   
@@ -479,16 +471,11 @@
     align-items: center;
   }
   
-  
-  @font-face {
-    font-family: "symboles de flèches";
-    src:url(../../../assets/fonts/VNArrows.ttf)
-  }
   .retour {
     text-align: left;
     display: block;
-    font-size: 4vh;
-   
+    font-size: 3vh;
+
     align-items: center; 
     padding: 4vh 6vw 2vh 6vw;
     width: 100vw;
@@ -513,6 +500,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    
     height: 85vh;
     background-color: transparent;
     /* mettre la police choisie pour l'appli */
@@ -592,13 +580,14 @@
     flex-direction: column;
     font-size: small;
     display: flex;
+    width: 80vw;
   }
   .image_oui img {
    
     align-items: center;
     text-align: center;
-    height: 30vh;
-    width: 25vw; 
+    height: 40vh;
+    width: 75vw; 
   }
   .texte_oui {
     margin-top: 10px;
@@ -614,13 +603,14 @@
     flex-direction: column;
     font-size: small;
     display: flex;
+    width: 80vw;
     
   }
   .image_non img {
     align-items: center;
     text-align: center;
-    height: 30vh;
-    width: 25vw; 
+    height: 40vh;
+    width: 75vw; 
   }
   
   .texte_non {
@@ -639,14 +629,14 @@
   }
   
   .swiper-button-prev {
-  
+    visibility: hidden;
     color: red;
     text-shadow:  3px 3px 5px rgb(0, 0, 0);
     
   }
   
   .swiper-button-next {
-  
+    visibility: hidden;
     color: blue;
     text-shadow:  3px 3px 5px rgb(0, 0, 0);
     
