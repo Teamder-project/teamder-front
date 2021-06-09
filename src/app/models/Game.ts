@@ -24,4 +24,13 @@ export class Game {
     public get alias(): string {
         return this._alias;
     }
+    public get name(): string {
+        return this._name;
+    }
+    public get editor(): string {
+        return this._editor;
+    }
+    public get released(): Date {
+        return this._released;
+    }
 }

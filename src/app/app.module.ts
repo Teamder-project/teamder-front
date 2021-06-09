@@ -20,6 +20,7 @@ import { FriendsComponent } from './_components/friends/friends.component';
 import { GameProfileComponent } from './_components/game-profile/game-profile.component';
 import { CommonModule } from '@angular/common';
 import { IndexComponent } from './pages/index/index.component';
+import { CreateProfileComponent } from './pages/create-profile/create-profile.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { IndexComponent } from './pages/index/index.component';
     FriendsComponent,
     SignInComponent,
     GameProfileComponent,
-    IndexComponent
+    IndexComponent,
+    CreateProfileComponent
     
   ],
   imports: [

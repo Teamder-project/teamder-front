@@ -14,4 +14,9 @@ export class GameProfileService {
   getProfilesByGamerId = (id : number) : Observable<GameProfile[]> => {
     return this.httpClient.get<GameProfile[]>(`${environment.apiBaseUrl}/game-profiles/gamer/${id}`)
   }
+
+  createProfile = (profile : GameProfile) : Observable<GameProfile> => {
+    console.log(profile);
+    return this.httpClient.post<GameProfile>(`${environment.apiBaseUrl}/game-profiles`, profile)
+  }
 }

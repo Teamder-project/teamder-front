@@ -1,0 +1,68 @@
+#back-color {
+    background-color: #171717;
+    color: white;
+  }
+  
+  .block {
+    font-family: 'Josefin Sans', sans-serif;
+    background-image: url(../../../assets/img/andras-vas-Bd7gNnWJBkU-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed; 
+    height: auto;
+    top: 70px; 
+    left: 0; 
+   /* Préserve le ratio de l'image */
+    min-width: 100%;
+    min-height: 100%;
+    text-transform: capitalize;
+  }
+
+.main{
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    
+}
+
+input {
+    width: 100%;
+}
+
+select {
+    padding: 15px;
+}
+textarea {
+    resize:none;
+    height:100px;
+    margin-bottom: 20px;
+}
+form{
+    width:25%;
+    display: flex;
+    flex-direction: column;
+    padding: 45px;
+    background: linear-gradient(rgb(58, 83, 126) 40%, rgb(136, 39, 10) 100%);
+    border-radius: 22%;
+}
+
+.submit{
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+}
+
+button:hover {
+    color: red;
+    opacity: 100%;
+  }
+
+label {
+    padding: 5px;
+}
+
+#pays {
+    margin-bottom: 25px;
+}
