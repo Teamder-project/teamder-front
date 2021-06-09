@@ -3,7 +3,6 @@
     margin-top: 9%;
     font-family: 'Josefin Sans', sans-serif;
     text-transform: capitalize;
-    min-width: 160px;
     padding: 16px;
     background: linear-gradient(to bottom, transparent 0%, rgb(6, 31, 75) 100%);
 }
@@ -23,11 +22,10 @@ label {
     text-decoration: none;
     display: block;
     margin: 2%;
-    
+    min-width: 160px;
 }
 
 button {
-    margin-top: 8%;
     color: white;
     font-size: 20px;
     font-family: 'Josefin Sans', sans-serif;
@@ -35,9 +33,37 @@ button {
     background: transparent;
     border: none;
     text-align: right;
-    margin-right: 5%;
 }
 
 button:hover {
     color:red;
+}
+
+.dropbtn {
+    font-size: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: capitalize;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    transition: all 0.2s ease-out;
+    text-shadow: 3px 3px 5px rgb(0, 0, 0);
+}
+
+.submit {
+    margin-top: 8%;
+    width: 0;
+    margin-left: 40%;
+    text-align: right;
+}
+
+/* Validation connexion*/
+.submit:hover {
+    color: rgb(151, 205, 50);
+}
+
+.login-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
 }

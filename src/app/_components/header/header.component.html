@@ -1,39 +1,54 @@
-<header id ="header">
-    <nav>
-           
+<header id="header">
+
+    <div class="containermobile">
         <div class="logo">
             <a routerLink="/home"><img src="../../../assets/img/logo.png" alt="logo"></a>
         </div>
 
+        <div class="dropdown">
+            <button  onclick="myFunction()" class="dropbtn">
+                <i class="fas fa-bars fa-2x"></i>
+            </button>
+            <div id="myDropdown" class="dropdown-content">
+                <a routerLink="/about-us">About us</a>
+                <a routerLink="/sign-in">Inscription</a>
+            </div>
+        </div>
+    </div>
+
+    <nav>
+        <div class="logo">
+            <a routerLink="/home"><img src="../../../assets/img/logo.png" alt="logo"></a>
+        </div>
+
+
         <div class="menu">
             <div class="dropdown" (mouseover)="showDropdown()" (mouseleave)="hideDropdown()">
                 <button class="dropbtn">jeux </button>
-                <div id="dropdown-content" class="dropdown-content" >
-                  <a routerLink="/league-of-legends" (click)="hideDropdown()">League of Legends</a>
-                  <a routerLink="/rocket-league" (click)="hideDropdown()">Rocket League</a>
-                  <a routerLink="/apex-legends" (click)="hideDropdown()">Apex</a>
-                  <a routerLink="/counter-strike" (click)="hideDropdown()">Counter Strike</a>
+                <div id="dropdown-content" class="dropdown-content">
+                    <a routerLink="/league-of-legends" (click)="hideDropdown()">League of Legends</a>
+                    <a routerLink="/rocket-league" (click)="hideDropdown()">Rocket League</a>
+                    <a routerLink="/apex-legends" (click)="hideDropdown()">Apex</a>
+                    <a routerLink="/counter-strike" (click)="hideDropdown()">Counter Strike</a>
                 </div>
             </div>
         </div>
-        
+
         <div class="more">
             <a routerLink="/about-us">a propos</a>
         </div>
-        
-        <div class="login-dropdown" (mouseover)="showLogin()" (mouseleave)="hideLogin()">
-            <div class="login" >
-                <a>connexion</a>
-            </div>
-            <div id="login-content" class="login-content">
-                <app-login></app-login>
-            </div>
+
+        <div class="login-dropdown">
+            <app-login></app-login>
         </div>
 
         <div class="signup">
             <a routerLink="/sign-in">inscription</a>
         </div>
 
+<<<<<<< HEAD
         
+=======
+>>>>>>> 307100cbc5bde0bb4d1924c8ad0137b29cabb734
     </nav>
 </header>
