@@ -6,7 +6,7 @@
         </div>
 
         <div class="dropdown">
-            <button  onclick="myFunction()" class="dropbtn">
+            <button  (click)="myFunction()" class="dropbtn">
                 <i class="fas fa-bars fa-2x"></i>
             </button>
             <div id="myDropdown" class="dropdown-content">
@@ -20,7 +20,6 @@
         <div class="logo">
             <a routerLink="/home"><img src="../../../assets/img/logo.png" alt="logo"></a>
         </div>
-
 
         <div class="menu">
             <div class="dropdown" (mouseover)="showDropdown()" (mouseleave)="hideDropdown()">
