@@ -8,11 +8,31 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
 
   }
+
+  myFunction(): void {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+
+  // Close the dropdown if the user clicks outside of it
+    onclick = function (event) {
+    if (!event.target.matches('.dropbtn')) {
+
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+
 
   showDropdown(): void {
     document.getElementById("dropdown-content").style.display = "block";
@@ -23,5 +43,5 @@ export class HeaderComponent implements OnInit {
   }
 }
 
-     
+
 
