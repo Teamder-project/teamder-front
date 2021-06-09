@@ -54,11 +54,11 @@ export class SwipeComponent implements OnInit {
         prevEl: '.swiper-button-next'
       },
       //empêche le swipe sur la fonctionnalité "retour"
-      //noSwiping : true,
-      //noSwipingClass : 'retour'
+      noSwiping : true,
+      noSwipingClass : 'retour'
     });
     
-    setInterval(this.rafraichir, 100);
+    setInterval(this.rafraichir, 1000);
   }
 
   
