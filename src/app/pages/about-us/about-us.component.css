@@ -56,7 +56,7 @@
 }
 
 /* Tablette */
-@media all and (min-width: 767px) and (max-width: 990px) {
+@media all and (min-width: 767px) and (max-width: 991px) {
     #back-color {
         background-color: #171717;
         color: white;

@@ -50,7 +50,7 @@
 }
 
 /* Tablette */
-@media all and (min-width: 767px) and (max-width: 990px) {
+@media all and (min-width: 767px) and (max-width: 991px) {
     .block {
         padding: 3.125rem 0;
         position: fixed; 
