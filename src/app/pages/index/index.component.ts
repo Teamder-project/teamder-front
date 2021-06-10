@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GameProfile } from 'src/app/models/GameProfile';
+import { GameProfileService } from 'src/app/services/game-profile.service';
 
 @Component({
   selector: 'app-index',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexComponent implements OnInit {
 
-  constructor() { }
+  gameProfiles : GameProfile[] = [];
 
+  constructor(private service : GameProfileService) { }
+
+  /**
+   * Récupération de l'id d'un gamer pour récuperer tout les profils lier à celui ci
+   */
   ngOnInit(): void {
+    this.service.getProfilesByGamerId(2).subscribe(data => {
+      this.gameProfiles = data;
+    })
   }
+
+
 
 }
