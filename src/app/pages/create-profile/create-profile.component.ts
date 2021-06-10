@@ -37,7 +37,6 @@ export class CreateProfileComponent implements OnInit {
   }
 
   createProfile = () => {
-    console.log(this.gamerProfileForm.value.game);
     this.gamerProfileForm.value.game.id = parseInt(this.gamerProfileForm.value.game.id);
     this.serviceProfile.createProfile(this.gamerProfileForm.value).subscribe(gameProfile => {
       this.router.navigateByUrl("index")

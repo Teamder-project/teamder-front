@@ -14,4 +14,8 @@ export class GameService {
   getAllGames = () : Observable<Game[]> => {
     return this.httpClient.get<Game[]>(`${environment.apiBaseUrl}/games`)
   }
+
+  getGameById = (id : number) : Observable<Game> => {
+    return this.httpClient.get<Game>(`${environment.apiBaseUrl}/games/${id}`)
+  }
 }

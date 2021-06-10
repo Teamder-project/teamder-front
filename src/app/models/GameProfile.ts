@@ -25,4 +25,16 @@ export class GameProfile {
     public get game(): Game {
         return this._game;
     }
+
+    public get nickname_game(): string {
+        return this._nickname_game;
+    }
+
+    public get goals(): string {
+        return this._goals;
+    }
+
+    public get description(): string {
+        return this._description;
+    }
 }

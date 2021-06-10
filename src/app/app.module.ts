@@ -21,6 +21,7 @@ import { GameProfileComponent } from './_components/game-profile/game-profile.co
 import { CommonModule } from '@angular/common';
 import { IndexComponent } from './pages/index/index.component';
 import { CreateProfileComponent } from './pages/create-profile/create-profile.component';
+import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { CreateProfileComponent } from './pages/create-profile/create-profile.co
     SignInComponent,
     GameProfileComponent,
     IndexComponent,
-    CreateProfileComponent
+    CreateProfileComponent,
+    EditProfileComponent
     
   ],
   imports: [
