@@ -8,10 +8,10 @@
   position: fixed; 
  
    /* Préserve le ratio de l'image */
-   min-width: 100%;
-   min-height: 100%;
-
+   min-width: 100vw;
+   min-height: 100vh;
 }
+
 
 /* correspond à la div swiper : ne pas toucher */
 
@@ -19,12 +19,11 @@
   
   text-align: center;
   font-size: 40px;
-  background: rgba(255, 255, 255, 0.288);
-  min-width: 60vw;
-  max-width: 90vw;
 
-  margin-left: 20%;
-  margin-right: 20%;
+  min-width: 100vw;
+  max-width: 100vw;
+
+
 
 
   /* swiper centré */
@@ -42,6 +41,12 @@
   align-items: center;
 }
 
+.frame {
+  background: linear-gradient(315deg, rgba(0, 38, 255, 0.349), rgba(231, 226, 226, 0.349));
+  border-radius: 15px;
+  padding: 2vh 3vw 2vh 3vw;
+  
+}
 
 .retour {
   text-align: left;
@@ -201,13 +206,26 @@
 
   color: red;
   text-shadow:  3px 3px 5px rgb(0, 0, 0);
-  
+  margin-left: 10vw;
+  background: rgba(255, 0, 0, 0.226);
+  padding: 7vh 2vw 7vh 2vw;
+  border-radius: 15px;  
+  border :rgb(0, 0, 0);
+  border : solid;
+  box-shadow: 3px 3px 5px rgb(0, 0, 0);
 }
 
 .swiper-button-next {
 
   color: blue;
   text-shadow:  3px 3px 5px rgb(0, 0, 0);
+  margin-right: 10vw;
+  background: rgba(0, 0, 255, 0.226);
+  padding: 7vh 2vw 7vh 2vw;
+  border-radius: 15px;  
+  border :rgb(0, 0, 0);
+  border : solid;
+  box-shadow: 3px 3px 5px rgb(0, 0, 0);
   
 }
 
@@ -226,8 +244,8 @@
     position: fixed; 
    
      /* Préserve le ratio de l'image */
-     min-width: 100%;
-     min-height: 100%;
+     min-width: 100vw;
+     min-height: 100vh;
   
   }
   
@@ -238,8 +256,9 @@
     text-align: center;
     font-size: 40px;
     background: rgba(255, 255, 255, 0.288);
-    min-width: 60vw;
-    max-width: 90vw;
+    min-width: 100vw;
+    max-width: 100vw;
+
   
   
     /* swiper centré */
@@ -440,8 +459,8 @@
     position: fixed; 
    
      /* Préserve le ratio de l'image */
-     min-width: 100%;
-     min-height: 100%;
+     min-width: 100vw;
+     min-height: 100vh;
      background-size:cover ;
   
   }
@@ -452,8 +471,9 @@
     
     text-align: center;
     background: rgba(255, 255, 255, 0.288);
-    min-width: 60vw;
-    max-width: 90vw;
+    min-width: 100vw;
+    max-width: 100vw;
+
   
   
     /* swiper centré */
