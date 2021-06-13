@@ -8,31 +8,27 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    document.addEventListener('click', this.hideDropdownMobileOnOutsideClick.bind(this));
+  }
 
   ngOnInit(): void {
 
   }
 
-  myFunction(): void {
-    document.getElementById("myDropdown").classList.toggle("show");
+  dropdownMobile(): void {
+    document.getElementById("dropdown-content-mobile").classList.toggle("show");
   }
 
-  // Close the dropdown if the user clicks outside of it
-    onclick = function (event) {
-    if (!event.target.matches('.dropbtn')) {
+  hideDropdownMobile(): void {
+    document.getElementById("dropdown-content-mobile").classList.remove("show");
+  }
 
-      var dropdowns = document.getElementsByClassName("dropdown-content");
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
-        }
-      }
+  hideDropdownMobileOnOutsideClick(event:any): void {
+    if (!document.getElementById("dropdown-mobile").contains(event.target)){
+      document.getElementById("dropdown-content-mobile").classList.remove("show");
     }
   }
-
 
   showDropdown(): void {
     document.getElementById("dropdown-content").style.display = "block";

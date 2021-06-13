@@ -5,13 +5,13 @@
             <a routerLink="/home"><img src="../../../assets/img/logo.png" alt="logo"></a>
         </div>
 
-        <div class="dropdown">
-            <button  onclick="myFunction()" class="dropbtn">
+        <div id="dropdown-mobile" class="dropdown">
+            <button  (click)="dropdownMobile()" class="dropbtn">
                 <i class="fas fa-bars fa-2x"></i>
             </button>
-            <div id="myDropdown" class="dropdown-content">
-                <a routerLink="/about-us">About us</a>
-                <a routerLink="/sign-in">Inscription</a>
+            <div id="dropdown-content-mobile" class="dropdown-content">
+                <a routerLink="/about-us" (click)="hideDropdownMobile()">A Propos</a>
+                <a routerLink="/sign-in" (click)="hideDropdownMobile()">Inscription</a>
             </div>
         </div>
     </div>
@@ -20,7 +20,6 @@
         <div class="logo">
             <a routerLink="/home"><img src="../../../assets/img/logo.png" alt="logo"></a>
         </div>
-
 
         <div class="menu">
             <div class="dropdown" (mouseover)="showDropdown()" (mouseleave)="hideDropdown()">
