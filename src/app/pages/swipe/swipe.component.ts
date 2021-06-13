@@ -35,6 +35,20 @@ export class SwipeComponent implements OnInit {
   //charge le premier gamer, initialise le swiper, et boucle la fonction rafraichir()
   ngOnInit(): void {
 
+    let fullscreen = document.querySelector("#fullscreen");
+    let button = document.querySelector("#button");
+    
+    button.addEventListener("click", ()=> {
+      if(!document.fullscreenElement){
+        fullscreen?.requestFullscreen();
+      } else {
+        document.exitFullscreen();
+      }
+    })
+    if (fullscreen.requestFullscreen){
+      fullscreen.requestFullscreen();
+    }
+
     document.getElementById("nom-prenom").innerText = this.users[0].nom + " " + this.users[0].prenom;
    
     const swiper = new Swiper('.swiper-container', {
@@ -109,4 +123,6 @@ export class SwipeComponent implements OnInit {
     setTimeout(function () { swiper.slidePrev(800) }, 600);
     console.log("dislike");
   }
+
+  
 }

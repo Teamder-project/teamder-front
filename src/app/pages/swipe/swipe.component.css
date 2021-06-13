@@ -1,5 +1,9 @@
 @media (min-width: 991px){
   /* met le background en full indépendamment du swiper*/
+
+  #fullscreen:fullscreen {
+    background-color: transparent;
+  }
 .full {
   
   background: url("../../../assets/img/rocket-page.jpg") center;
