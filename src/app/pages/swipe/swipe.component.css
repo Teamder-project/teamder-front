@@ -1,5 +1,9 @@
 @media (min-width: 991px){
   /* met le background en full indépendamment du swiper*/
+
+  #fullscreen:fullscreen {
+    background-color: transparent;
+  }
 .full {
   
   background: url("../../../assets/img/rocket-page.jpg") center;
@@ -61,7 +65,10 @@
   border :rgb(0, 0, 0);
   border : solid;
   box-shadow: 3px 3px 5px rgb(0, 0, 0);
- 
+  
+}
+#button.bouton {
+  margin-left: 2vw;
 }
 .bouton:hover {
     color:red;
@@ -238,8 +245,10 @@
     Responsive Tablette
 ========================================================================== */
 
-@media all and (min-width: 767px) and (max-width: 991px) {
-
+@media all and (min-width: 768px) and (max-width: 990px) {
+  #fullscreen:fullscreen {
+    background-color: transparent;
+  }
   .full {
   
   background: url("../../../assets/img/league-page.jpg") center;
@@ -297,6 +306,9 @@
   border : solid;
   box-shadow: 3px 3px 5px rgb(0, 0, 0);
  
+}
+#button.bouton {
+  margin-left: 2vw;
 }
 .bouton:hover {
     color:red;
@@ -478,7 +490,9 @@
 ========================================================================== */
 
 @media (max-width:767px) {
-
+  #fullscreen:fullscreen {
+    background-color: transparent;
+  }
   .full {
   
     background: url("../../../assets/img/background-mobile/league-background.jpg") center;
@@ -539,6 +553,9 @@
     border : solid;
     box-shadow: 3px 3px 5px rgb(0, 0, 0);
    
+  }
+  #button.bouton {
+    margin-left: 2vw;
   }
   .bouton:hover {
       color:red;
