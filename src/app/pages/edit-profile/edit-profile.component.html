@@ -1,6 +1,9 @@
 <div class="block" id="back-color">
     <div class="main">
-        <form [formGroup]="updatedProfile" (ngSubmit)="editProfile()">
+        <form *ngIf="profile" [formGroup]="updatedProfile" (ngSubmit)="editProfile()">
+            <div id="error">
+                <p *ngFor="let error of error">{{error}}</p>
+            </div>
             <label for="username">pseudo</label>
             <input type="text" formControlName="nickname_game">
             <label for="goals">Objectifs :</label>

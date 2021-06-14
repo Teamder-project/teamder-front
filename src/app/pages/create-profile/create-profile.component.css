@@ -29,6 +29,9 @@ input {
     width: 100%;
 }
 
+#error p {
+    color:red;
+}
 select {
     padding: 15px;
 }

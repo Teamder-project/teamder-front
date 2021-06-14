@@ -1,6 +1,9 @@
 <div class="block" id="back-color">
     <div class="main">
         <form [formGroup]="gamerProfileForm" (ngSubmit)="createProfile()">
+            <div id="error">
+                <p *ngFor="let error of error">{{error}}</p>
+            </div>
             <label for="games">Jeu :</label>
             <div formGroupName="game">
                 <select name="games" id="games" formControlName="id">
