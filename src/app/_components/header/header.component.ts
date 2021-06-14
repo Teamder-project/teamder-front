@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivationStart, NavigationStart, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,12 +7,32 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  showConversation: boolean = true;
+  constructor(private router : Router) {
 
-  constructor() {
     document.addEventListener('click', this.hideDropdownMobileOnOutsideClick.bind(this));
+
+    router.events.forEach((event) => {
+
+      if (event instanceof NavigationStart) {
+        if (event['url'] == '/index') {
+          this.showConversation = true;
+        }        
+        else { 
+          this.showConversation = false;
+        }
+      }
+    });
   }
+  
 
   ngOnInit(): void {
+    if (this.router.url == '/index') {
+      this.showConversation = true;
+    }        
+    else {  
+      this.showConversation = false;
+    }
 
   }
 
@@ -37,6 +57,8 @@ export class HeaderComponent implements OnInit {
   hideDropdown(): void {
     document.getElementById("dropdown-content").style.display = "none";
   }
+
+ 
 }
 
 
