@@ -12,24 +12,7 @@
     justify-content: space-between;
     flex-wrap:wrap;
 }
-.game {
-    margin-top: 3%;
-    width: 380px;
-    height: 250px;
-    background-size: cover;
-}
-.lol {
-    background-image: url("https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/bltcfa4652c8d383f56/5e21837f63d1b6503160d39b/Home-page.jpg");
-}
-.rl {
-    background-image: url("../../../assets/img/encart-rocket-league.jpg");
-}
-.apex {
-    background-image: url("../../../assets/img/encart-apex-legends.jpg");
-}
-.csgo {
-    background-image: url("../../../assets/img/encart-csgo.jpg");
-}
+
 .container div {
     flex-basis:40%;
 }
