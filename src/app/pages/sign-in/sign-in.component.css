@@ -8,7 +8,7 @@
     background-image: url(../../../assets/img/page-form.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    position: fixed; 
+    position: absolute; 
     height: auto;
     top: 70px; 
     left: 0; 
