@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AccountService } from 'src/app/services/account.service';
+import { GamerService } from 'src/app/services/gamer.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -12,7 +12,7 @@ export class SignInComponent implements OnInit {
 
   accountForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private accountService: AccountService, private router: Router) {
+  constructor(private fb: FormBuilder, private accountService: GamerService, private router: Router) {
     this.accountForm = this.fb.group({
       username: '',
       password: '',
