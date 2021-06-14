@@ -5,7 +5,7 @@ button:hover {
 .button-div button {
     width:50%;
     position:relative;
-    top:150px;
+    bottom: 0;
 }
 
 h3 {
