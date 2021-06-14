@@ -72,7 +72,6 @@ export class CreateProfileComponent implements OnInit {
    */
   createProfile = () => {
 
-    console.log(this.checkIfProfileAlreadyExist());
     if(
       this.gamerProfileForm.value.nickname_game != null &&
       this.gamerProfileForm.value.goals != null &&
