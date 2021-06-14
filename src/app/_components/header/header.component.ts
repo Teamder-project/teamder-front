@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivationStart, NavigationStart, Router } from '@angular/router';
+import { NavigationStart, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -25,7 +25,6 @@ export class HeaderComponent implements OnInit {
     });
   }
   
-
   ngOnInit(): void {
     if (this.router.url == '/index') {
       this.showConversation = true;
