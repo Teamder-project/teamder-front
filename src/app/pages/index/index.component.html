@@ -4,7 +4,7 @@
             <div *ngFor="let profile of gameProfiles" class="game {{profile.game.alias}}" > 
                 <app-game-profile [gameProfile]="profile"></app-game-profile>
             </div>
-            <div class="profile-edit">
+            <div id="create-profile" class="profile-edit">
                 <button id="create" routerLink="/new-profile">Créer un Profil</button>
             </div>
         </div>        
