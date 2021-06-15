@@ -2,7 +2,15 @@
     Responsive
 ========================================================================== */
 
-/* PC */
+.elements {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap:wrap;
+}
+
+.container div {
+    flex-basis:40%;
+}
 
 @media (min-width: 991px) {
     #back-color {

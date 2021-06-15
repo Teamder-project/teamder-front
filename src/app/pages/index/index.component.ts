@@ -19,7 +19,18 @@ export class IndexComponent implements OnInit {
   ngOnInit(): void {
     this.service.getProfilesByGamerId(2).subscribe(data => {
       this.gameProfiles = data;
+      this.deleteDivIfGamerAlreadyHaveOneProfileByGame();
     })
+  }
+
+  /**
+   * Suppréssion de la div create-profile si le joueur à déjà 4 profils
+   */
+  deleteDivIfGamerAlreadyHaveOneProfileByGame = () => {
+    let div = document.getElementById("create-profile");
+    if(this.gameProfiles.length > 3) {
+      div.remove();
+    }
   }
 
 
