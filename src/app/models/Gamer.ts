@@ -1,4 +1,4 @@
-export class Account {
+export class Gamer {
     private _id : number;
     private _username : string;
     private _password : string;
