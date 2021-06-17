@@ -41,7 +41,11 @@
             <app-login></app-login>
         </div>
 
-        <div class="signup">
+        <div class="chat-list" *ngIf="connected">
+            <a routerLink="/chat-list">Conversation</a>
+        </div>
+
+        <div id="signup" class="signup" *ngIf="!connected">
             <a routerLink="/sign-in">inscription</a>
         </div>
 

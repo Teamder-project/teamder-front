@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RoutesRecognized } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,13 +7,30 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  
+  connected: boolean = false;
+  
+  constructor(private router : Router) {
 
-  constructor() {
     document.addEventListener('click', this.hideDropdownMobileOnOutsideClick.bind(this));
+
+    router.events.forEach((event) => {
+      if (event instanceof RoutesRecognized) {
+        if (localStorage.getItem("id") != null) {
+          this.connected = true;
+        }
+        else{
+          this.connected = false;
+        }
+      }
+    });
+
   }
-
+  
   ngOnInit(): void {
-
+    if (localStorage.getItem("id") != null) {
+      this.connected = true;
+    }
   }
 
   dropdownMobile(): void {

@@ -47,6 +47,7 @@ export class LoginComponent implements OnInit {
       localStorage.removeItem("id");
       this.label = "connexion";
     }
+    this.router.navigate(["home"]);
   }
 
   showLogin(): void {
