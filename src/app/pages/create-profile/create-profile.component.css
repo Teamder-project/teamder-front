@@ -28,6 +28,10 @@ input {
     padding: 4%;
 }
 
+#error {
+    width:100%;
+}
+
 #error p {
     color: red;
 }
