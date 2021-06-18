@@ -24,6 +24,7 @@ const routes: Routes = [
   { path: 'about-us', component : AboutUsComponent},
   { path: 'sign-in', component : SignInComponent},
   { path: 'swipe', component : SwipeComponent},
+  { path: 'swipe/:id', component : SwipeComponent},
   { path: 'chat-list', component : ChatListComponent},
   { path: 'new-profile', component : CreateProfileComponent},
   { path: 'edit-profile/:id', component : EditProfileComponent},

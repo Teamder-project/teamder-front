@@ -63,23 +63,20 @@ export class SwipeComponent implements OnInit {
     swiper.on('reachBeginning', this.like);
     swiper.on('reachEnd', this.dislike);
     //setInterval(this.rafraichir, 100);
+    
+  }
+
+  trigerFullScreen = () => {
 
     let fullscreen = document.querySelector("#fullscreen");
     let button = document.querySelector("#button");
-    
-    button.addEventListener("click", ()=> {
-      if(!document.fullscreenElement){
-        fullscreen?.requestFullscreen();
-      } else {
-        document.exitFullscreen();
-      }
-    })
-    if (fullscreen.requestFullscreen){
-      fullscreen.requestFullscreen();
+
+    if(!document.fullscreenElement){
+      fullscreen?.requestFullscreen();
+    } else {
+      document.exitFullscreen();
     }
   }
-
-  
   //verifie s'il y a eu swipe et execute like() ou dislike() selon le sens
   // rafraichir = () => {
 
