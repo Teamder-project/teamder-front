@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { GameProfile } from 'src/app/models/GameProfile';
+import { GameProfileService } from 'src/app/services/game-profile.service';
 import Swiper, { EffectFlip } from 'swiper';
 
 @Component({
@@ -8,44 +11,35 @@ import Swiper, { EffectFlip } from 'swiper';
 })
 export class SwipeComponent implements OnInit {
 
-  users = [
-    { nom: "Pif", prenom: "Coucou", age: 26 },
-    { nom: "Paf", prenom: "Cuicui", age: 30 },
-    { nom: "Pouf", prenom: "Crucru", age: 58 },
-    { nom: "toto", prenom: "roro", age: 12 },
-    { nom: "titi", prenom: "riri", age: 27 },
-    { nom: "tutu", prenom: "rara", age: 69 },
-    { nom: "fufu", prenom: "momo", age: 14 },
-    { nom: "coco", prenom: "mimi", age: 18 },
-    { nom: "fafa", prenom: "mama", age: 78 },
-  ]
+  users: GameProfile[] = [];
 
-  likes = [
+  likes = [];
 
-  ]
+  dislikes = [];
 
-  dislikes = [
-
-  ]
-
-  constructor() {
+  constructor(private service: GameProfileService, private route: ActivatedRoute) {
   }
 
 
   //charge le premier gamer, initialise le swiper, et boucle la fonction rafraichir()
   ngOnInit(): void {
 
-    
+    this.displayProfilesByGame()
 
-    document.getElementById("nom-prenom").innerText = this.users[0].nom + " " + this.users[0].prenom;
-   
+    setTimeout(() => {
+      console.log(this.users);
+      document.getElementById("nom-prenom").innerText = this.users[0].nickname_game;
+    },
+      500);
+
+
     const swiper = new Swiper('.swiper-container', {
       //permet de mettre en place l'effet flip de la carte. Pour modifier la vitesse à laquelle elle se tourne, jouer avec les valeurs du speed.
       effect: 'flip',
       grabCursor: true,
       flipEffect: {
         slideShadows: false,
-      
+
       },
       speed: 600,
       spaceBetween: 100,
@@ -56,14 +50,14 @@ export class SwipeComponent implements OnInit {
         prevEl: '.swiper-button-next'
       },
       //empêche le swipe sur la fonctionnalité "retour"
-      noSwiping : true,
-      noSwipingClass : 'retour'
+      noSwiping: true,
+      noSwipingClass: 'retour'
     });
-    
+
     swiper.on('reachBeginning', this.like);
     swiper.on('reachEnd', this.dislike);
     //setInterval(this.rafraichir, 100);
-    
+
   }
 
   trigerFullScreen = () => {
@@ -71,7 +65,7 @@ export class SwipeComponent implements OnInit {
     let fullscreen = document.querySelector("#fullscreen");
     let button = document.querySelector("#button");
 
-    if(!document.fullscreenElement){
+    if (!document.fullscreenElement) {
       fullscreen?.requestFullscreen();
     } else {
       document.exitFullscreen();
@@ -99,7 +93,7 @@ export class SwipeComponent implements OnInit {
     // document.getElementById("swipe3").classList.add("swiper-slide-next");
 
     this.likes.push(this.users.splice(0, 1));
-    document.getElementById("nom-prenom").innerText = this.users[0].nom + " " + this.users[0].prenom;
+    document.getElementById("nom-prenom").innerText = this.users[0].nickname_game;
 
     const swiper = document.querySelector('.swiper-container')['swiper'];
     setTimeout(function () { swiper.slideNext(800) }, 600);
@@ -116,12 +110,23 @@ export class SwipeComponent implements OnInit {
     // document.getElementById("swipe3").classList.add("swiper-slide-next");
 
     this.dislikes.push(this.users.splice(0, 1));
-    document.getElementById("nom-prenom").innerText = this.users[0].nom + " " + this.users[0].prenom;
+    document.getElementById("nom-prenom").innerText = this.users[0].nickname_game;
 
     const swiper = document.querySelector('.swiper-container')['swiper'];
     setTimeout(function () { swiper.slidePrev(800) }, 600);
     console.log("dislike");
   }
 
-  
+  displayProfilesByGame = () => {
+    this.route.paramMap.subscribe(url => {
+      let id: number = Number(url.get("id"));
+      this.service.getProfileById(id).subscribe(data => {
+        this.service.getProfilesForSwipe(data).subscribe(data => {
+          this.users = data;
+        })
+
+      });
+    });
+  }
+
 }

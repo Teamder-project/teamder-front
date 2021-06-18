@@ -26,4 +26,9 @@ export class GameProfileService {
   updateProfile = (profile : GameProfile) : Observable<GameProfile> => {
     return this.httpClient.patch<GameProfile>(`${environment.apiBaseUrl}/game-profiles`, profile)
   }
+
+  getProfilesForSwipe = (profile : GameProfile) : Observable<GameProfile[]> => {
+    
+    return this.httpClient.post<GameProfile[]>(`${environment.apiBaseUrl}/game-profiles/swipe`, profile)
+  }
 }
