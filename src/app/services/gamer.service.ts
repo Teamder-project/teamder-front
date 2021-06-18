@@ -23,6 +23,10 @@ export class GamerService {
     return this.httpClient.post<Gamer>(`${environment.apiBaseUrl}/gamers`, gamer);
   }
 
+  login(gamer: Gamer): Observable<string> {
+    return this.httpClient.post(`${environment.apiBaseUrl}/gamers/login`, gamer, {responseType: "text"});
+  }
+
   update(gamer: Gamer): Observable<Gamer> {
     return this.httpClient.put<Gamer>(`${environment.apiBaseUrl}/gamers`, gamer);
   }
