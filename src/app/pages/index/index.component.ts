@@ -17,7 +17,7 @@ export class IndexComponent implements OnInit {
    * Récupération de l'id d'un gamer pour récuperer tout les profils lier à celui ci
    */
   ngOnInit(): void {
-    this.service.getProfilesByGamerId(2).subscribe(data => {
+    this.service.getProfilesByGamerId(parseInt(localStorage.getItem("id"))).subscribe(data => {
       this.gameProfiles = data;
       this.deleteDivIfGamerAlreadyHaveOneProfileByGame();
     })
@@ -27,7 +27,7 @@ export class IndexComponent implements OnInit {
    * Suppréssion de la div create-profile si le joueur à déjà 4 profils
    */
   deleteDivIfGamerAlreadyHaveOneProfileByGame = () => {
-    let div = document.getElementById("create-profile");
+    let div = document.getElementById("create");
     if(this.gameProfiles.length > 3) {
       div.remove();
     }

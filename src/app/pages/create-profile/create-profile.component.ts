@@ -23,7 +23,7 @@ export class CreateProfileComponent implements OnInit {
       goals: null,
       description: null,
       gamer: {
-        id: 2
+        id: parseInt(localStorage.getItem("id"))
       },
       game: this.fb.group({
         id: null
@@ -40,7 +40,7 @@ export class CreateProfileComponent implements OnInit {
       this.games = data;
     })
 
-    this.serviceProfile.getProfilesByGamerId(2).subscribe(data => {
+    this.serviceProfile.getProfilesByGamerId(parseInt(localStorage.getItem("id"))).subscribe(data => {
       
       data.forEach(element => {
 

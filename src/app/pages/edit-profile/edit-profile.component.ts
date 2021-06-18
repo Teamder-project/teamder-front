@@ -76,7 +76,7 @@ export class EditProfileComponent implements OnInit {
       goals: this.profile.goals,
       description: this.profile.description,
       gamer: {
-        id: 2
+        id: parseInt(localStorage.getItem("id"))
       },
       game: this.fb.group({
         id: this.profile.game.id
