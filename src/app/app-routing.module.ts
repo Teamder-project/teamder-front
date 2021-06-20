@@ -29,6 +29,8 @@ const routes: Routes = [
   { path: 'new-profile', component : CreateProfileComponent},
   { path: 'edit-profile/:id', component : EditProfileComponent},
   { path: 'error404', component : Error404Component},
+  { path: 'error404', component : Error404Component},
+  { path : '' , redirectTo : '/home' , pathMatch : 'full'},
   { path: '**', redirectTo: '/error404' }
 
 ];
