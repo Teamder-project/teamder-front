@@ -36,6 +36,8 @@ export class SwipeComponent implements OnInit {
   //charge le premier gamer, initialise le swiper, et boucle la fonction rafraichir()
   ngOnInit(): void {
 
+    
+
     document.getElementById("nom-prenom").innerText = this.users[0].nom + " " + this.users[0].prenom;
    
     const swiper = new Swiper('.swiper-container', {
@@ -55,38 +57,47 @@ export class SwipeComponent implements OnInit {
         prevEl: '.swiper-button-next'
       },
       //empêche le swipe sur la fonctionnalité "retour"
-      //noSwiping : true,
-      //noSwipingClass : 'retour'
+      noSwiping : true,
+      noSwipingClass : 'retour'
     });
-  
-    setInterval(this.rafraichir, 100);
-      
+    
+    swiper.on('reachBeginning', this.like);
+    swiper.on('reachEnd', this.dislike);
+    //setInterval(this.rafraichir, 100);
+    
   }
 
-  //verifie s'il y a eu swipe et execute like() ou dislike() selon le sens
-  rafraichir = () => {
+  trigerFullScreen = () => {
 
-    if(this.router.url.startsWith("/swipe")){
+    let fullscreen = document.querySelector("#fullscreen");
+    let button = document.querySelector("#button");
 
-      console.log("bonjour");
-      const swiper = document.querySelector('.swiper-container')['swiper'];
-      let slide = document.getElementById("swipe2");
-      if (slide.classList.contains("swiper-slide-next")) {
-        this.like();
-      } else if (slide.classList.contains("swiper-slide-prev")) {
-        this.dislike();
-      }
+    if(!document.fullscreenElement){
+      fullscreen?.requestFullscreen();
+    } else {
+      document.exitFullscreen();
     }
   }
+  //verifie s'il y a eu swipe et execute like() ou dislike() selon le sens
+  // rafraichir = () => {
+
+  //   const swiper = document.querySelector('.swiper-container')['swiper'];
+  //   let slide = document.getElementById("swipe2");
+  //   if (slide.classList.contains("swiper-slide-next")) {
+  //     this.like();
+  //   } else if (slide.classList.contains("swiper-slide-prev")) {
+  //     this.dislike();
+  //   }
+  // }
 
   //charge le prochain gamer, l'ajoute dans likes[] et renvoie sur la slide principale
   like = () => {
 
-    document.getElementById("swipe1").classList.remove("swiper-slide-active");
-    document.getElementById("swipe1").classList.add("swiper-slide-prev");
-    document.getElementById("swipe2").classList.remove("swiper-slide-next");
-    document.getElementById("swipe2").classList.add("swiper-slide-active");
-    document.getElementById("swipe3").classList.add("swiper-slide-next");
+    // document.getElementById("swipe1").classList.remove("swiper-slide-active");
+    // document.getElementById("swipe1").classList.add("swiper-slide-prev");
+    // document.getElementById("swipe2").classList.remove("swiper-slide-next");
+    // document.getElementById("swipe2").classList.add("swiper-slide-active");
+    // document.getElementById("swipe3").classList.add("swiper-slide-next");
 
     this.likes.push(this.users.splice(0, 1));
     document.getElementById("nom-prenom").innerText = this.users[0].nom + " " + this.users[0].prenom;
@@ -99,11 +110,11 @@ export class SwipeComponent implements OnInit {
   //charge le prochain gamer, l'ajoute dans dislikes[] et renvoie sur la slide principale
   dislike = () => {
 
-    document.getElementById("swipe1").classList.add("swiper-slide-prev");
-    document.getElementById("swipe2").classList.remove("swiper-slide-prev");
-    document.getElementById("swipe2").classList.add("swiper-slide-active");
-    document.getElementById("swipe2").classList.remove("swiper-slide-active");
-    document.getElementById("swipe3").classList.add("swiper-slide-next");
+    // document.getElementById("swipe1").classList.add("swiper-slide-prev");
+    // document.getElementById("swipe2").classList.remove("swiper-slide-prev");
+    // document.getElementById("swipe2").classList.add("swiper-slide-active");
+    // document.getElementById("swipe2").classList.remove("swiper-slide-active");
+    // document.getElementById("swipe3").classList.add("swiper-slide-next");
 
     this.dislikes.push(this.users.splice(0, 1));
     document.getElementById("nom-prenom").innerText = this.users[0].nom + " " + this.users[0].prenom;
@@ -112,4 +123,6 @@ export class SwipeComponent implements OnInit {
     setTimeout(function () { swiper.slidePrev(800) }, 600);
     console.log("dislike");
   }
+
+  
 }

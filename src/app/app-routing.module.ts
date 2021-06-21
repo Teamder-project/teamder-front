@@ -4,6 +4,9 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ApexLegendsComponent } from './pages/apex-legends/apex-legends.component';
 import { ChatListComponent } from './pages/chat-list/chat-list.component';
 import { CounterStrikeComponent } from './pages/counter-strike/counter-strike.component';
+import { Error404Component } from './pages/error404/error404.component';
+import { CreateProfileComponent } from './pages/create-profile/create-profile.component';
+import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
 import { HomeComponent } from './pages/home/home.component';
 import { IndexComponent } from './pages/index/index.component';
 import { LeagueOfLegendsComponent } from './pages/league-of-legends/league-of-legends.component';
@@ -21,8 +24,15 @@ const routes: Routes = [
   { path: 'about-us', component : AboutUsComponent},
   { path: 'sign-in', component : SignInComponent},
   { path: 'swipe', component : SwipeComponent},
-  { path: 'chat-list', component : ChatListComponent}
-  
+  { path: 'swipe/:id', component : SwipeComponent},
+  { path: 'chat-list', component : ChatListComponent},
+  { path: 'new-profile', component : CreateProfileComponent},
+  { path: 'edit-profile/:id', component : EditProfileComponent},
+  { path: 'error404', component : Error404Component},
+  { path: 'error404', component : Error404Component},
+  { path : '' , redirectTo : '/home' , pathMatch : 'full'},
+  { path: '**', redirectTo: '/error404' }
+
 ];
 
 @NgModule({

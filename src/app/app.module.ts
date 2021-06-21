@@ -17,6 +17,14 @@ import { NgxUsefulSwiperModule} from 'ngx-useful-swiper';
 import { ChatListComponent } from './pages/chat-list/chat-list.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { FriendsComponent } from './_components/friends/friends.component';
+import { LoginComponent } from './_components/login/login.component';
+import { Error404Component } from './pages/error404/error404.component';
+import { GameProfileComponent } from './_components/game-profile/game-profile.component';
+import { CommonModule } from '@angular/common';
+import { IndexComponent } from './pages/index/index.component';
+import { CreateProfileComponent } from './pages/create-profile/create-profile.component';
+import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
+import { ChatComponent } from './_components/chat/chat.component';
 
 
 @NgModule({
@@ -32,11 +40,19 @@ import { FriendsComponent } from './_components/friends/friends.component';
     SwipeComponent,
     ChatListComponent,
     FriendsComponent,
-    SignInComponent
+    SignInComponent,
+    LoginComponent,
+    Error404Component,
+    GameProfileComponent,
+    IndexComponent,
+    CreateProfileComponent,
+    EditProfileComponent,
+    ChatComponent
     
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,

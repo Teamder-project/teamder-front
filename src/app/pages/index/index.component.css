@@ -1,43 +1,112 @@
 #back-color {
+    padding: 3.125rem 0;
     background-color: #171717;
     color: white;
+    min-height: 100%;
+    min-width: 100%;
+    position: absolute;
 }
 
-.block {
-    padding: 3.125rem 0;
-    background-size: 100vh;
+/* ==========================================================================
+    Responsive
+========================================================================== */
+
+/* PC */
+
+@media (min-width: 991px) {
+    .elements {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .container div {
+        flex-basis: 50%;
+    }
+    
+    button:hover {
+        opacity: 100%;
+    }
+    button {
+        width: 50%;
+        opacity: 30%;
+        position: relative;
+    }
+    
+    .profile-edit {
+        text-align: center;
+        display: inline-block;
+    }
+    #create {
+        margin-top: 5%;
+        position: relative;
+        display: inline-block;
+        width: auto;
+        padding: 2%;
+        border-radius: 56.25%;
+        text-align: center;
+    }
 }
 
-.elements {
-    display: flex;
-    justify-content: space-around;
+/* Tablette */
+
+@media all and (min-width: 767px) and (max-width: 991px) {
+
+    .elements {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .container div {
+        flex-basis: 50%;
+    }
+    button {
+        width: 50%;
+        opacity: 30%;
+        position: relative;
+    }
+    button:hover {
+        opacity: 100%;
+    }
+    .profile-edit {
+        text-align: center;
+        display: inline-block;
+    }
+    #create {
+        margin-top: 5%;
+        position: relative;
+        display: inline-block;
+        width: auto;
+        padding: 3%;
+        border-radius: 100%;
+        text-align: center;
+    }
 }
 
-.game {
-    background-image: url("https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/bltcfa4652c8d383f56/5e21837f63d1b6503160d39b/Home-page.jpg");
-    width: 380px;
-    height: 200px;
-    background-size: cover;
-}
+/* Mobile */
 
+@media (max-width:767px) {
 
-.profile-edit {
-    background-image: url("../../../assets/img/add-profile.jpg");
-    width: 380px;
-    height: 200px;
-    background-size: cover;
-}
+    button {
+        width: 50%;
+        opacity: 30%;
+        position: relative;
+    }
 
-#search {
-    float: left;
-    width: 50%;
-}
+    button:hover {
+        opacity: 100%;
+    }
+    
+    .profile-edit {
+        text-align: center;
+    }
 
-#edit {
-    float: right;
-    width: 50%;
-}
-
-a:hover {
-    opacity: 50%;
+    #create {
+        margin-top: 5%;
+        position: relative;
+        display: inline-block;
+        width: auto;
+        padding: 3%;
+        border-radius: 56.25%;
+        text-align: center;
+    }
 }
