@@ -24,14 +24,7 @@ export class SwipeComponent implements OnInit {
   //charge le premier gamer, initialise le swiper, et boucle la fonction rafraichir()
   ngOnInit(): void {
 
-    this.displayProfilesByGame()
-
-    setTimeout(() => {
-      console.log(this.users);
-      document.getElementById("nom-prenom").innerText = this.users[0].nickname_game;
-    },
-      500);
-
+    this.getProfiles()
 
     const swiper = new Swiper('.swiper-container', {
       //permet de mettre en place l'effet flip de la carte. Pour modifier la vitesse à laquelle elle se tourne, jouer avec les valeurs du speed.
@@ -86,46 +79,57 @@ export class SwipeComponent implements OnInit {
   //charge le prochain gamer, l'ajoute dans likes[] et renvoie sur la slide principale
   like = () => {
 
-    // document.getElementById("swipe1").classList.remove("swiper-slide-active");
-    // document.getElementById("swipe1").classList.add("swiper-slide-prev");
-    // document.getElementById("swipe2").classList.remove("swiper-slide-next");
-    // document.getElementById("swipe2").classList.add("swiper-slide-active");
-    // document.getElementById("swipe3").classList.add("swiper-slide-next");
 
     this.likes.push(this.users.splice(0, 1));
     document.getElementById("nom-prenom").innerText = this.users[0].nickname_game;
 
     const swiper = document.querySelector('.swiper-container')['swiper'];
     setTimeout(function () { swiper.slideNext(800) }, 600);
-    console.log("like");
+
+    if(this.users.length == 2) {
+      this.getProfilesWhenOnly2Left();
+    }
   }
 
   //charge le prochain gamer, l'ajoute dans dislikes[] et renvoie sur la slide principale
   dislike = () => {
-
-    // document.getElementById("swipe1").classList.add("swiper-slide-prev");
-    // document.getElementById("swipe2").classList.remove("swiper-slide-prev");
-    // document.getElementById("swipe2").classList.add("swiper-slide-active");
-    // document.getElementById("swipe2").classList.remove("swiper-slide-active");
-    // document.getElementById("swipe3").classList.add("swiper-slide-next");
 
     this.dislikes.push(this.users.splice(0, 1));
     document.getElementById("nom-prenom").innerText = this.users[0].nickname_game;
 
     const swiper = document.querySelector('.swiper-container')['swiper'];
     setTimeout(function () { swiper.slidePrev(800) }, 600);
-    console.log("dislike");
+
+    if(this.users.length == 2) {
+      this.getProfilesWhenOnly2Left();
+    }
   }
 
-  displayProfilesByGame = () => {
+  getProfiles = () => {
     this.route.paramMap.subscribe(url => {
       let id: number = Number(url.get("id"));
-      this.service.getProfileById(id).subscribe(data => {
-        this.service.getProfilesForSwipe(data).subscribe(data => {
-          this.users = data;
+      this.service.getProfilesForSwipe(id).subscribe(data => {
+        data.forEach(element => {
+          this.users.push(element);
         })
+      })
+    });
 
-      });
+    setTimeout(() => {
+      document.getElementById("nom-prenom").innerText = this.users[0].nickname_game;
+    },
+      500);
+  }
+
+  getProfilesWhenOnly2Left = () => {
+    
+    this.route.paramMap.subscribe(url => {
+      let id: number = Number(url.get("id"));
+      this.service.getProfilesWeDontHaveForSwipe(id, this.users[0].id, this.users[1].id).subscribe(data => {
+        data.forEach(element => {
+          this.users.push(element);
+        })
+      })
     });
   }
 
