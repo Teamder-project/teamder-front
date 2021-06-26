@@ -24,8 +24,7 @@ import { CommonModule } from '@angular/common';
 import { IndexComponent } from './pages/index/index.component';
 import { CreateProfileComponent } from './pages/create-profile/create-profile.component';
 import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
-import { ChatComponent } from './pages/chat/chat.component';
-import { NgChatModule } from 'ng-chat';
+import { ChatComponent } from './_components/chat/chat.component';
 
 
 @NgModule({
@@ -59,8 +58,7 @@ import { NgChatModule } from 'ng-chat';
     ReactiveFormsModule,
     NgxUsefulSwiperModule,
     HammerModule,
-    HttpClientModule,
-    NgChatModule
+    HttpClientModule
   ],
   providers: [
     {
