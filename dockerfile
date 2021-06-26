@@ -1,8 +1,8 @@
 FROM node
 
-COPY teamder-app-front teamder-app-front/
+COPY . .
 
-WORKDIR /teamder-app-front
+WORKDIR /teamder-front
 
 RUN npm i
 
