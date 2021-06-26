@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GameProfile } from 'src/app/models/GameProfile';
+import { Swipe } from 'src/app/models/Swipe';
 import { GameProfileService } from 'src/app/services/game-profile.service';
 import Swiper, { EffectFlip } from 'swiper';
 
@@ -10,6 +11,8 @@ import Swiper, { EffectFlip } from 'swiper';
   styleUrls: ['./swipe.component.css']
 })
 export class SwipeComponent implements OnInit {
+
+  swiper: GameProfile;
 
   users: GameProfile[] = [];
 
@@ -23,6 +26,13 @@ export class SwipeComponent implements OnInit {
 
   //charge le premier gamer, initialise le swiper, et boucle la fonction rafraichir()
   ngOnInit(): void {
+
+    this.route.paramMap.subscribe(url => {
+      let id: number = Number(url.get("id"));
+      this.service.getProfileById(id).subscribe(profileSwiper => {
+        this.swiper = profileSwiper;
+      })
+    })
 
     this.getProfiles()
 
@@ -64,45 +74,47 @@ export class SwipeComponent implements OnInit {
       document.exitFullscreen();
     }
   }
-  //verifie s'il y a eu swipe et execute like() ou dislike() selon le sens
-  // rafraichir = () => {
-
-  //   const swiper = document.querySelector('.swiper-container')['swiper'];
-  //   let slide = document.getElementById("swipe2");
-  //   if (slide.classList.contains("swiper-slide-next")) {
-  //     this.like();
-  //   } else if (slide.classList.contains("swiper-slide-prev")) {
-  //     this.dislike();
-  //   }
-  // }
 
   //charge le prochain gamer, l'ajoute dans likes[] et renvoie sur la slide principale
   like = () => {
 
+    console.log(this.users)
+    console.log(this.users[0])
+    let swipe : Swipe = new Swipe(1, this.swiper, this.users.splice(0, 1)[0]);
+    console.log(this.users)
+    console.log(this.users[0])
+    
+    this.service.swipe(swipe).subscribe(element =>{
+      if(this.users.length == 2) {
+        this.getProfilesWhenOnly2Left();
+      }
+    });
 
-    this.likes.push(this.users.splice(0, 1));
     document.getElementById("nom-prenom").innerText = this.users[0].nickname_game;
 
     const swiper = document.querySelector('.swiper-container')['swiper'];
     setTimeout(function () { swiper.slideNext(800) }, 600);
-
-    if(this.users.length == 2) {
-      this.getProfilesWhenOnly2Left();
-    }
   }
 
   //charge le prochain gamer, l'ajoute dans dislikes[] et renvoie sur la slide principale
   dislike = () => {
 
-    this.dislikes.push(this.users.splice(0, 1));
+    console.log(this.users)
+    console.log(this.users[0])
+    let swipe : Swipe = new Swipe(0, this.swiper, this.users.splice(0, 1)[0]);
+    console.log(this.users)
+    console.log(this.users[0])
+    
+    this.service.swipe(swipe).subscribe(element =>{
+      if(this.users.length == 2) {
+        this.getProfilesWhenOnly2Left();
+      }
+    });
+
     document.getElementById("nom-prenom").innerText = this.users[0].nickname_game;
 
     const swiper = document.querySelector('.swiper-container')['swiper'];
-    setTimeout(function () { swiper.slidePrev(800) }, 600);
-
-    if(this.users.length == 2) {
-      this.getProfilesWhenOnly2Left();
-    }
+    setTimeout(function () { swiper.slideNext(800) }, 600);
   }
 
   getProfiles = () => {
