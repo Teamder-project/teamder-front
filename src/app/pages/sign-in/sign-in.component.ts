@@ -27,6 +27,24 @@ export class SignInComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  displayAvatar = () => {
+    let btn = document.getElementById("div-img");
+    btn.classList.toggle("hide");
+    let avatarChoisi = document.getElementById("avatar-choisi");
+    avatarChoisi.classList.add("hide");
+    let form = document.getElementById("form");
+    form.classList.add("hide");
+  }
+
+  chooseAvatar = (value : string) => {
+    let btn = document.getElementById("div-img");
+    btn.classList.toggle("hide")
+    let avatarChoisi = document.getElementById("avatar-choisi");
+    avatarChoisi.classList.remove("hide");
+    document.getElementById("avatar-choisi").setAttribute("src", "../../../assets/avatars/"+value+".jpg");
+    let form = document.getElementById("form");
+    form.classList.remove("hide");
+  }
   onSubmit = () : void => {
 
     if(
