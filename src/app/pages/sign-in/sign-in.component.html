@@ -7,8 +7,9 @@
             </div>
             <button id="avatar-btn" type="button" (click)="displayAvatar()">Avatar <i class="fas fa-edit"></i></button>
             <img id="avatar-choisi" class="hide" src="" alt="">
+            <input id="hidden" type="hidden" value="" formControlName="avatar">
             <div id="div-img" class="hide">
-                <button (click)="chooseAvatar('ahri')" type="button" ><img src="../../../assets/avatars/ahri.jpg" alt="ahri"></button>
+                <button (click)="chooseAvatar('ahri')" type="button"><img src="../../../assets/avatars/ahri.jpg" alt="ahri"></button>
                 <button (click)="chooseAvatar('ak47-cs')" type="button"><img src="../../../assets/avatars/ak47-cs.jpg" alt="ak47-cs"></button>
                 <button (click)="chooseAvatar('bangalore')" type="button"><img src="../../../assets/avatars/bangalore.jpg" alt="bangalore"></button>
                 <button (click)="chooseAvatar('bloodhound')" type="button"><img src="../../../assets/avatars/bloodhound.jpg" alt="bloodhound"></button>

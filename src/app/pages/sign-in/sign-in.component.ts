@@ -20,7 +20,8 @@ export class SignInComponent implements OnInit {
       email: null,
       birthday: null,
       gender: null,
-      country: null
+      country: null,
+      avatar: "default"
     })
   }
 
@@ -37,6 +38,8 @@ export class SignInComponent implements OnInit {
   }
 
   chooseAvatar = (value : string) => {
+    let input = document.getElementById("hidden");
+    input.setAttribute("value", value);
     let btn = document.getElementById("div-img");
     btn.classList.toggle("hide")
     let avatarChoisi = document.getElementById("avatar-choisi");
@@ -47,13 +50,16 @@ export class SignInComponent implements OnInit {
   }
   onSubmit = () : void => {
 
+    let input = document.getElementById("hidden");
+    this.gamerForm.value.avatar = input["value"];
     if(
       this.gamerForm.value.username != null &&
       this.gamerForm.value.password != null &&
       this.gamerForm.value.email != null &&
       this.gamerForm.value.birthday != null &&
       this.gamerForm.value.gender != null &&
-      this.gamerForm.value.country != null){
+      this.gamerForm.value.country != null &&
+      this.gamerForm.value.avatar != null){
 
       if(this.gamerForm.value.username.length < 2 || this.gamerForm.value.username.length > 50){
         this.error = [];

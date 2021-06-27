@@ -11,7 +11,7 @@ import Swiper, { EffectFlip } from 'swiper';
   styleUrls: ['./swipe.component.css']
 })
 export class SwipeComponent implements OnInit {
-
+  
   swiper: GameProfile;
 
   users: GameProfile[] = [];
@@ -78,11 +78,7 @@ export class SwipeComponent implements OnInit {
   //charge le prochain gamer, l'ajoute dans likes[] et renvoie sur la slide principale
   like = () => {
 
-    console.log(this.users)
-    console.log(this.users[0])
     let swipe : Swipe = new Swipe(1, this.swiper, this.users.splice(0, 1)[0]);
-    console.log(this.users)
-    console.log(this.users[0])
     
     this.service.swipe(swipe).subscribe(element =>{
       if(this.users.length == 2) {
@@ -90,6 +86,7 @@ export class SwipeComponent implements OnInit {
       }
     });
 
+    document.getElementById("avatar").setAttribute("src", "../../../assets/avatars/"+this.users[0].gamer.avatar+".jpg");
     document.getElementById("nom-prenom").innerText = this.users[0].nickname_game;
 
     const swiper = document.querySelector('.swiper-container')['swiper'];
@@ -98,12 +95,7 @@ export class SwipeComponent implements OnInit {
 
   //charge le prochain gamer, l'ajoute dans dislikes[] et renvoie sur la slide principale
   dislike = () => {
-
-    console.log(this.users)
-    console.log(this.users[0])
     let swipe : Swipe = new Swipe(0, this.swiper, this.users.splice(0, 1)[0]);
-    console.log(this.users)
-    console.log(this.users[0])
     
     this.service.swipe(swipe).subscribe(element =>{
       if(this.users.length == 2) {
@@ -112,6 +104,7 @@ export class SwipeComponent implements OnInit {
     });
 
     document.getElementById("nom-prenom").innerText = this.users[0].nickname_game;
+    document.getElementById("avatar").setAttribute("src", "../../../assets/avatars/"+this.users[0].gamer.avatar+".jpg");
 
     const swiper = document.querySelector('.swiper-container')['swiper'];
     setTimeout(function () { swiper.slideNext(800) }, 600);
@@ -124,10 +117,14 @@ export class SwipeComponent implements OnInit {
         data.forEach(element => {
           this.users.push(element);
         })
+        console.log(this.users);
       })
     });
 
     setTimeout(() => {
+      document.getElementById("objectif").innerText = "Mon objectif : "+this.users[0].goals;
+      document.getElementById("description").innerText = this.users[0].description;
+      document.getElementById("avatar").setAttribute("src", "../../../assets/avatars/"+this.users[0].gamer.avatar+".jpg");
       document.getElementById("nom-prenom").innerText = this.users[0].nickname_game;
     },
       500);
