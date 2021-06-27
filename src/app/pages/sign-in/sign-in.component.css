@@ -66,3 +66,30 @@ label {
 #pays {
     margin-bottom: 25px;
 }
+
+#avatar-btn {
+    width:40%;
+    margin-bottom:30px;
+}
+
+#div-img img {
+    width:75px;
+}
+#div-img button {
+    border:0;
+    padding:0;
+    margin:5px;
+}
+.hide {
+    display:none;
+}
+#div-img {
+    text-align:center;
+}
+#div-img button:hover {
+    transform: scale(1.2);
+}
+#avatar-choisi {
+    width:100px;
+    margin:0 auto;
+}

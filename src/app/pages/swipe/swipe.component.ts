@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { GameProfile } from 'src/app/models/GameProfile';
+import { Swipe } from 'src/app/models/Swipe';
+import { GameProfileService } from 'src/app/services/game-profile.service';
 import Swiper, { EffectFlip } from 'swiper';
 
 @Component({
@@ -7,45 +11,38 @@ import Swiper, { EffectFlip } from 'swiper';
   styleUrls: ['./swipe.component.css']
 })
 export class SwipeComponent implements OnInit {
+  
+  swiper: GameProfile;
 
-  users = [
-    { nom: "Pif", prenom: "Coucou", age: 26 },
-    { nom: "Paf", prenom: "Cuicui", age: 30 },
-    { nom: "Pouf", prenom: "Crucru", age: 58 },
-    { nom: "toto", prenom: "roro", age: 12 },
-    { nom: "titi", prenom: "riri", age: 27 },
-    { nom: "tutu", prenom: "rara", age: 69 },
-    { nom: "fufu", prenom: "momo", age: 14 },
-    { nom: "coco", prenom: "mimi", age: 18 },
-    { nom: "fafa", prenom: "mama", age: 78 },
-  ]
+  users: GameProfile[] = [];
 
-  likes = [
+  likes = [];
 
-  ]
+  dislikes = [];
 
-  dislikes = [
-
-  ]
-
-  constructor() {
+  constructor(private service: GameProfileService, private route: ActivatedRoute) {
   }
 
 
   //charge le premier gamer, initialise le swiper, et boucle la fonction rafraichir()
   ngOnInit(): void {
 
-    
+    this.route.paramMap.subscribe(url => {
+      let id: number = Number(url.get("id"));
+      this.service.getProfileById(id).subscribe(profileSwiper => {
+        this.swiper = profileSwiper;
+      })
+    })
 
-    document.getElementById("nom-prenom").innerText = this.users[0].nom + " " + this.users[0].prenom;
-   
+    this.getProfiles()
+
     const swiper = new Swiper('.swiper-container', {
       //permet de mettre en place l'effet flip de la carte. Pour modifier la vitesse à laquelle elle se tourne, jouer avec les valeurs du speed.
       effect: 'flip',
       grabCursor: true,
       flipEffect: {
         slideShadows: false,
-      
+
       },
       speed: 600,
       spaceBetween: 100,
@@ -56,14 +53,14 @@ export class SwipeComponent implements OnInit {
         prevEl: '.swiper-button-next'
       },
       //empêche le swipe sur la fonctionnalité "retour"
-      noSwiping : true,
-      noSwipingClass : 'retour'
+      noSwiping: true,
+      noSwipingClass: 'retour'
     });
-    
+
     swiper.on('reachBeginning', this.like);
     swiper.on('reachEnd', this.dislike);
     //setInterval(this.rafraichir, 100);
-    
+
   }
 
   trigerFullScreen = () => {
@@ -71,57 +68,78 @@ export class SwipeComponent implements OnInit {
     let fullscreen = document.querySelector("#fullscreen");
     let button = document.querySelector("#button");
 
-    if(!document.fullscreenElement){
+    if (!document.fullscreenElement) {
       fullscreen?.requestFullscreen();
     } else {
       document.exitFullscreen();
     }
   }
-  //verifie s'il y a eu swipe et execute like() ou dislike() selon le sens
-  // rafraichir = () => {
-
-  //   const swiper = document.querySelector('.swiper-container')['swiper'];
-  //   let slide = document.getElementById("swipe2");
-  //   if (slide.classList.contains("swiper-slide-next")) {
-  //     this.like();
-  //   } else if (slide.classList.contains("swiper-slide-prev")) {
-  //     this.dislike();
-  //   }
-  // }
 
   //charge le prochain gamer, l'ajoute dans likes[] et renvoie sur la slide principale
   like = () => {
 
-    // document.getElementById("swipe1").classList.remove("swiper-slide-active");
-    // document.getElementById("swipe1").classList.add("swiper-slide-prev");
-    // document.getElementById("swipe2").classList.remove("swiper-slide-next");
-    // document.getElementById("swipe2").classList.add("swiper-slide-active");
-    // document.getElementById("swipe3").classList.add("swiper-slide-next");
+    let swipe : Swipe = new Swipe(1, this.swiper, this.users.splice(0, 1)[0]);
+    
+    this.service.swipe(swipe).subscribe(element =>{
+      if(this.users.length == 2) {
+        this.getProfilesWhenOnly2Left();
+      }
+    });
 
-    this.likes.push(this.users.splice(0, 1));
-    document.getElementById("nom-prenom").innerText = this.users[0].nom + " " + this.users[0].prenom;
+    document.getElementById("avatar").setAttribute("src", "../../../assets/avatars/"+this.users[0].gamer.avatar+".jpg");
+    document.getElementById("nom-prenom").innerText = this.users[0].nickname_game;
 
     const swiper = document.querySelector('.swiper-container')['swiper'];
     setTimeout(function () { swiper.slideNext(800) }, 600);
-    console.log("like");
   }
 
   //charge le prochain gamer, l'ajoute dans dislikes[] et renvoie sur la slide principale
   dislike = () => {
+    let swipe : Swipe = new Swipe(0, this.swiper, this.users.splice(0, 1)[0]);
+    
+    this.service.swipe(swipe).subscribe(element =>{
+      if(this.users.length == 2) {
+        this.getProfilesWhenOnly2Left();
+      }
+    });
 
-    // document.getElementById("swipe1").classList.add("swiper-slide-prev");
-    // document.getElementById("swipe2").classList.remove("swiper-slide-prev");
-    // document.getElementById("swipe2").classList.add("swiper-slide-active");
-    // document.getElementById("swipe2").classList.remove("swiper-slide-active");
-    // document.getElementById("swipe3").classList.add("swiper-slide-next");
-
-    this.dislikes.push(this.users.splice(0, 1));
-    document.getElementById("nom-prenom").innerText = this.users[0].nom + " " + this.users[0].prenom;
+    document.getElementById("nom-prenom").innerText = this.users[0].nickname_game;
+    document.getElementById("avatar").setAttribute("src", "../../../assets/avatars/"+this.users[0].gamer.avatar+".jpg");
 
     const swiper = document.querySelector('.swiper-container')['swiper'];
-    setTimeout(function () { swiper.slidePrev(800) }, 600);
-    console.log("dislike");
+    setTimeout(function () { swiper.slideNext(800) }, 600);
   }
 
-  
+  getProfiles = () => {
+    this.route.paramMap.subscribe(url => {
+      let id: number = Number(url.get("id"));
+      this.service.getProfilesForSwipe(id).subscribe(data => {
+        data.forEach(element => {
+          this.users.push(element);
+        })
+        console.log(this.users);
+      })
+    });
+
+    setTimeout(() => {
+      document.getElementById("objectif").innerText = "Mon objectif : "+this.users[0].goals;
+      document.getElementById("description").innerText = this.users[0].description;
+      document.getElementById("avatar").setAttribute("src", "../../../assets/avatars/"+this.users[0].gamer.avatar+".jpg");
+      document.getElementById("nom-prenom").innerText = this.users[0].nickname_game;
+    },
+      500);
+  }
+
+  getProfilesWhenOnly2Left = () => {
+    
+    this.route.paramMap.subscribe(url => {
+      let id: number = Number(url.get("id"));
+      this.service.getProfilesWeDontHaveForSwipe(id, this.users[0].id, this.users[1].id).subscribe(data => {
+        data.forEach(element => {
+          this.users.push(element);
+        })
+      })
+    });
+  }
+
 }
