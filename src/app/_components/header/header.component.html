@@ -12,6 +12,7 @@
             <div id="dropdown-content-mobile" class="dropdown-content">
                 <a routerLink="/about-us" (click)="hideDropdownMobile()">A Propos</a>
                 <a routerLink="/sign-in" (click)="hideDropdownMobile()">Inscription</a>
+                <a routerLink="/chat" (click)="hideDropdownMobile()">Conversation</a>
             </div>
         </div>
     </div>
@@ -33,6 +34,8 @@
             </div>
         </div>
 
+       
+
         <div class="more">
             <a routerLink="/about-us">a propos</a>
         </div>
@@ -48,6 +51,6 @@
         <div id="signup" class="signup" *ngIf="!connected">
             <a routerLink="/sign-in">inscription</a>
         </div>
-
+       
     </nav>
 </header>

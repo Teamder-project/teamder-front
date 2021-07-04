@@ -208,7 +208,7 @@
   font-size: 3vh;
 }
 
-.description {
+#description, #objectif {
   margin-top: 10px;
 }
 

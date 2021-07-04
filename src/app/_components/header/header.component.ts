@@ -54,6 +54,8 @@ export class HeaderComponent implements OnInit {
   hideDropdown(): void {
     document.getElementById("dropdown-content").style.display = "none";
   }
+
+ 
 }
 
 

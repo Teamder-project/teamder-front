@@ -13,8 +13,10 @@ import { LeagueOfLegendsComponent } from './pages/league-of-legends/league-of-le
 import { RocketLeagueComponent } from './pages/rocket-league/rocket-league.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { SwipeComponent } from './pages/swipe/swipe.component';
+import { ChatComponent } from './_components/chat/chat.component';
 
 const routes: Routes = [
+  { path : '' , redirectTo : '/home' , pathMatch : 'full'},
   { path: 'home', component: HomeComponent },
   { path: 'index', component: IndexComponent },
   { path: 'league-of-legends', component: LeagueOfLegendsComponent},
@@ -28,11 +30,11 @@ const routes: Routes = [
   { path: 'chat-list', component : ChatListComponent},
   { path: 'new-profile', component : CreateProfileComponent},
   { path: 'edit-profile/:id', component : EditProfileComponent},
+  { path: 'chat', component : ChatComponent},
   { path: 'error404', component : Error404Component},
   { path: 'error404', component : Error404Component},
   { path : '' , redirectTo : '/home' , pathMatch : 'full'},
   { path: '**', redirectTo: '/error404' }
-
 ];
 
 @NgModule({

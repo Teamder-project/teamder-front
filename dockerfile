@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 FROM node:14 AS builder
+=======
+FROM node
+
+COPY . .
+
+WORKDIR /teamder-front
+>>>>>>> develop
 
 WORKDIR /app
 COPY . .
