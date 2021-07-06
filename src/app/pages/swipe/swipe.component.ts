@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute} from '@angular/router';
 import { GameProfile } from 'src/app/models/GameProfile';
 import { Swipe } from 'src/app/models/Swipe';
 import { GameProfileService } from 'src/app/services/game-profile.service';
-import Swiper, { EffectFlip } from 'swiper';
+import Swiper from 'swiper';
 
 @Component({
   selector: 'app-swipe',
@@ -21,10 +20,7 @@ export class SwipeComponent implements OnInit {
 
   dislikes = [];
 
-
-  constructor(private router : Router) {}
   constructor(private service: GameProfileService, private route: ActivatedRoute) {
-
   }
 
 
