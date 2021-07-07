@@ -22,3 +22,29 @@
 input {
     border: none;
 }
+
+.chat-content .side-panel {
+    float: left;
+    position: relative;
+    background: linear-gradient(to top, rgb(10, 40, 92) 0%, black 80%);
+    border-radius: 2%;
+    width: 20%;
+    height: 100%;
+}
+
+h4 {
+    text-align: center;
+    color: white;
+    margin-top: 8%;
+}
+
+.chat-send {
+    float: right;
+    min-width: 50%;
+}
+
+hr {
+    color:white;
+    width:80%;
+    margin:0 auto;
+}

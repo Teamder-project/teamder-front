@@ -1,6 +1,18 @@
 <main class="chat">
+    
+        
     <div class="container">
+        
         <div class="chat-content">
+
+            <div class="side-panel">
+                <h4>Liste d'amis</h4>
+                <div *ngFor="let friend of friends">
+                    <app-friends [friend]="friend"></app-friends>
+                    <hr>
+                </div>
+            </div>
+
             <div class="card">
                 <ul class="list-group list-group-flush">
                     
