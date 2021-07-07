@@ -1,25 +1,29 @@
 <main class="chat">
-    
-        
+
+
     <div class="container">
-        
+
         <div class="chat-content">
 
             <div class="side-panel">
                 <h4>Liste d'amis</h4>
-                <div *ngFor="let friend of friends">
-                    <app-friends [friend]="friend"></app-friends>
-                    <hr>
-                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" *ngFor="let chatMessage of webSocketService.chatMessages">
+                      <div class="receiver-button"><button><span>{{chatMessage.receiver.username}}</span> </button> </div>
+                        <hr>
+                    </li>
+                </ul>
             </div>
+
 
             <div class="card">
                 <ul class="list-group list-group-flush">
-                    
+
                     <li class="list-group-item" *ngFor="let chatMessage of webSocketService.chatMessages">
-                        <span>{{chatMessage.receiver.username}}</span>
-                        <strong>{{chatMessage.sender.username}}: </strong>
-                        <span>{{chatMessage.message}}</span>
+
+                        <div class="sender"> <strong>{{chatMessage.sender.username}} : </strong>
+                        <span>&nbsp; {{chatMessage.message}}</span>
+                        </div>  
 
                     </li>
                 </ul>

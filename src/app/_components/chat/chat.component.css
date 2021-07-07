@@ -48,3 +48,19 @@ hr {
     width:80%;
     margin:0 auto;
 }
+
+.sender {
+    display: flex;
+    float: right;
+}
+
+.list-group-flush>.list-group-item{
+    background-color: transparent;
+    color: white;
+}
+
+.receiver-button button {
+    border: none;
+    background-color: transparent;
+    color: white;
+}

@@ -5,7 +5,7 @@ export class ChatMessageDto {
     sender : Gamer;
     receiver : Gamer; 
 
-    constructor( message: string, sender : Gamer, receiver : Gamer) {
+    constructor(message : string, sender : Gamer, receiver : Gamer) {
         this.message = message;
         this.sender = sender;
         this.receiver = receiver;
