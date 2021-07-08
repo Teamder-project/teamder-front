@@ -38,7 +38,6 @@ import { ChatComponent } from './_components/chat/chat.component';
     CounterStrikeComponent,
     AboutUsComponent,
     SwipeComponent,
-    ChatListComponent,
     FriendsComponent,
     SignInComponent,
     LoginComponent,

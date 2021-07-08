@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ApexLegendsComponent } from './pages/apex-legends/apex-legends.component';
-import { ChatListComponent } from './pages/chat-list/chat-list.component';
 import { CounterStrikeComponent } from './pages/counter-strike/counter-strike.component';
 import { Error404Component } from './pages/error404/error404.component';
 import { CreateProfileComponent } from './pages/create-profile/create-profile.component';
@@ -27,11 +26,9 @@ const routes: Routes = [
   { path: 'sign-in', component : SignInComponent},
   { path: 'swipe', component : SwipeComponent},
   { path: 'swipe/:id', component : SwipeComponent},
-  { path: 'chat-list', component : ChatListComponent},
   { path: 'new-profile', component : CreateProfileComponent},
   { path: 'edit-profile/:id', component : EditProfileComponent},
   { path: 'chat', component : ChatComponent},
-  { path: 'error404', component : Error404Component},
   { path: 'error404', component : Error404Component},
   { path : '' , redirectTo : '/home' , pathMatch : 'full'},
   { path: '**', redirectTo: '/error404' }

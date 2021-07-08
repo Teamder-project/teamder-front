@@ -15,11 +15,6 @@ export class ChatComponent implements OnInit, OnDestroy {
   private sender : Gamer;
   private receiver : Gamer;
 
-  friends = [
-    {pseudo: "toto", avatar:"default-img.jpg"},
-    {pseudo: "titi", avatar:"default-img.jpg"}
-  ];
-
   constructor(public webSocketService: WebSocketService, private gamerService: GamerService) { }
   
   ngOnInit(): void {
