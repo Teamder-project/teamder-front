@@ -27,11 +27,9 @@ export class ChatComponent implements OnInit {
   }
 
   connect = () => {
-    this.ws = new WebSocket("ws://localhost:8080/chat/1");
+    this.ws = new WebSocket("ws://localhost:8080/chat/" + localStorage.getItem("id"));
 
-    this.ws.onmessage = function (event) {
-      console.log(event)
-    };
+    this.ws.onmessage = this.receive.bind(event);
   }
 
   send = () => {
@@ -39,10 +37,14 @@ export class ChatComponent implements OnInit {
     let json = JSON.stringify({
 
       "message": content,
-      "sender": { "id": 1 },
-      "reveiver": { "id": 2 }
+      "sender": { "id": localStorage.getItem("id") },
+      "receiver": { "id": 2 }
     });
 
     this.ws.send(json);
+  }
+
+  receive = (event) => {
+    console.log(JSON.parse(event.data).message)
   }
 }
