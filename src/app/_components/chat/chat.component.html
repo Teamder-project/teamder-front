@@ -8,8 +8,8 @@
             <div class="side-panel">
                 <h4>Liste d'amis</h4>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item" *ngFor="let chatMessage of webSocketService.chatMessages">
-                      <div class="receiver-button"><button><span>{{chatMessage.receiver.username}}</span> </button> </div>
+                    <li class="list-group-item" *ngFor="let friend of friends">
+                      <div class="receiver-button"><button><span>{{friend.pseudo}}</span> </button> </div>
                         <hr>
                     </li>
                 </ul>
@@ -18,18 +18,11 @@
 
             <div class="card">
                 <ul class="list-group list-group-flush">
-
-                    <li class="list-group-item" *ngFor="let chatMessage of webSocketService.chatMessages">
-
-                        <div class="sender"> <strong>{{chatMessage.sender.username}} : </strong>
-                        <span>&nbsp; {{chatMessage.message}}</span>
-                        </div>  
-
-                    </li>
+                    
                 </ul>
             </div>
         </div>
-        <form (ngSubmit)="sendMessage(sendForm)" #sendForm="ngForm">
+        <form (ngSubmit)="send()">
             <div class="chat-send row">
 
                 <div class="col-8">
