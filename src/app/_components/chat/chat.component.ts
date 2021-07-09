@@ -11,7 +11,6 @@ import { GamerService } from 'src/app/services/gamer.service';
 })
 export class ChatComponent implements OnInit {
 
-  private sender: Gamer;
   private receiver: Gamer;
   private ws: WebSocket;
 
@@ -45,6 +44,7 @@ export class ChatComponent implements OnInit {
   }
 
   receive = (event) => {
-    console.log(JSON.parse(event.data).message)
+    let friendchat: FriendChat = JSON.parse(event.data);
+    console.log(friendchat.message)
   }
 }
