@@ -29,6 +29,8 @@ export class SignInComponent implements OnInit {
   }
 
   displayAvatar = () => {
+    document.getElementById("avatar-btn").classList.add("hide");
+    document.getElementById("return").classList.remove("hide");
     let btn = document.getElementById("div-img");
     btn.classList.toggle("hide");
     let avatarChoisi = document.getElementById("avatar-choisi");
@@ -36,8 +38,15 @@ export class SignInComponent implements OnInit {
     let form = document.getElementById("form");
     form.classList.add("hide");
   }
-
+  return = () => {
+    document.getElementById("return").classList.add("hide")
+    document.getElementById("avatar-btn").classList.remove("hide");
+    document.getElementById("form").classList.remove("hide");
+    document.getElementById("div-img").classList.add("hide");
+  }
   chooseAvatar = (value : string) => {
+    document.getElementById("return").classList.add("hide");
+    document.getElementById("avatar-btn").classList.remove("hide");
     let input = document.getElementById("hidden");
     input.setAttribute("value", value);
     let btn = document.getElementById("div-img");
