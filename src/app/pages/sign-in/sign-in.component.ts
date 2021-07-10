@@ -39,6 +39,7 @@ export class SignInComponent implements OnInit {
     form.classList.add("hide");
   }
   return = () => {
+    document.getElementById("hidden").setAttribute("value", "default");
     document.getElementById("return").classList.add("hide")
     document.getElementById("avatar-btn").classList.remove("hide");
     document.getElementById("form").classList.remove("hide");
