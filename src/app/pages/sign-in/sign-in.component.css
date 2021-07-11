@@ -4,8 +4,8 @@
         height:75px;
     }
     form {
-        margin-top:60px;
-        padding:15px;   
+        margin-top:30px;
+        padding: 30px;   
     }
 }
 @media (min-width: 600px) {
@@ -14,8 +14,8 @@
         height:100px;
     }
     form {
-        margin-top:20px;
-        padding:30px;   
+        margin-top:30px;
+        padding:25px;   
     }
 }
 #back-color {
@@ -28,7 +28,7 @@
     background-color: #171717;
     background-repeat: no-repeat;
     background-size: cover; 
-    position: fixed;
+    position: absolute;
     height: auto;
     left: 0; 
     /* Préserve le ratio de l'image */
@@ -43,13 +43,12 @@
 
 #error p {
     text-align:center;
-    color:royalblue;
+    color:white;
 }
 .main{
     margin: 0 auto;
-    width:30%;
-    padding:10px;
-    min-width:350px;    
+    width:10%;
+    min-width:360px;    
 }
 
 input {
@@ -64,8 +63,21 @@ form{
     border-radius: 12%;
 }
 
-.submit, .avatar-btn, .return{
+.avatar-btn, .return{
     width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #171717;
+    color: white;
+    border: none;
+    padding: 2%;
+    border-radius: 1rem;
+}
+
+.submit {
+    width: 80%;
+    margin: auto;
     display: flex;
     justify-content: center;
     text-align: center;
