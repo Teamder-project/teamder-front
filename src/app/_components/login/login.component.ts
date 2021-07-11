@@ -73,7 +73,9 @@ export class LoginComponent implements OnInit {
 
   hideOnClick(event:any) {
     if (!document.getElementById("login-content").contains(event.target)) {
-      document.getElementById("login-content").style.display = "none";
+      if(this.label == "déconnexion") {
+        document.getElementById("login-content").style.display = "none";
+      }
     }
 }
 }

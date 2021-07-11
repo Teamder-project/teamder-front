@@ -1,3 +1,23 @@
+@media (max-width: 600px) {
+    #avatar-choisi {
+        width:75px;
+        height:75px;
+    }
+    form {
+        margin-top:60px;
+        padding:15px;   
+    }
+}
+@media (min-width: 600px) {
+    #avatar-choisi {
+        width:100px;
+        height:100px;
+    }
+    form {
+        margin-top:20px;
+        padding:30px;   
+    }
+}
 #back-color {
     background-color: #171717;
     color: white;
@@ -22,27 +42,29 @@
 }
 
 #error p {
-    color:red;
+    text-align:center;
+    color:royalblue;
 }
 .main{
-    display: flex;
-    justify-content: center;
-    padding: 2rem;
+    margin: 0 auto;
+    width:30%;
+    padding:10px;
+    min-width:350px;    
 }
 
 input {
-    width: 100%;
+    width:100%;
+    margin-bottom:10px;
 }
 
 form{
     display: flex;
     flex-direction: column;
-    padding: 3rem;
     background: linear-gradient(rgba(223, 78, 59, 0.493) 20%, rgb(10, 40, 92) 100%);
     border-radius: 12%;
 }
 
-.submit{
+.submit, .avatar-btn, .return{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -67,9 +89,9 @@ label {
     margin-bottom: 25px;
 }
 
-#avatar-btn {
+#avatar-btn, #return {
     width:40%;
-    margin-bottom:30px;
+    align-self:center;
 }
 
 #div-img img {
@@ -89,7 +111,11 @@ label {
 #div-img button:hover {
     transform: scale(1.2);
 }
-#avatar-choisi {
-    width:100px;
-    margin:0 auto;
+.flex {
+    display:flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+i {
+    margin-left:5px;
 }
