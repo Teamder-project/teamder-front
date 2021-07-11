@@ -1,4 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Open+Sans&display=swap');
+
+/* 3 Headers différents selon les supports */
+
+/* Taille du logo */
+header img {
+    width: 50px;
+}
+
+
 /* ==========================================================================
     Responsive
 ========================================================================== */
@@ -6,38 +15,27 @@
 /* PC */
 
 @media (min-width: 991px) {
-    header img {
-        width: 50px;
-    }
+
     nav {
-        display: flex;
-        align-items: center;
         height: 70px;
     }
-    .logo {
-        margin-left: 20px;
+
+    .header-left {
+        float: left;
+        margin-left: 1%;
     }
-    .menu {
-        margin-left: 3%;
+
+    .header-right {
+        float: right;
+        margin-right: 3%;
     }
-    .more {
-        margin-left: 3%;
-    }
-    .login-dropdown {
-        margin-left: 40%;
-    }
+
     .login-content {
         display: none;
         position: absolute;
         z-index: 1;
     }
-    .signup {
-        margin-left: 5%;
-    }
-
-    .chat-list {
-        margin-left: 5%;
-    }
+    
     i {
         color: white;
     }
@@ -48,13 +46,14 @@
         font-size: 20px;
         font-family: 'Josefin Sans', sans-serif;
         text-transform: capitalize;
-        align-items: center;
+        
     }
     header a {
         text-decoration: none;
         color: white;
         transition: all 0.2s ease-out;
         text-shadow: 3px 3px 5px rgb(0, 0, 0);
+        padding: 0 10px;
     }
     nav a:hover {
         color: red;
@@ -92,45 +91,42 @@
         text-decoration: none;
         display: block;
     }
+
+    /* Ne pas afficher les autres Header */
+
     .containermobile {
         display: none;
     }
+   
 }
 
 /* Tablette */
 
 @media all and (min-width: 767px) and (max-width: 991px) {
-    header img {
-        width: 50px;
-    }
+    
     nav {
-        display: flex;
-        align-items: center;
+        height: 70px;
     }
+
     .logo {
-        margin-left: 5%;
+        text-align: center;
     }
-    .menu {
-        margin-left: 5%;
+
+    .header-left {
+        float: left;
+        margin-left: 3%;
     }
-    .more {
-        margin-left: 5%;
-    }
-    .login-dropdown {
-        margin-left: 20%;
+
+    .header-right {
+        float: right;
+        margin-right: 3%;
     }
     .login-content {
         display: none;
         position: absolute;
         z-index: 1;
     }
-    .signup {
-        margin-left: 5%;
-    }
     
-    .chat-list {
-        margin-left: 5%;
-    }
     i {
         color: white;
     }
@@ -187,9 +183,11 @@
         text-decoration: none;
         display: block;
     }
+
     .containermobile {
         display: none;
     }
+
 }
 
 /* Mobile */
@@ -198,9 +196,7 @@
     header {
         background-color: #171717;
     }
-    header img {
-        width: 50px;
-    }
+    
     nav {
         display: flex;
         align-items: center;
@@ -265,5 +261,9 @@
    
     .show {
         display: block;
+    }
+
+    .containerpc {
+        display: none;
     }
 }
