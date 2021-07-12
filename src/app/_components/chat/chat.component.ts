@@ -47,4 +47,7 @@ export class ChatComponent implements OnInit {
     let friendchat: FriendChat = JSON.parse(event.data);
     console.log(friendchat.message)
   }
+  clickFriends = (event) => {
+    
+  }
 }
