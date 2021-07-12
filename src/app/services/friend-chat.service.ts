@@ -1,16 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Gamer } from '../models/Gamer';
+import { FriendChat } from '../models/FriendChat';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
-export class FriendService {
+export class FriendChatService {
 
   constructor(private httpClient : HttpClient) { }
-  getAll(id: number): Observable<Gamer[]> {
-    return this.httpClient.get<Gamer[]>(`${environment.apiBaseUrl}/friends/gamer/${id}`)
+  create(friendChat: FriendChat): Observable<FriendChat> {
+    return this.httpClient.post<FriendChat>(`${environment.apiBaseUrl}/friend-chats`, friendChat);
   }
 }

@@ -1,7 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+
 import { FriendChat } from 'src/app/models/FriendChat';
 import { Gamer } from 'src/app/models/Gamer';
+import { FriendChatService } from 'src/app/services/friend-chat.service';
+import { FriendService } from 'src/app/services/friend.service';
 import { GamerService } from 'src/app/services/gamer.service';
 
 @Component({
@@ -10,19 +12,20 @@ import { GamerService } from 'src/app/services/gamer.service';
   styleUrls: ['./chat.component.css']
 })
 export class ChatComponent implements OnInit {
-
+  private idFriend: number;
   private receiver: Gamer;
   private ws: WebSocket;
 
-  friends = [
-    { pseudo: "toto", avatar: "default-img.jpg" },
-    { pseudo: "titi", avatar: "default-img.jpg" }
-  ];
+  friends : Gamer[];
 
-  constructor(private gamerService: GamerService) { }
+  constructor(private gamerService: GamerService, private friendService : FriendService, private friendChatService: FriendChatService) { }
 
   ngOnInit(): void {
     this.connect();
+    this.friendService.getAll(Number(localStorage.getItem("id"))).subscribe(data => {
+      this.friends = data;
+      console.log(this.friends);
+    });  
   }
 
   connect = () => {
@@ -33,13 +36,16 @@ export class ChatComponent implements OnInit {
 
   send = () => {
     let content = document.getElementById("input-message")['value'];
-    let json = JSON.stringify({
-
+    let message : any = {
       "message": content,
       "sender": { "id": localStorage.getItem("id") },
-      "receiver": { "id": 2 }
-    });
-
+      "receiver": { "id": this.idFriend }
+    }
+    this.friendChatService.create(message).subscribe(data=>{
+      message = data;
+    })
+    // envoie le message à la websocket en Json
+    let json = JSON.stringify(message);
     this.ws.send(json);
   }
 
@@ -47,7 +53,7 @@ export class ChatComponent implements OnInit {
     let friendchat: FriendChat = JSON.parse(event.data);
     console.log(friendchat.message)
   }
-  clickFriends = (event) => {
-    
+  clickFriends = (id) => {
+   this.idFriend= id;
   }
 }
