@@ -13,6 +13,7 @@ import { RocketLeagueComponent } from './pages/rocket-league/rocket-league.compo
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { SwipeComponent } from './pages/swipe/swipe.component';
 import { ChatComponent } from './_components/chat/chat.component';
+import { AuthComponent } from './pages/auth/auth.component';
 
 const routes: Routes = [
   { path : '' , redirectTo : '/home' , pathMatch : 'full'},
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'new-profile', component : CreateProfileComponent},
   { path: 'edit-profile/:id', component : EditProfileComponent},
   { path: 'chat', component : ChatComponent},
+  { path: 'auth', component : AuthComponent},
   { path: 'error404', component : Error404Component},
   { path : '' , redirectTo : '/home' , pathMatch : 'full'},
   { path: '**', redirectTo: '/error404' }

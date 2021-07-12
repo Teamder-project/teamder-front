@@ -1,0 +1,21 @@
+<div class="block">
+
+    <div class="padding">
+
+        <div class="email">
+            <input color="light" type="mail" placeholder="Adresse Mail">
+        </div>
+        <input color="light" type="password" placeholder="Mot de passe">
+
+        <button id="forget" color="light" slot="end" fill="clear">Mot de passe oublié ?</button>
+
+        <div class="auth">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <button class="submit" type="submit" color="light" expand="block" shape="round">Connexion</button>
+                <br>
+                <button routerLink="/sign-in" color="dark" expand="block" shape="round">Inscription</button>
+            </form>
+        </div>
+    </div>
+
+</div>

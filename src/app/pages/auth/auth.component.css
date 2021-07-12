@@ -1,0 +1,60 @@
+.block {
+    background: linear-gradient(#171717, #0a285c);
+    padding: 3.125rem 0;
+        position: fixed;
+        /* Préserve le ratio de l'image */
+        min-width: 100%;
+        min-height: 100%;
+}
+
+img {  
+    width: 70px;
+}
+
+
+.padding {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    color: white;
+}
+
+.email {
+    margin-top: 20%;
+}
+
+input {
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: transparent;
+    color: white;
+    border: none;
+    text-align: center;
+    margin-bottom: 10%;
+    font-size: 18px;
+    border-radius: 25px;
+}
+
+#forget {
+    font-size: 10px;
+    float: right;
+    margin-right: 4%;
+    margin-top: 0;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-style: italic;
+}
+
+.auth {
+    margin-top: 15%;
+    display: inline-block;
+}
+
+input:focus::placeholder {
+    color: transparent;
+  }  
+
+form {
+    text-align: center;
+}
+
