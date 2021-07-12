@@ -107,7 +107,7 @@ export class SwipeComponent implements OnInit {
     document.getElementById("avatar").setAttribute("src", "../../../assets/avatars/"+this.users[0].gamer.avatar+".jpg");
 
     const swiper = document.querySelector('.swiper-container')['swiper'];
-    setTimeout(function () { swiper.slideNext(800) }, 600);
+    setTimeout(function () { swiper.slidePrev(800) }, 600);
   }
 
   getProfiles = () => {
@@ -117,7 +117,6 @@ export class SwipeComponent implements OnInit {
         data.forEach(element => {
           this.users.push(element);
         })
-        console.log(this.users);
       })
     });
 

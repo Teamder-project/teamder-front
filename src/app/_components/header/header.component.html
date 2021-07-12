@@ -45,7 +45,7 @@
         </div>
 
         <div class="chat-list" *ngIf="connected">
-            <a routerLink="/chat">Conversation</a>
+            <a routerLink="/chat">Conversation {{notification}}</a>
         </div>
 
         <div id="signup" class="signup" *ngIf="!connected">

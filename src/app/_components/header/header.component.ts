@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RoutesRecognized } from '@angular/router';
+import { Gamer } from 'src/app/models/Gamer';
+import { EventEmitterMatchService } from 'src/app/services/event-emitter-match.service';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +10,10 @@ import { Router, RoutesRecognized } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   
+  notification: string = "";
   connected: boolean = false;
   
-  constructor(private router : Router) {
+  constructor(private router : Router, private eventEmitterMatchService: EventEmitterMatchService) {
 
     document.addEventListener('click', this.hideDropdownMobileOnOutsideClick.bind(this));
 
@@ -30,6 +33,12 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     if (localStorage.getItem("id") != null) {
       this.connected = true;
+    }
+
+    if (this.eventEmitterMatchService.subsVar==undefined) {    
+      this.eventEmitterMatchService.subsVar = this.eventEmitterMatchService.invokeHeaderFunction.subscribe((gamer: Gamer) => {
+        this.showNotification.bind(gamer);
+      });
     }
   }
 
@@ -55,7 +64,9 @@ export class HeaderComponent implements OnInit {
     document.getElementById("dropdown-content").style.display = "none";
   }
 
- 
+  showNotification(gamer: Gamer): void{
+    this.notification = "1"
+  }
 }
 
 

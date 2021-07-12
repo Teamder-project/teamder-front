@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, HammerGestureConfig, HammerModule, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,7 +14,6 @@ import { CounterStrikeComponent } from './pages/counter-strike/counter-strike.co
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { SwipeComponent } from './pages/swipe/swipe.component';
 import { NgxUsefulSwiperModule} from 'ngx-useful-swiper';
-import { ChatListComponent } from './pages/chat-list/chat-list.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { FriendsComponent } from './_components/friends/friends.component';
 import { LoginComponent } from './_components/login/login.component';
@@ -25,6 +24,7 @@ import { IndexComponent } from './pages/index/index.component';
 import { CreateProfileComponent } from './pages/create-profile/create-profile.component';
 import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
 import { ChatComponent } from './_components/chat/chat.component';
+import { EventEmitterMatchService } from './services/event-emitter-match.service';
 
 
 @NgModule({
@@ -56,14 +56,10 @@ import { ChatComponent } from './_components/chat/chat.component';
     FormsModule,
     ReactiveFormsModule,
     NgxUsefulSwiperModule,
-    HammerModule,
     HttpClientModule
   ],
   providers: [
-    {
-    provide: HAMMER_GESTURE_CONFIG,
-    useClass: HammerGestureConfig
-    }
+    EventEmitterMatchService
   ],
   bootstrap: [AppComponent]
 })
