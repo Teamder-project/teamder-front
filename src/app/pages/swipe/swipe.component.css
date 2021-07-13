@@ -4,9 +4,23 @@
   #fullscreen:fullscreen {
     background-color: transparent;
   }
+
+  .rl {
+    background-image: url("../../../assets/img/rocket-page.jpg");
+  }
+  .lol {
+    background-image: url("../../../assets/img/league-page.jpg");
+  }
+  .apex {
+    background-image: url("../../../assets/img/apex-page.jpg");
+  }
+  .csgo {
+    background-image: url("../../../assets/img/counter-page.jpg");
+  }
+
 .full {
   
-  background: url("../../../assets/img/rocket-page.jpg") center;
+  background-position: center;
   position: fixed; 
    /* Préserve le ratio de l'image */
    min-width: 100%;
@@ -251,9 +265,21 @@
   #fullscreen:fullscreen {
     background-color: transparent;
   }
+  .rl {
+    background-image: url("../../../assets/img/rocket-page.jpg");
+  }
+  .lol {
+    background-image: url("../../../assets/img/league-page.jpg");
+  }
+  .apex {
+    background-image: url("../../../assets/img/apex-page.jpg");
+  }
+  .csgo {
+    background-image: url("../../../assets/img/counter-page.jpg");
+  }
   .full {
   
-  background: url("../../../assets/img/league-page.jpg") center;
+  background-position: center;
   position: fixed; 
    /* Préserve le ratio de l'image */
    min-width: 100vw;
@@ -495,9 +521,21 @@
   #fullscreen:fullscreen {
     background-color: transparent;
   }
+  .rl {
+    background-image: url("../../../assets/img/rocket-page.jpg");
+  }
+  .lol {
+    background-image: url("../../../assets/img/league-page.jpg");
+  }
+  .apex {
+    background-image: url("../../../assets/img/Apex-mobile-page.jpg");
+  }
+  .csgo {
+    background-image: url("../../../assets/img/counter-page.jpg");
+  }
   .full {
   
-    background: url("../../../assets/img/background-mobile/league-background.jpg") center;
+    background-position: center;
     position: fixed; 
    
      /* Préserve le ratio de l'image */

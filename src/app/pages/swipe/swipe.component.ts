@@ -3,6 +3,7 @@ import { ActivatedRoute} from '@angular/router';
 import { GameProfile } from 'src/app/models/GameProfile';
 import { Swipe } from 'src/app/models/Swipe';
 import { GameProfileService } from 'src/app/services/game-profile.service';
+import { GameService } from 'src/app/services/game.service';
 import Swiper from 'swiper';
 
 @Component({
@@ -12,6 +13,8 @@ import Swiper from 'swiper';
 })
 export class SwipeComponent implements OnInit {
   
+  alias: string;
+  
   swiper: GameProfile;
 
   users: GameProfile[] = [];
@@ -20,7 +23,7 @@ export class SwipeComponent implements OnInit {
 
   dislikes = [];
 
-  constructor(private service: GameProfileService, private route: ActivatedRoute) {
+  constructor(private gameService: GameService, private service: GameProfileService, private route: ActivatedRoute) {
   }
 
 
@@ -33,8 +36,8 @@ export class SwipeComponent implements OnInit {
         this.swiper = profileSwiper;
       })
     })
-
-    this.getProfiles()
+    this.getBackground();
+    this.getProfiles();
 
     const swiper = new Swiper('.swiper-container', {
       //permet de mettre en place l'effet flip de la carte. Pour modifier la vitesse à laquelle elle se tourne, jouer avec les valeurs du speed.
@@ -63,6 +66,14 @@ export class SwipeComponent implements OnInit {
 
   }
 
+  getBackground = () => {
+    this.route.paramMap.subscribe(url => {
+      let id: number = Number(url.get("id"));
+      this.service.getProfileById(id).subscribe(data => {
+        this.alias = data.game.alias;
+      })
+    })
+  }
   trigerFullScreen = () => {
 
     let fullscreen = document.querySelector("#fullscreen");

@@ -7,6 +7,12 @@ header img {
     width: 50px;
 }
 
+.avatar {
+    border-radius: 50%;
+}
+.conversation {
+    padding-right:10px;
+}
 
 /* ==========================================================================
     Responsive
