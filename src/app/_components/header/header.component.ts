@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RoutesRecognized } from '@angular/router';
+import { GamerService } from 'src/app/services/gamer.service';
 
 @Component({
   selector: 'app-header',
@@ -9,8 +10,9 @@ import { Router, RoutesRecognized } from '@angular/router';
 export class HeaderComponent implements OnInit {
   
   connected: boolean = false;
-  
-  constructor(private router : Router) {
+  avatar : string;
+
+  constructor(private router : Router, private gamerService: GamerService) {
 
     document.addEventListener('click', this.hideDropdownMobileOnOutsideClick.bind(this));
 
@@ -18,6 +20,9 @@ export class HeaderComponent implements OnInit {
       if (event instanceof RoutesRecognized) {
         if (localStorage.getItem("id") != null) {
           this.connected = true;
+          this.gamerService.getById(localStorage.getItem("id")).subscribe(data => {
+            this.avatar = data.avatar;
+          })
         }
         else{
           this.connected = false;
