@@ -77,5 +77,5 @@ export class LoginComponent implements OnInit {
         document.getElementById("login-content").style.display = "none";
       }
     }
-}
+  }
 }
