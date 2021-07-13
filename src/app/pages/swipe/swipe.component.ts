@@ -88,6 +88,8 @@ export class SwipeComponent implements OnInit {
 
     document.getElementById("avatar").setAttribute("src", "../../../assets/avatars/"+this.users[0].gamer.avatar+".jpg");
     document.getElementById("nom-prenom").innerText = this.users[0].nickname_game;
+    document.getElementById("objectif").innerText = this.users[0].goals;
+    document.getElementById("description").innerText = this.users[0].description;
 
     const swiper = document.querySelector('.swiper-container')['swiper'];
     setTimeout(function () { swiper.slideNext(800) }, 600);
@@ -105,6 +107,8 @@ export class SwipeComponent implements OnInit {
 
     document.getElementById("nom-prenom").innerText = this.users[0].nickname_game;
     document.getElementById("avatar").setAttribute("src", "../../../assets/avatars/"+this.users[0].gamer.avatar+".jpg");
+    document.getElementById("objectif").innerText = this.users[0].goals;
+    document.getElementById("description").innerText = this.users[0].description;
 
     const swiper = document.querySelector('.swiper-container')['swiper'];
     setTimeout(function () { swiper.slidePrev(800) }, 600);
