@@ -18,7 +18,7 @@
 
 
             <div class="card">
-                <ul class="list-group list-group-flush" *ngFor="let message of messages">
+                <ul class="list-group list-group-flush display-none" id="{{friend.id}}" attr.data-username="{{friend.username}}" *ngFor="let friend of friends">
                     
                 </ul>
             </div>

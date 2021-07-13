@@ -25,6 +25,12 @@ export class Gamer {
     public set id(value: number) {
         this._id = value;
     }
+    public get username(): string {
+        return this._username;
+    }
+    public set username(value: string) {
+        this._username = value;
+    }
     public get avatar(): string {
         return this._avatar;
     }

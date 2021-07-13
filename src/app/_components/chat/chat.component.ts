@@ -13,7 +13,7 @@ import { GamerService } from 'src/app/services/gamer.service';
 })
 export class ChatComponent implements OnInit {
   private idFriend: number;
-  private receiver: Gamer;
+  private gamer: Gamer;
   private ws: WebSocket;
 
   friends : Gamer[];
@@ -22,38 +22,105 @@ export class ChatComponent implements OnInit {
 
   ngOnInit(): void {
     this.connect();
-    this.friendService.getAll(Number(localStorage.getItem("id"))).subscribe(data => {
+    // Stock le profil du l'utilisateur connecté
+    this.gamerService.getById(localStorage.getItem("id")).subscribe(data => {
+      this.gamer = data;
+    })
+    // Récupère les amis et met le premier ami de la liste comme ami selectionné
+    this.friendService.getById(localStorage.getItem("id")).subscribe(data => {
       this.friends = data;
-      console.log(this.friends);
-    });  
+      this.idFriend = this.friends[0].id;
+      // Déclare les variables pour être appelées dans le setTimeout
+      let idFriend = this.idFriend;
+      let scrollBottom = this.scrollBottom;
+      setTimeout(function(){
+        document.getElementById(String(idFriend)).classList.remove("display-none");
+        scrollBottom();
+      }, 50);
+      // Réupère et affiche les messages pour chaque amis
+      this.friendChatService.getMessagesByGamer(localStorage.getItem("id")).subscribe(messages => {
+        this.scrollBottom();
+        messages.forEach(message => {
+          this.showMessage(message);
+        })
+      })
+    });
   }
 
+  /**
+   * Appelé par event click
+   * Change l'utilisateur selectionné
+   * @param id
+   */
+  clickFriends = (id) => {
+    document.getElementById(String(this.idFriend)).classList.add("display-none");
+    this.idFriend= id;
+    document.getElementById(String(this.idFriend)).classList.remove("display-none");
+    this.scrollBottom();
+  }
+
+  /**
+   * Scroll en bas des messages
+   */
+  scrollBottom = () => {
+    document.getElementById(String(this.idFriend)).scrollTop = document.getElementById(String(this.idFriend)).scrollHeight - document.getElementById(String(this.idFriend)).clientHeight;
+  }
+
+  /**
+   * Initialisation WebSocket
+   */
   connect = () => {
     this.ws = new WebSocket("ws://localhost:8080/chat/" + localStorage.getItem("id"));
-
     this.ws.onmessage = this.receive.bind(event);
   }
 
+  /**
+   * Sauvegarde le message en BDD et l'envoie à la WebSocket
+   */
   send = () => {
-    let content = document.getElementById("input-message")['value'];
-    let message : any = {
-      "message": content,
-      "sender": { "id": localStorage.getItem("id") },
-      "receiver": { "id": this.idFriend }
+    if(document.getElementById("input-message")['value'] != "") {
+      let content = document.getElementById("input-message")['value'];
+      document.getElementById("input-message")['value'] = "";
+      let message : any = {
+        "message": content,
+        "sender": { "id": localStorage.getItem("id") },
+        "receiver": { "id": this.idFriend }
+      }
+      this.friendChatService.create(message).subscribe(data=>{
+        message = data;
+        // envoie le message à la websocket en Json
+        let json = JSON.stringify(message);
+        this.ws.send(json);
+      })
     }
-    this.friendChatService.create(message).subscribe(data=>{
-      message = data;
-    })
-    // envoie le message à la websocket en Json
-    let json = JSON.stringify(message);
-    this.ws.send(json);
+    else{
+      alert("rentre un message")
+    }
   }
 
+  /**
+   * Appelé par la WebSocket lorsqu'un message est reçu, converti l'objet et l'affiche
+   * @param event objet reçu de la WebSocket
+   */
   receive = (event) => {
-    let friendchat: FriendChat = JSON.parse(event.data);
-    console.log(friendchat.message)
+    this.showMessage(JSON.parse(event.data));
   }
-  clickFriends = (id) => {
-   this.idFriend= id;
+
+  /**
+   * Affiche le message
+   * @param message message a afficher
+   */
+  showMessage = (message: FriendChat) => {
+    if(message.sender.id == Number(localStorage.getItem("id"))){
+      document.getElementById(String(message.receiver.id)).innerHTML += 
+      // Remplacer par une balise contenant le message envoyé par l'utilisateur connecté
+      this.gamer.username + ": " + message.message + "<br/>";
+    }
+    else{
+      document.getElementById(String(message.sender.id)).innerHTML += 
+        // Remplacer par une balise contenant le message envoyé par l'ami
+        document.getElementById(String(message.sender.id)).getAttribute('data-username') + ": " + message.message + "<br/>";
+    }
+    this.scrollBottom();
   }
 }

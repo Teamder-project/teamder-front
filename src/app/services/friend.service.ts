@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 export class FriendService {
 
   constructor(private httpClient : HttpClient) { }
-  getAll(id: number): Observable<Gamer[]> {
+  getById(id: string): Observable<Gamer[]> {
     return this.httpClient.get<Gamer[]>(`${environment.apiBaseUrl}/friends/gamer/${id}`)
   }
 }
