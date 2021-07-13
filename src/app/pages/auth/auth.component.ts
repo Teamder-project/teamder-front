@@ -11,7 +11,6 @@ import { GamerService } from 'src/app/services/gamer.service';
 export class AuthComponent implements OnInit {
 
   label: string = "connexion";
-
   loginForm: FormGroup;
 
   constructor(private fb: FormBuilder, private service: GamerService, private router: Router) {

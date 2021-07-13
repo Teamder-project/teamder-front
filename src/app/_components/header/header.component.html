@@ -14,7 +14,7 @@
             <div id="dropdown-content-mobile" class="dropdown-content">
                 <a routerLink="/about-us" (click)="hideDropdownMobile()">A Propos</a>
                 <a routerLink="/auth" (click)="hideDropdownMobile()">Connexion</a>
-                <a routerLink="/chat" (click)="hideDropdownMobile()">Conversation</a>
+                <a *ngIf="connected" routerLink="/chat" (click)="hideDropdownMobile()">Conversation</a>
             </div>
         </div>
     </div>
