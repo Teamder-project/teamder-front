@@ -18,16 +18,16 @@
 
 
             <div class="card">
-                <ul class="list-group list-group-flush display-none" id="{{friend.id}}" attr.data-username="{{friend.username}}" *ngFor="let friend of friends">
+                <div class="list-group list-group-flush display-none" id="{{friend.id}}" attr.data-username="{{friend.username}}" *ngFor="let friend of friends">
                     
-                </ul>
+                </div>
             </div>
         </div>
         <form (ngSubmit)="send()">
             <div class="chat-send row">
 
                 <div class="col-8">
-                    <input type="text" class="form-control" name="message" id="input-message" ngModel>
+                    <textarea type="text" class="form-control" name="message" id="input-message" ngModel></textarea>
                 </div>
                 <div class="col-2">
                     <button type="submit" class="btn btn-light">Envoyer</button>

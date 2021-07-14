@@ -111,15 +111,16 @@ export class ChatComponent implements OnInit {
    * @param message message a afficher
    */
   showMessage = (message: FriendChat) => {
+    
     if(message.sender.id == Number(localStorage.getItem("id"))){
       document.getElementById(String(message.receiver.id)).innerHTML += 
       // Remplacer par une balise contenant le message envoyé par l'utilisateur connecté
-      this.gamer.username + ": " + message.message + "<br/>";
+      "<p class=envoyeur style=\"align-self: flex-end; text-align:right; background-color:white; margin-right:20px; font-size:20px; opacity:0.2; padding:10px; color:black; width:40%;\">"+ message.message + "</p>";
     }
     else{
       document.getElementById(String(message.sender.id)).innerHTML += 
         // Remplacer par une balise contenant le message envoyé par l'ami
-        document.getElementById(String(message.sender.id)).getAttribute('data-username') + ": " + message.message + "<br/>";
+        "<p class=receveur style=\" background-color:white; opacity:0.2; margin-left:20px; font-size:20px; color:black; width:40%; padding:10px;\">"+ message.message + "</p>"
     }
     this.scrollBottom();
   }

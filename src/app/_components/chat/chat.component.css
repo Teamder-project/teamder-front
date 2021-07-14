@@ -37,21 +37,20 @@ input {
     height: 100%;
 }
 
+.envoyeur {
+    text-align:right;
+}
+
 h4 {
     text-align: center;
     color: white;
     margin-top: 8%;
+    margin-bottom:8%;   
 }
 
 .chat-send {
     float: right;
     min-width: 50%;
-}
-
-hr {
-    color:white;
-    width:80%;
-    margin:0 auto;
 }
 
 .sender {
@@ -65,7 +64,7 @@ hr {
 
 .list-group-flush::-webkit-scrollbar {
     width:10px;
-    border-radius: 10px;
+    border-radius: 10px;    
     background-color:black;
 }
 .list-group-flush::-webkit-scrollbar-thumb {
@@ -75,6 +74,10 @@ hr {
 .list-group-flush>.list-group-item{
     background-color: transparent;
     color: white;
+    border:none;
+}
+.list-group-item {
+    padding:0px 16px;
 }
 
 .receiver-button button {
