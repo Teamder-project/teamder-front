@@ -51,12 +51,10 @@
     .auth {
         margin-top: 15%;
         display: inline-block;
+        text-align: center;
     }
     input:focus::placeholder {
         color: transparent;
-    }
-    form {
-        text-align: center;
     }
     .submit {
         width: 50%;
