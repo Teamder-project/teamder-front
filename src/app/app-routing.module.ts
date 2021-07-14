@@ -14,6 +14,7 @@ import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { SwipeComponent } from './pages/swipe/swipe.component';
 import { ChatComponent } from './_components/chat/chat.component';
 import { AuthComponent } from './pages/auth/auth.component';
+import { EditAccountComponent } from './pages/edit-account/edit-account.component';
 
 const routes: Routes = [
   { path : '' , redirectTo : '/home' , pathMatch : 'full'},
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'edit-profile/:id', component : EditProfileComponent},
   { path: 'chat', component : ChatComponent},
   { path: 'auth', component : AuthComponent},
+  { path: 'edit-account/:id', component: EditAccountComponent},
   { path: 'error404', component : Error404Component},
   { path : '' , redirectTo : '/home' , pathMatch : 'full'},
   { path: '**', redirectTo: '/error404' }

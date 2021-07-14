@@ -25,7 +25,28 @@ export class Gamer {
     public set id(value: number) {
         this._id = value;
     }
+    public get username(): string {
+        return this._username;
+    }
+    public set username(value: string) {
+        this._username = value;
+    }
     public get avatar(): string {
         return this._avatar;
+    }
+    public get password(): string {
+        return this._password;
+    }
+    public get email(): string {
+        return this._email;
+    }
+    public get birthday(): string {
+        return this._birthday;
+    }
+    public get gender(): string {
+        return this._gender;
+    }
+    public get country(): string {
+        return this._country;
     }
 }

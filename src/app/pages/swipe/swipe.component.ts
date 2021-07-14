@@ -97,7 +97,7 @@ export class SwipeComponent implements OnInit {
       }
     });
 
-    document.getElementById("avatar").setAttribute("src", "../../../assets/avatars/"+this.users[0].gamer.avatar+".jpg");
+    document.getElementById("avatar-card").setAttribute("src", "../../../assets/avatars/"+this.users[0].gamer.avatar+".jpg");
     document.getElementById("nom-prenom").innerText = this.users[0].nickname_game;
     document.getElementById("objectif").innerText = this.users[0].goals;
     document.getElementById("description").innerText = this.users[0].description;
@@ -117,7 +117,7 @@ export class SwipeComponent implements OnInit {
     });
 
     document.getElementById("nom-prenom").innerText = this.users[0].nickname_game;
-    document.getElementById("avatar").setAttribute("src", "../../../assets/avatars/"+this.users[0].gamer.avatar+".jpg");
+    document.getElementById("avatar-card").setAttribute("src", "../../../assets/avatars/"+this.users[0].gamer.avatar+".jpg");
     document.getElementById("objectif").innerText = this.users[0].goals;
     document.getElementById("description").innerText = this.users[0].description;
 
@@ -139,7 +139,7 @@ export class SwipeComponent implements OnInit {
     setTimeout(() => {
       document.getElementById("objectif").innerText = "Mon objectif : "+this.users[0].goals;
       document.getElementById("description").innerText = this.users[0].description;
-      document.getElementById("avatar").setAttribute("src", "../../../assets/avatars/"+this.users[0].gamer.avatar+".jpg");
+      document.getElementById("avatar-card").setAttribute("src", "../../../assets/avatars/"+this.users[0].gamer.avatar+".jpg");
       document.getElementById("nom-prenom").innerText = this.users[0].nickname_game;
     },
       500);

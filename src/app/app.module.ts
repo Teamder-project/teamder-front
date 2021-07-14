@@ -25,6 +25,7 @@ import { CreateProfileComponent } from './pages/create-profile/create-profile.co
 import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
 import { ChatComponent } from './_components/chat/chat.component';
 import { AuthComponent } from './pages/auth/auth.component';
+import { EditAccountComponent } from './pages/edit-account/edit-account.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { AuthComponent } from './pages/auth/auth.component';
     CreateProfileComponent,
     EditProfileComponent,
     ChatComponent,
-    AuthComponent
+    AuthComponent,
+    EditAccountComponent
   ],
   imports: [
     BrowserModule,

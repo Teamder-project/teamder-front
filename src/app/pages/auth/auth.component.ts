@@ -21,16 +21,13 @@ export class AuthComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (localStorage.getItem("id") != null) {
-      this.label = "déconnexion";
-    }
+    
   }
 
   onSubmit(): void {
     document.getElementById("login-content").style.display = "none";
     this.service.login(this.loginForm.value).subscribe(data => {
       localStorage.setItem("id", data);
-      this.label = "déconnexion";
       document.getElementById("email")["value"] = "";
       document.getElementById("password")["value"] = "";
       this.loginForm.value.email = "";
@@ -38,13 +35,4 @@ export class AuthComponent implements OnInit {
       this.router.navigate(["index"]);
     })
   }
-
-  logOut(): void {
-    if (this.label == "déconnexion") {
-      localStorage.removeItem("id");
-      this.label = "connexion";
-    }
-    this.router.navigate(["home"]);
-  }
-
 }
