@@ -63,6 +63,15 @@ hr {
     overflow-y: scroll;
 }
 
+.list-group-flush::-webkit-scrollbar {
+    width:10px;
+    border-radius: 10px;
+    background-color:black;
+}
+.list-group-flush::-webkit-scrollbar-thumb {
+    background-color:white;
+    border-radius:10px;
+}
 .list-group-flush>.list-group-item{
     background-color: transparent;
     color: white;
