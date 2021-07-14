@@ -34,4 +34,19 @@ export class Gamer {
     public get avatar(): string {
         return this._avatar;
     }
+    public get password(): string {
+        return this._password;
+    }
+    public get email(): string {
+        return this._email;
+    }
+    public get birthday(): string {
+        return this._birthday;
+    }
+    public get gender(): string {
+        return this._gender;
+    }
+    public get country(): string {
+        return this._country;
+    }
 }

@@ -14,6 +14,8 @@
     background-image: url("../../../assets/img/encart-csgo.jpg");
 }
 
+
+
 /* ==========================================================================
     Responsive
 ========================================================================== */
@@ -32,6 +34,12 @@
         transition: .3s ease-in-out;
     }
 
+    .block {
+        display:block;
+    }
+    .hide {
+        display:none;
+    }
     .grayscale div:hover {
         -webkit-transform: scale(1);
         transform: scale(1.03);

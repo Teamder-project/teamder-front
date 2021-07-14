@@ -11,7 +11,7 @@ export class HeaderComponent implements OnInit {
   
   connected: boolean = false;
   avatar : string;
-
+  id : number;
   constructor(private router : Router, private gamerService: GamerService) {
 
     document.addEventListener('click', this.hideDropdownMobileOnOutsideClick.bind(this));
@@ -20,7 +20,8 @@ export class HeaderComponent implements OnInit {
       if (event instanceof RoutesRecognized) {
         if (localStorage.getItem("id") != null) {
           this.connected = true;
-          this.gamerService.getById(localStorage.getItem("id")).subscribe(data => {
+          this.id = parseInt(localStorage.getItem("id"));
+          this.gamerService.getById(this.id).subscribe(data => {
             this.avatar = data.avatar;
           })
         }
@@ -60,6 +61,13 @@ export class HeaderComponent implements OnInit {
     document.getElementById("dropdown-content").style.display = "none";
   }
 
+  displayEdit(): void {
+    document.getElementById("avatar").setAttribute("src", "../../../assets/img/edit.jpg");
+  }
+
+  deleteEdit(): void {
+    document.getElementById("avatar").setAttribute("src", "../../../assets/avatars/"+ this.avatar + ".jpg");
+  }
  
 }
 

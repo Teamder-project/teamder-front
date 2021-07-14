@@ -52,10 +52,9 @@
 
                 <a *ngIf="!connected" routerLink="/sign-in">inscription</a>
 
-                <a *ngIf="connected" routerLink="/edit-account"><img class="avatar" src="../../../assets/avatars/{{avatar}}.jpg" alt=""></a>
+                <a (mouseover)="displayEdit()" (mouseleave)="deleteEdit()" *ngIf="connected" routerLink="/edit-account/{{id}}"><img id="avatar" class="avatar" src="../../../assets/avatars/{{avatar}}.jpg" alt=""></a>
             </div>
         </nav>
-
     </div>
 
     <!-- Tablette -->

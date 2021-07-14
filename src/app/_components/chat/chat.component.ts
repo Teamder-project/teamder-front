@@ -23,7 +23,7 @@ export class ChatComponent implements OnInit {
   ngOnInit(): void {
     this.connect();
     // Stock le profil du l'utilisateur connecté
-    this.gamerService.getById(localStorage.getItem("id")).subscribe(data => {
+    this.gamerService.getById(parseInt(localStorage.getItem("id"))).subscribe(data => {
       this.gamer = data;
     })
     // Récupère les amis et met le premier ami de la liste comme ami selectionné

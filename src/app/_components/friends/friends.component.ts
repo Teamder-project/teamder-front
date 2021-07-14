@@ -9,7 +9,8 @@ import { GamerService } from 'src/app/services/gamer.service';
 export class FriendsComponent implements OnInit {
 
   @Input() friend;
-  constructor(){
+  constructor(private service: GamerService) { 
+    this.service.getById(parseInt(localStorage.getItem("id")));
   }
 
   ngOnInit(): void {
