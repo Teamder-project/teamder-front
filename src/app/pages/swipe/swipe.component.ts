@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
 import { GameProfile } from 'src/app/models/GameProfile';
 import { Swipe } from 'src/app/models/Swipe';

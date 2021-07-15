@@ -10,9 +10,6 @@
     padding:10px;
     border-radius: 12% / 50%;
 }
-.friends button:hover {
-    opacity:1;
-}
 .friends img {
     width:30px;
 }
@@ -38,4 +35,9 @@ hr {
     color:white;
     margin:5px auto;
     
+}
+@media (min-width:550px) {
+    .friends button:hover {
+        opacity:1;
+    }
 }

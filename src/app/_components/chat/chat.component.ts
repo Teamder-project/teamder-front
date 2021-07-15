@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 
 import { FriendChat } from 'src/app/models/FriendChat';
 import { Gamer } from 'src/app/models/Gamer';
@@ -9,9 +9,10 @@ import { GamerService } from 'src/app/services/gamer.service';
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
-  styleUrls: ['./chat.component.css']
+  styleUrls: ['./chat.component.css'],
+  encapsulation:ViewEncapsulation.None
 })
-export class ChatComponent implements OnInit {
+export class ChatComponent implements OnInit, OnDestroy {
   private idFriend: number;
   private gamer: Gamer;
   private ws: WebSocket;
@@ -19,6 +20,9 @@ export class ChatComponent implements OnInit {
   friends : Gamer[];
 
   constructor(private gamerService: GamerService, private friendService : FriendService, private friendChatService: FriendChatService) { }
+  ngOnDestroy(): void {
+    this.ws.close();
+  }
 
   ngOnInit(): void {
     this.connect();
@@ -53,6 +57,10 @@ export class ChatComponent implements OnInit {
    * @param id
    */
   clickFriends = (id) => {
+    if(window.innerWidth <= 550) {
+      
+      this.displayFriends();
+    }
     document.getElementById(String(this.idFriend)).classList.add("display-none");
     this.idFriend= id;
     document.getElementById(String(this.idFriend)).classList.remove("display-none");
@@ -115,13 +123,26 @@ export class ChatComponent implements OnInit {
     if(message.sender.id == Number(localStorage.getItem("id"))){
       document.getElementById(String(message.receiver.id)).innerHTML += 
       // Remplacer par une balise contenant le message envoyé par l'utilisateur connecté
-      "<p class=envoyeur style=\"align-self: flex-end; text-align:right; background-color:white; margin-right:20px; font-size:20px; opacity:0.2; padding:10px; color:black; width:40%;\">"+ message.message + "</p>";
+      "<p class=envoyeur>"+"<span>"+message.time.substr(0, 19).replace("T", " ")+"</span>"+"<br>"+message.message+"</p>";
     }
     else{
       document.getElementById(String(message.sender.id)).innerHTML += 
         // Remplacer par une balise contenant le message envoyé par l'ami
-        "<p class=receveur style=\" background-color:white; opacity:0.2; margin-left:20px; font-size:20px; color:black; width:40%; padding:10px;\">"+ message.message + "</p>"
+        "<p class=receveur>"+ "<span>"+message.time.substr(0, 19).replace("T", " ")+"</span>"+"<br>"+message.message+"</p>"
     }
     this.scrollBottom();
+  }
+
+  displayFriends = () => {
+    console.log(document.getElementById("side-panel").style.display);
+    if(document.getElementById("side-panel").style.display == "none") {
+      document.getElementById("side-panel").style.display = "block";
+      document.getElementById("card").style.display = "none"; 
+    }
+    else {
+      document.getElementById("side-panel").style.display = "none";
+      document.getElementById("card").style.display = "flex";
+      this.scrollBottom();
+    }
   }
 }
