@@ -30,12 +30,10 @@ export class ChatComponent implements OnInit {
     this.friendService.getById(localStorage.getItem("id")).subscribe(data => {
       this.friends = data;
       this.idFriend = this.friends[0].id;
-      // Déclare les variables pour être appelées dans le setTimeout
-      let idFriend = this.idFriend;
-      let scrollBottom = this.scrollBottom;
-      setTimeout(function(){
-        document.getElementById(String(idFriend)).classList.remove("display-none");
-        scrollBottom();
+      setTimeout(() => {
+        console.log(this.idFriend)
+        document.getElementById(String(this.idFriend)).classList.remove("display-none");
+        this.scrollBottom();
       }, 50);
       // Réupère et affiche les messages pour chaque amis
       this.friendChatService.getMessagesByGamer(localStorage.getItem("id")).subscribe(messages => {
