@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { FriendChat } from 'src/app/models/FriendChat';
 import { Gamer } from 'src/app/models/Gamer';
@@ -18,9 +19,12 @@ export class ChatComponent implements OnInit {
 
   friends : Gamer[];
 
-  constructor(private gamerService: GamerService, private friendService : FriendService, private friendChatService: FriendChatService) { }
+  constructor(private gamerService: GamerService, private friendService : FriendService, private friendChatService: FriendChatService, private router: Router) { }
 
   ngOnInit(): void {
+    if(localStorage.getItem("id") == null){
+      this.router.navigate(["home"]);
+    }
     this.connect();
     // Stock le profil du l'utilisateur connecté
     this.gamerService.getById(parseInt(localStorage.getItem("id"))).subscribe(data => {
