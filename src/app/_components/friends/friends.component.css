@@ -1,17 +1,43 @@
 .friends {
+    padding-top:0px;
+}
+.friends button {
+    width:100%;
     display:flex;
-    align-items: center;
+    justify-content: space-between;
+    background-color:white;
+    opacity:0.5;
+    padding:10px;
+    border-radius: 12% / 50%;
 }
 .friends img {
-    width:50px;
-    margin:20px;
+    width:30px;
 }
-.friends p, .friends h4 {
+.friends p {
     color:white;
+}
+.friends h4 {
+    color:black;
+    font-size:20px;
 }
 
 button {
-    display: flex;
     background-color: transparent;
     border: none;
+}
+.avatar {
+    border-radius:50%;
+}
+.nom {
+    align-self: center;
+}
+hr {
+    color:white;
+    margin:5px auto;
+    
+}
+@media (min-width:550px) {
+    .friends button:hover {
+        opacity:1;
+    }
 }
