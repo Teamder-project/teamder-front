@@ -1,5 +1,5 @@
 <div id="fullscreen">
-  <div class="full">
+  <div class="full {{alias}}">
 
     <div class="retour">
       <button routerLink="/index" class="bouton">Retour</button>
@@ -9,11 +9,9 @@
     <div class="swiper-container">
 
       <div class="swiper-wrapper">
-
+        <!-- card qui indique que le swipe a été positif-->
         <div id="swipe1" class="swiper-slide">
-          <!-- card qui indique que le swipe a été positif-->
           <div class="container">
-
             <div class="card_transition_oui">
               <div class="image_oui">
                 <img src="../../../assets/img/YES.jpg" alt="oui">
@@ -25,14 +23,12 @@
           </div>
         </div>
 
+        <!-- carte active avec l'affichage du profil -->
         <div id="swipe2" class="swiper-slide">
-
-          <!-- carte active avec l'affichage du profil -->
           <div class="container">
-
             <div class="card">
               <div class="entete">
-                <img id="avatar" src="../../../assets/avatars/.jpg" alt="Person" class="card_image">
+                <img id="avatar-card" src="" alt="Person" class="card_image">
                 <p id="nom-prenom" class="joueur"></p>
               </div>
               <div class="infos_joueur">
@@ -42,10 +38,10 @@
             </div>
           </div>
         </div>
-        <div id="swipe3" class="swiper-slide">
 
+        <!-- card qui indique que le swipe a été négatif-->
+        <div id="swipe3" class="swiper-slide">
           <div class="container">
-            <!-- card qui indique que le swipe a été négatif-->
             <div class="card_transition_non">
               <div class="image_non">
                 <img src="../../../assets/img/NO.jpg" alt="non">

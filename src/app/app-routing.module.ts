@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ApexLegendsComponent } from './pages/apex-legends/apex-legends.component';
-import { ChatListComponent } from './pages/chat-list/chat-list.component';
 import { CounterStrikeComponent } from './pages/counter-strike/counter-strike.component';
 import { Error404Component } from './pages/error404/error404.component';
 import { CreateProfileComponent } from './pages/create-profile/create-profile.component';
@@ -14,6 +13,8 @@ import { RocketLeagueComponent } from './pages/rocket-league/rocket-league.compo
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { SwipeComponent } from './pages/swipe/swipe.component';
 import { ChatComponent } from './_components/chat/chat.component';
+import { AuthComponent } from './pages/auth/auth.component';
+import { EditAccountComponent } from './pages/edit-account/edit-account.component';
 
 const routes: Routes = [
   { path : '' , redirectTo : '/home' , pathMatch : 'full'},
@@ -27,11 +28,11 @@ const routes: Routes = [
   { path: 'sign-in', component : SignInComponent},
   { path: 'swipe', component : SwipeComponent},
   { path: 'swipe/:id', component : SwipeComponent},
-  { path: 'chat-list', component : ChatListComponent},
   { path: 'new-profile', component : CreateProfileComponent},
   { path: 'edit-profile/:id', component : EditProfileComponent},
   { path: 'chat', component : ChatComponent},
-  { path: 'error404', component : Error404Component},
+  { path: 'auth', component : AuthComponent},
+  { path: 'edit-account/:id', component: EditAccountComponent},
   { path: 'error404', component : Error404Component},
   { path : '' , redirectTo : '/home' , pathMatch : 'full'},
   { path: '**', redirectTo: '/error404' }

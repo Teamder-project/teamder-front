@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { GamerService } from 'src/app/services/gamer.service';
 
 @Component({
   selector: 'app-friends',
@@ -8,9 +9,10 @@ import { Component, Input, OnInit } from '@angular/core';
 export class FriendsComponent implements OnInit {
 
   @Input() friend;
-  constructor() { }
+  constructor(private service: GamerService) { 
+    this.service.getById(parseInt(localStorage.getItem("id")));
+  }
 
   ngOnInit(): void {
   }
-
 }

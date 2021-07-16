@@ -14,7 +14,6 @@ import { CounterStrikeComponent } from './pages/counter-strike/counter-strike.co
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { SwipeComponent } from './pages/swipe/swipe.component';
 import { NgxUsefulSwiperModule} from 'ngx-useful-swiper';
-import { ChatListComponent } from './pages/chat-list/chat-list.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { FriendsComponent } from './_components/friends/friends.component';
 import { LoginComponent } from './_components/login/login.component';
@@ -25,6 +24,8 @@ import { IndexComponent } from './pages/index/index.component';
 import { CreateProfileComponent } from './pages/create-profile/create-profile.component';
 import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
 import { ChatComponent } from './_components/chat/chat.component';
+import { AuthComponent } from './pages/auth/auth.component';
+import { EditAccountComponent } from './pages/edit-account/edit-account.component';
 
 
 @NgModule({
@@ -38,7 +39,6 @@ import { ChatComponent } from './_components/chat/chat.component';
     CounterStrikeComponent,
     AboutUsComponent,
     SwipeComponent,
-    ChatListComponent,
     FriendsComponent,
     SignInComponent,
     LoginComponent,
@@ -47,8 +47,9 @@ import { ChatComponent } from './_components/chat/chat.component';
     IndexComponent,
     CreateProfileComponent,
     EditProfileComponent,
-    ChatComponent
-    
+    ChatComponent,
+    AuthComponent,
+    EditAccountComponent
   ],
   imports: [
     BrowserModule,

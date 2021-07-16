@@ -13,4 +13,11 @@ export class GameProfileComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  displayBtn(id: any): void {
+   document.getElementById("button-div"+id).classList.remove("hide")
+  }
+
+  deleteBtn(id): void {
+    document.getElementById("button-div"+id).classList.add("hide");
+  }
 }

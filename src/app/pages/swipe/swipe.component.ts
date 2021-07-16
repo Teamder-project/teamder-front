@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
 import { GameProfile } from 'src/app/models/GameProfile';
 import { Swipe } from 'src/app/models/Swipe';
 import { GameProfileService } from 'src/app/services/game-profile.service';
+import { GameService } from 'src/app/services/game.service';
 import Swiper from 'swiper';
 
 @Component({
@@ -12,19 +13,15 @@ import Swiper from 'swiper';
 })
 export class SwipeComponent implements OnInit {
   
+  alias: string;
+  
   swiper: GameProfile;
 
   users: GameProfile[] = [];
 
-  likes = [];
-
-  dislikes = [];
-
-  constructor(private service: GameProfileService, private route: ActivatedRoute) {
+  constructor(private gameService: GameService, private service: GameProfileService, private route: ActivatedRoute) {
   }
 
-
-  //charge le premier gamer, initialise le swiper, et boucle la fonction rafraichir()
   ngOnInit(): void {
 
     this.route.paramMap.subscribe(url => {
@@ -33,8 +30,8 @@ export class SwipeComponent implements OnInit {
         this.swiper = profileSwiper;
       })
     })
-
-    this.getProfiles()
+    this.getBackground();
+    this.getProfiles();
 
     const swiper = new Swiper('.swiper-container', {
       //permet de mettre en place l'effet flip de la carte. Pour modifier la vitesse à laquelle elle se tourne, jouer avec les valeurs du speed.
@@ -52,15 +49,22 @@ export class SwipeComponent implements OnInit {
         nextEl: '.swiper-button-prev',
         prevEl: '.swiper-button-next'
       },
-      //empêche le swipe sur la fonctionnalité "retour"
+      //empêche de swipe les slides avec la classe "no-swiping"
       noSwiping: true,
-      noSwipingClass: 'retour'
+      noSwipingClass: 'no-swiping'
     });
 
-    swiper.on('reachBeginning', this.like);
-    swiper.on('reachEnd', this.dislike);
-    //setInterval(this.rafraichir, 100);
+    swiper.on('reachBeginning', this.swipe.bind(this, 1));
+    swiper.on('reachEnd', this.swipe.bind(this, 0));
+  }
 
+  getBackground = () => {
+    this.route.paramMap.subscribe(url => {
+      let id: number = Number(url.get("id"));
+      this.service.getProfileById(id).subscribe(data => {
+        this.alias = data.game.alias;
+      })
+    })
   }
 
   trigerFullScreen = () => {
@@ -75,10 +79,8 @@ export class SwipeComponent implements OnInit {
     }
   }
 
-  //charge le prochain gamer, l'ajoute dans likes[] et renvoie sur la slide principale
-  like = () => {
-
-    let swipe : Swipe = new Swipe(1, this.swiper, this.users.splice(0, 1)[0]);
+  swipe = (state: number) => {
+    let swipe : Swipe = new Swipe(state, this.swiper, this.users.splice(0, 1)[0]);
     
     this.service.swipe(swipe).subscribe(element =>{
       if(this.users.length == 2) {
@@ -86,28 +88,16 @@ export class SwipeComponent implements OnInit {
       }
     });
 
-    document.getElementById("avatar").setAttribute("src", "../../../assets/avatars/"+this.users[0].gamer.avatar+".jpg");
-    document.getElementById("nom-prenom").innerText = this.users[0].nickname_game;
+    this.loadNextProfile();
 
     const swiper = document.querySelector('.swiper-container')['swiper'];
-    setTimeout(function () { swiper.slideNext(800) }, 600);
-  }
-
-  //charge le prochain gamer, l'ajoute dans dislikes[] et renvoie sur la slide principale
-  dislike = () => {
-    let swipe : Swipe = new Swipe(0, this.swiper, this.users.splice(0, 1)[0]);
-    
-    this.service.swipe(swipe).subscribe(element =>{
-      if(this.users.length == 2) {
-        this.getProfilesWhenOnly2Left();
+    setTimeout(() => {
+      if(state == 1) {
+        swiper.slideNext(800)
+      }else {
+        swiper.slidePrev(800)
       }
-    });
-
-    document.getElementById("nom-prenom").innerText = this.users[0].nickname_game;
-    document.getElementById("avatar").setAttribute("src", "../../../assets/avatars/"+this.users[0].gamer.avatar+".jpg");
-
-    const swiper = document.querySelector('.swiper-container')['swiper'];
-    setTimeout(function () { swiper.slideNext(800) }, 600);
+    }, 600);
   }
 
   getProfiles = () => {
@@ -117,21 +107,16 @@ export class SwipeComponent implements OnInit {
         data.forEach(element => {
           this.users.push(element);
         })
-        console.log(this.users);
       })
     });
 
     setTimeout(() => {
-      document.getElementById("objectif").innerText = "Mon objectif : "+this.users[0].goals;
-      document.getElementById("description").innerText = this.users[0].description;
-      document.getElementById("avatar").setAttribute("src", "../../../assets/avatars/"+this.users[0].gamer.avatar+".jpg");
-      document.getElementById("nom-prenom").innerText = this.users[0].nickname_game;
+      this.loadNextProfile();
     },
-      500);
+    500);
   }
 
   getProfilesWhenOnly2Left = () => {
-    
     this.route.paramMap.subscribe(url => {
       let id: number = Number(url.get("id"));
       this.service.getProfilesWeDontHaveForSwipe(id, this.users[0].id, this.users[1].id).subscribe(data => {
@@ -142,4 +127,22 @@ export class SwipeComponent implements OnInit {
     });
   }
 
+  loadNextProfile = () => {
+    if(this.users[0] != null){
+      document.getElementById("nom-prenom").innerText = this.users[0].nickname_game;
+      document.getElementById("avatar-card").setAttribute("src", "../../../assets/avatars/"+this.users[0].gamer.avatar+".jpg");
+      document.getElementById("objectif").innerText = this.users[0].goals;
+      document.getElementById("description").innerText = this.users[0].description;
+    }
+    else{
+      const swiper = document.querySelector('.swiper-container')['swiper'];
+      setTimeout(() => {
+        swiper.enabled = false;}
+      , 650)
+      document.getElementById("nom-prenom").innerText = "Plus de profil !";
+      document.getElementById("avatar-card").setAttribute("src", "../../../assets/avatars/null.jpg");
+      document.getElementById("objectif").innerText = "Désolé !";
+      document.getElementById("description").innerText = "Aucun profil ne correspond à vos critères, revenez plus tard.";
+    }
+  }
 }

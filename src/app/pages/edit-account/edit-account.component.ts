@@ -1,31 +1,35 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Gamer } from 'src/app/models/Gamer';
 import { GamerService } from 'src/app/services/gamer.service';
 
 @Component({
-  selector: 'app-sign-in',
-  templateUrl: './sign-in.component.html',
-  styleUrls: ['./sign-in.component.css']
+  selector: 'app-edit-account',
+  templateUrl: './edit-account.component.html',
+  styleUrls: ['./edit-account.component.css']
 })
-export class SignInComponent implements OnInit {
+export class EditAccountComponent implements OnInit {
 
   error = [];
   gamerForm: FormGroup;
+  profile : Gamer;
+  avatar: string = "default";
 
-  constructor(private fb: FormBuilder, private gamerService: GamerService, private router: Router) {
-    this.gamerForm = this.fb.group({
-      username: null,
-      password: null,
-      email: null,
-      birthday: null,
-      gender: null,
-      country: null,
-      avatar: "default"
-    })
+  constructor(private fb: FormBuilder, private gamerService: GamerService, private router: Router, private route: ActivatedRoute) {
+    this.gamerForm = new FormGroup({});
   }
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe(url => {
+      let id : number = Number(url.get("id"));
+      this.gamerService.getById(id).subscribe(profile => {
+        this.profile = profile
+        this.avatar = profile.avatar;
+        this.updatedForm();
+        this.avatar = document.getElementById("hidden") ? document.getElementById("hidden")['value'] : '';
+      })
+    })
   }
 
   displayAvatar = () => {
@@ -81,7 +85,7 @@ export class SignInComponent implements OnInit {
         this.error.push("Le mot de passe doit être compris entre 4 et 50 caractères");
       }
       else {
-        this.gamerService.create(this.gamerForm.value).subscribe(data => {
+        this.gamerService.update(this.gamerForm.value).subscribe(data => {
           this.router.navigate([`/home`]);
         })
       }
@@ -91,4 +95,18 @@ export class SignInComponent implements OnInit {
       this.error.push("Veuillez remplir tout les champs");
     }
   }
+
+  updatedForm = () => {
+    this.gamerForm = this.fb.group({
+      id: this.profile.id,
+      username: this.profile.username,
+      password: this.profile.password,
+      email: this.profile.email,
+      birthday: this.profile.birthday,
+      gender: this.profile.gender,
+      country: this.profile.country,
+      avatar: this.avatar
+    })
+  }
+
 }

@@ -1,6 +1,6 @@
 
 <div class="block" id="back-color">
-    <div class="main">
+    <div class="main" *ngIf='profile'>
         <form [formGroup]="gamerForm" (ngSubmit)="onSubmit()">
             <div id="error">
                 <p *ngFor="let error of error">{{error}}</p>
@@ -8,7 +8,7 @@
             <div class="flex">
                 <button id="avatar-btn" class="avatar-btn" type="button" (click)="displayAvatar()">Avatar <i class="fas fa-edit"></i></button>
                 <button id="return" class="hide return" (click)="return()" type ="button">Retour</button>
-                <img id="avatar-choisi" class="hide" src="" alt="">
+                <img id="avatar-choisi" class="" src="../../../assets/avatars/{{profile.avatar}}.jpg" alt="">
             </div>
             <input id="hidden" type="hidden" value="" formControlName="avatar">
             <div id="div-img" class="hide">

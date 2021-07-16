@@ -15,7 +15,7 @@ export class GamerService {
     return this.httpClient.get<Gamer[]>(`${environment.apiBaseUrl}/gamers`)
   }
 
-  getById(id: string): Observable<Gamer> {
+  getById(id: number): Observable<Gamer> {
     return this.httpClient.get<Gamer>(`${environment.apiBaseUrl}/gamers/${id}`)
   }
 
@@ -28,7 +28,7 @@ export class GamerService {
   }
 
   update(gamer: Gamer): Observable<Gamer> {
-    return this.httpClient.put<Gamer>(`${environment.apiBaseUrl}/gamers`, gamer);
+    return this.httpClient.patch<Gamer>(`${environment.apiBaseUrl}/gamers`, gamer);
   }
 
   delete(id: string) {
